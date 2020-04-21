@@ -19,7 +19,7 @@ performance and is just plain neat. I'm using them in
 mapping functions it creates. Unfortunately, the default debug view for an Expression Tree looks 
 something like this:
 
-![_config.yml]({{ site.post_images_dir }}2016-02-29/DebugView.png)
+![Debug view.yml]({{ site.post_images_dir }}2016-02-29/DebugView.png)
 
 ...now maybe you're some coding savant who eats IL for breakfast, but I find that pretty unreadable.
 
@@ -27,7 +27,7 @@ So! To get a nicer look at my Expression Trees, I've written
 [ReadableExpressions](https://github.com/agileobjects/ReadableExpressions), a PCL with a single 
 extension method which translates an Expression Tree into something friendlier, like:
 
-![_config.yml]({{ site.post_images_dir }}2016-02-29/VisualizerView.png)
+![Visualizer view.yml]({{ site.post_images_dir }}2016-02-29/VisualizerView.png)
 
 ...yes, that's the same Expression Tree as the first screenshot :)
 
