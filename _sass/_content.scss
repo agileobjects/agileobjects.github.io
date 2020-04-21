@@ -52,9 +52,8 @@
 }
 
 .post-share-title {
-    color: $gray-darkest;
+    color: $body-subheading-color;
     display: inline-block;
-    font-weight: 700;
     margin-right: 10px;
 }
 
@@ -172,7 +171,7 @@
 }
 
 .tag-top-link {
-    color: $gray;
+    color: $body-text-color;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
