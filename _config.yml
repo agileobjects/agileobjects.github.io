@@ -9,6 +9,7 @@ author:
   greetings: "Hello! My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK. I deliver software."
 favicon: 'assets/images/favicon.ico'
 baseurl: 
+post_images_dir: '/assets/images/posts/'
 production_url: https://agileobjects.co.uk/
 disqus: 'justgoodthemes'
 mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'

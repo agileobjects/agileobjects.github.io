@@ -3,6 +3,7 @@ layout: post
 title: Legacy Projects, Technical Debt and NDepend
 excerpt: Legacy systems are commonplace, but it's difficult to come up with anything concrete to justify the expense of an update to someone with an eye on the bottom line. Thankfully, the folks at NDepend have now built technical debt computation on top of their code analysis tools, giving you a much easier way to have these sorts of discussions. Here's a real-world example.
 tags: [C&#35;, Programming Practices]
+images_dir: '2017-06-29/'
 ---
 
 Unless every project you've worked on has been green field and / or built with no time pressure,
@@ -32,7 +33,7 @@ I'm currently working with a legacy project, so when I heard about NDepend's new
 capabilities, I was eager to fire it up and see what it said. With all the default settings, it said 
 this!
 
-![_config.yml](/images/posts/2017-06-29/InitialReport.png)
+![Initial report]({{ site.post_images_dir }}{{ page.images_dir }}InitialReport.png)
 
 The main takeaways are:
 
@@ -61,11 +62,11 @@ exactly what we're doing :)
 As usual with NDepend, you can explore the issues it finds in great detail. Selecting from the 
 Explore debt menu:
 
-![_config.yml](/images/posts/2017-06-29/DebtExplorer.png)
+![Debt Explorer]({{ site.post_images_dir }}{{ page.images_dir }}DebtExplorer.png)
 
 ...you can check out Debt and Issues on a rule-by-rule basis:
 
-![_config.yml](/images/posts/2017-06-29/DebtAndIssuesPerRule.png)
+![Debt and Issues per rule]({{ site.post_images_dir }}{{ page.images_dir }}DebtAndIssuesPerRule.png)
 
 The main offenders here are the aforementioned unwieldy methods and direct use of data access code 
 in the UI layer. You see the debt and annual interest here on a per-rule basis, with the annual 
@@ -74,7 +75,7 @@ interest sum in the bottom row.
 You can click into a particular rule to see more details, as well as the query used to calculate the 
 debt and interest. For the 'Methods too complex' rule, that looks like this:
 
-![_config.yml](/images/posts/2017-06-29/MethodsTooComplexRule.png)
+![Methods Too Complex rule]({{ site.post_images_dir }}{{ page.images_dir }}MethodsTooComplexRule.png)
 
 Debt is calculated directly from the [Cyclomatic Complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) 
 measurement - the number of paths through the method. Interest is calculated as 10 minutes per year 
@@ -87,7 +88,7 @@ with it - it's just C# Linq in Visual Studio!
 
 The dashboard indicated violation of 8 critical rules - clicking that opens the Queries and Rules Explorer:
 
-![_config.yml](/images/posts/2017-06-29/RulesExplorer.png)
+![Rules Explorer]({{ site.post_images_dir }}{{ page.images_dir }}RulesExplorer.png)
 
 Our 8 violated rules are listed in the right-hand pane - again, mainly down to unwieldy methods. 
 Clicking into each rule presents the list of offenders with direct access to the code.
