@@ -2,7 +2,7 @@
 layout: post
 title: Death of a Scrum Room
 excerpt: A friend of mine works at a company where the scrum process is gradually being phased out. Why is it happening, and what are the consequences?
-tags: [{{ Programming Practices | url_encode }}]
+tags: [Programming Practices]
 ---
 
 A friend of mine (seriously - a friend of mine - this isn't about me) works at a medium-large 

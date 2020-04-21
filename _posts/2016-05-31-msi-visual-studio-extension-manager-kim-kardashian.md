@@ -2,7 +2,7 @@
 layout: post
 title: MSIs, Visual Studio Extension Manager and Possible Kim Kardashian
 excerpt: I've now reached v1.5.1 of the ReadableExpressions Debugger Visualizers, and solving a recent bug led me on a bit of an adventure. Here's the details, along with a tenuous Kim Kardashian reference.
-tags: [{{ C# | url_encode }}, ReadableExpressions, {{ Expression Trees | url_encode }}]
+tags: [C&#35;, ReadableExpressions, Expression Trees]
 ---
 
 I've now reached v1.5.1 of the ReadableExpressions Debugger Visualizers, and have got quite a 

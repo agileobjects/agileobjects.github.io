@@ -2,7 +2,7 @@
 layout: post
 title: Spotting a Missing Object
 excerpt: There are various tell-tale signs when a system is missing an object, and I spotted some of them recently while writing the ReadableExpressions library. Here's how.
-tags: [{{ C# | url_encode }}, {{ Programming Practices | url_encode }}]
+tags: [C&#35;, Programming Practices]
 ---
 
 There are various tell-tale signs when a system is missing an object, and I spotted some of them 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Legacy Projects, Technical Debt and NDepend
-excerpt: Legacy systems are commonplace, but it's difficult to come up with anything concrete to justify the expense of an update to someone with an eye on their bottom line. Thankfully, the folks at NDepend have now built technical debt computation on top of their code analysis tools, giving you a much easier way to have these sorts of discussions. Here's a real-world example.
-tags: [{{ C# | url_encode }}, {{ Programming Practices | url_encode }}]
+excerpt: Legacy systems are commonplace, but it's difficult to come up with anything concrete to justify the expense of an update to someone with an eye on the bottom line. Thankfully, the folks at NDepend have now built technical debt computation on top of their code analysis tools, giving you a much easier way to have these sorts of discussions. Here's a real-world example.
+tags: [C&#35;, Programming Practices]
 ---
 
 Unless every project you've worked on has been green field and / or built with no time pressure,
@@ -14,7 +14,7 @@ Projects to replace or rewrite these systems are commonplace, but where do you b
 you want to make a case to the business that such a system needs to be replaced? 
 [Technical debt](https://en.wikipedia.org/wiki/Technical_debt) can be a useful metaphor to make 
 that case, but while it's easy to explain in the abstract, it's difficult to come up with anything 
-concrete to justify the expense of an update to someone with an eye on their bottom line.
+concrete to justify the expense of an update to someone with an eye on the bottom line.
 
 Thankfully, the folks at [NDepend](https://www.ndepend.com) have now built technical debt computation 
 on top of their code analysis tools, giving you a much easier way to have these sorts of discussions. 

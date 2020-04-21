@@ -2,7 +2,7 @@
 layout: post
 title: Mapper vs Mapper&#58; Performance
 excerpt: The first in a series of posts comparing a subset of the available mappers. This blog is on that favourite thing we're not supposed to obsess too much about (in programming) - performance.
-tags: [{{ .NET Core | url_encode }}, AgileMapper, {{ Programming Practices | url_encode }}, {{ C# | url_encode }}]
+tags: [C&#35;, .NET Core, AgileMapper, Programming Practices]
 ---
 
 <span class="updated">

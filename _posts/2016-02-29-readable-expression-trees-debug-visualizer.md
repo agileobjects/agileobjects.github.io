@@ -2,7 +2,7 @@
 layout: post
 title: Friendly, Readable Expression Trees
 excerpt: Introducing ReadableExpressions, a simple PCL which generates a friendly, readable view of an Expression Tree.
-tags: [{{ C# | url_encode }}, {{ Programming Practices | url_encode }}]
+tags: [C&#35;, Programming Practices]
 ---
 
 tl;dr: ReadableExpressions is an extension method which makes a readable string from [Expression 

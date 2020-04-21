@@ -2,7 +2,7 @@
 layout: post
 title: Interview Trivia Questions
 excerpt: There is a style of technical interview question which I think is more or less pointless. Here's some examples, with what I think is a question worth asking instead.
-tags: [Patterns, {{ C# | url_encode }}, {{ Programming Practices | url_encode }}, {{ Dependency Injection (DI) | url_encode }}]
+tags: [C&#35;, Patterns, Programming Practices, Dependency Injection (DI)]
 ---
 
 Here's some interview questions I've been asked / seen:

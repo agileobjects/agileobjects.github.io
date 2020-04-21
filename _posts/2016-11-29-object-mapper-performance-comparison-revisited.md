@@ -2,7 +2,7 @@
 layout: post
 title: Mapper vs Mapper&#58; Performance Revisited
 excerpt: I recently wrote a blog on the performance of various object-object mappers, but it turns out my tests weren't quite fair and equal at that point. Having updated the relevant mapper classes and re-measured, here are my results.
-tags: [AgileMapper, {{ C# | url_encode }}, {{ Programming Practices | url_encode }}, {{ .NET Core | url_encode }}]
+tags: [C&#35;, AgileMapper, .NET Core, Programming Practices]
 ---
 
 <span class="updated">

@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project (Again)&#58; My Critical Errors
 excerpt: Following on from my look at the non-critical errors NDepend 6 told me about on my project, here's a look at the more serious stuff - the critical errors.
-tags: [NDepend, {{ C# | url_encode }}, Patterns, {{ Programming Practices | url_encode }}]
+tags: [C&#35;, NDepend, Patterns, Programming Practices]
 ---
 
 Following on from my look at the [non-critical errors](/ndepend-non-critical-errors-real-project) 

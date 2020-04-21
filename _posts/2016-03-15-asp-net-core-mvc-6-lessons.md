@@ -2,7 +2,7 @@
 layout: post
 title: ASP.NET Core and MVC 6 Lessons Learned
 excerpt: I recently finished a small website using ASP.NET Core and MVC 6 - I only scratched the surface of the framework, but here's some gotchas and things I picked up along the way.
-tags: [{{ C# | url_encode }}, ReadableExpressions, {{ Expression Trees | url_encode }}, {{ Programming Practices | url_encode }}]
+tags: [C&#35;, ReadableExpressions, Expression Trees, Programming Practices]
 ---
 
 I recently finished a small website using ASP.NET Core and MVC 6 - I only scratched the surface of 
