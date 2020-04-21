@@ -11,8 +11,8 @@ author:
 favicon: 'assets/images/favicon.ico'
 baseurl: 
 post_images_dir: '/assets/images/posts/'
-production_url: https://agileobjects.co.uk/
-disqus: 'justgoodthemes'
+production_url: https://agileobjects.co.uk
+disqus: 'agileobjects'
 # Add your GA Tracking Id
 ga_analytics: 
 
@@ -34,6 +34,8 @@ navigation:
     url: /
   - text: About
     url: /about
+  - text: Projects
+    url: /projects
   - text: Search
     url: /search
   - text: Contact
