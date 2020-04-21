@@ -62,7 +62,7 @@ mapper.Map(dtos).Over(customers);
 var plan = mapper.GetPlanFor<PersonViewModel>().ToANew<Person>();
 ```
 
-![_config.yml](/images/posts/2016-10-03/MappingPlan.gif)
+![_config.yml]({{ site.post_images_dir }}2016-10-03/MappingPlan.gif)
 
 ## Other Stuff
 

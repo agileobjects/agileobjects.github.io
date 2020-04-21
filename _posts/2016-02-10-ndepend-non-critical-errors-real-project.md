@@ -13,7 +13,7 @@ broken about 10.5% of them.
 
 Rule violations are viewed in the Queries and Rules Explorer, which looks like this:
 
-![RulesExplorer1](/images/posts/2016-02-10/RulesExplorer1.png)
+![RulesExplorer1]({{ site.post_images_dir }}2016-02-10/RulesExplorer1.png)
 
 Every category with a warning symbol in the pane on the left has one or more violated rules. In the
 Object Oriented Design category, I've violated rules relating to sealing classes, leaving stateless
@@ -21,7 +21,7 @@ classes and methods non-static, and using [Singletons](https://en.wikipedia.org/
 
 Clicking the query title displays a window with more information about my 62 unsealed classes:
 
-![SealedClasses](/images/posts/2016-02-10/SealedClasses.png)
+![SealedClasses]({{ site.post_images_dir }}2016-02-10/SealedClasses.png)
 
 The first pane contains the query used to check the rule, a description of why the rule exists, and
 how to fix violations; the second pane lists offending classes. It's important to keep in mind that
@@ -42,12 +42,12 @@ ignore this rule, which I can do by deselecting it in the Queries and Rules Expl
 
 Another highly-violated category is Naming Conventions:
 
-![NamingConventions](/images/posts/2016-02-10/NamingConventions.png)
+![NamingConventions]({{ site.post_images_dir }}2016-02-10/NamingConventions.png)
 
 ...but as I don't prefix instance fields with 'm_' or static fields with 's_', these don't apply. 
 Fortunately, the rules are easy to modify:
 
-![NamingUpdate](/images/posts/2016-02-10/NamingUpdate.png)
+![NamingUpdate]({{ site.post_images_dir }}2016-02-10/NamingUpdate.png)
 
 As 'm_' and 's_' aren't the Visual Studio or ReSharper defaults - nor a commonly-used convention as
 far as I know - it strikes me as a curious default rule. Never mind - just a minor quibble and easy
@@ -55,7 +55,7 @@ to change.
 
 A good-size chunk of the other non-critical errors relate to method visibility:
 
-![Visibility](/images/posts/2016-02-10/Visibility.png)
+![Visibility]({{ site.post_images_dir }}2016-02-10/Visibility.png)
 
 Both rules - 'Methods that could have a lower visibility' and 'Avoid public methods not publically 
 visible' - have picked out a large number of public methods in internal classes, on the basis that 
@@ -83,7 +83,7 @@ to prove it) around:
 
 Re-running the analysis gives me this dashboard:
 
-![Dashboard2](/images/posts/2016-02-10/Dashboard2.png)
+![Dashboard2]({{ site.post_images_dir }}2016-02-10/Dashboard2.png)
 
 51.5% fewer non-critical violations - significantly better. I'll go over the critical violations 
 [next time](/ndepend-critical-errors-real-project).

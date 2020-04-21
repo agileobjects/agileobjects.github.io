@@ -13,7 +13,7 @@
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('search-results'),
                 json: '{{ site.baseurl }}/search.json',
-                searchResultTemplate: '<li><span class="post-meta"><time class="published" datetime="{date}">{date}</time></span><a href="{url}" title="{desc}">{title}</a> </li>',
+                searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><span class="post-meta"><time class="published" datetime="{date}">{date}</time></span> </li>',
                 noResultsText: 'No results found',
                 limit: 15,
                 fuzzy: false,

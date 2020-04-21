@@ -32,13 +32,13 @@ module to route requests rewritten by the URL Rewrite module (try saying that te
 can install this via IIS Manager - click **Get New Web Platform Components** in the right-hand 
 column to open the **Web Platform Installer**, then search for **ARR**, and look for version 3.0:
 
-![_config.yml](/images/posts/2017-03-25/ARR.png)
+![ApplicationRequestRouting]({{ site.post_images_dir }}2017-03-25/ARR.png)
 
 Once that's installed, open **Application Request Routing** in the server-level **IIS** section (you 
 may need to close and re-open IIS to see the icon), click **Server Proxy Settings**, check **Enable 
 proxy**, and click **Apply**:
 
-![_config.yml](/images/posts/2017-03-25/ARR_4.png)
+![ApplicationRequestRouting]({{ site.post_images_dir }}2017-03-25/ARR_4.png)
 
 #### URL Rewrite
 
@@ -46,7 +46,7 @@ Finally, you need the [URL Rewrite](https://www.iis.net/downloads/microsoft/url-
 This you can also install via the Web Platform Installer - just search for **rewrite**, and look 
 for version 2.0:
 
-![_config.yml](/images/posts/2017-03-25/UrlRewrite.png)
+![UrlRewrite]({{ site.post_images_dir }}2017-03-25/UrlRewrite.png)
 
 ## Setting up ASP.NET Core
 
@@ -63,7 +63,7 @@ Finally, set up an IIS website pointing to your ASP.NET Core publish directory. 
 website will be accessed via WebForms only, bind it to a non-public port number - I'll use 1234 for 
 our example:
 
-![_config.yml](/images/posts/2017-03-25/CoreBindings.png)
+![Core bindings]({{ site.post_images_dir }}2017-03-25/CoreBindings.png)
 
 ## Setting up WebForms
 

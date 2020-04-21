@@ -18,7 +18,7 @@ quality metrics are violated, which is pretty awesome. It retains its easy-to-us
 ability to customise queries, and spits out an informative dashboard displaying analysis results. 
 Like this one:
 
-![Dashboard1](/images/posts/2016-02-09/Dashboard1.png)
+![Dashboard1]({{ site.post_images_dir }}2016-02-09/Dashboard1.png)
 
 ...which is what I got for my first round of analysis. NDepend does not calculate code coverage, 
 but can use coverage results from various coverage tools - these were from 
@@ -32,7 +32,7 @@ code coverage data I'm able to look at types in my project which have less than 
 (metric 1) against the percentage coverage they have (metric 2). This trivially makes it clear 
 where more coverage may be required, and looks a little something like this:
 
-![ColouredMetrics](/images/posts/2016-02-09/ColouredMetrics.png)
+![ColouredMetrics]({{ site.post_images_dir }}2016-02-09/ColouredMetrics.png)
 
 I've selected the `NullMappingStep` class here, which has brought up a summary of the metric data
 (inside the area I've highlighted with a red outline) as well as a help box (at the bottom) 

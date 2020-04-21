@@ -25,7 +25,7 @@ have to use an MSI for. The MSI:
 Adding an extension [using an MSI](https://blogs.msdn.microsoft.com/visualstudio/2009/10/26/vsix-and-msi)
 means Extension Manager can't perform update installs itself; you get the following message:
 
-![_config.yml](/images/posts/2016-05-31/Messages.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/Messages.png)
 
 ...but 'Updates will appear on the Updates tab'; you just have to download and install them 
 yourself when notified.
@@ -44,7 +44,7 @@ from which a query for the current versions of
 the [SQLite Toolbox](https://visualstudiogallery.msdn.microsoft.com/0e313dfd-be80-4afb-b5e9-6e74d369f7a1)
 and my extension gave me the following result:
 
-![_config.yml](/images/posts/2016-05-31/Service.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/Service.png)
 
 ...a blank string for my extension's latest version number.
 
@@ -53,12 +53,12 @@ and my extension gave me the following result:
 I tried adding the new extension version as a brand new extension, and - to my surprise - saw the 
 following field on the form:
 
-![_config.yml](/images/posts/2016-05-31/VSIXID.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/VSIXID.png)
 
 VSIX ID?! Where had that been all this time? I went back to edit my existing extension's page, and 
 sure enough, no VSIX ID box:
 
-![_config.yml](/images/posts/2016-05-31/NoVSIXID.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/NoVSIXID.png)
 
 Well, not much I can do about that - I filled in my extension's ID, added the new extension, and - 
 hurrah! - the service now returned the version number! I checked the Extension Manager Updates 
@@ -69,15 +69,15 @@ going on?
 
 I went back to my extension's page, and... ummm...
 
-![_config.yml](/images/posts/2016-05-31/ErrorNew.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/ErrorNew.png)
 
 Ut-oh. How about the page for the previous version?
 
-![_config.yml](/images/posts/2016-05-31/ErrorOld.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/ErrorOld.png)
 
 Ut-oh. How about the Visual Studio Gallery website itself?
 
-![_config.yml](/images/posts/2016-05-31/ErrorAll.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/ErrorAll.png)
 
 Oh dear. Ummm... did I just break the internet? Nahh - probably a coincidence. *Probably*.
 
@@ -92,11 +92,11 @@ However! It did appear when I deselected then reselected one of the supported Vi
 which - after deleting the new version I previously added - finally let me associate the extension's
 ID with the extension!
 
-![_config.yml](/images/posts/2016-05-31/VSIXID_1.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/VSIXID_1.png)
 
 Which meant, after lots of fun, Visual Studio reported the update:
 
-![_config.yml](/images/posts/2016-05-31/Update.png)
+![_config.yml]({{ site.post_images_dir }}2016-05-31/Update.png)
 
 \**Phew*\*
 

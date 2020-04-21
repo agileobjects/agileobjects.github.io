@@ -130,7 +130,7 @@
 .read-next-title:after,
 .tagcloud-title:after,
 .page-header:after {
-    background-color: $color-accent;
+    background-color: $body-text-color;
     display: block;
     content: "";
     height: 1px;
@@ -162,6 +162,7 @@
 .tag-top-link,
 .tagcloud a {
     border: 1px solid $gray-lighter;
+    color: $body-text-color;
     display: inline-block;
     font-size: 0.77778rem;
     line-height: 1.5;
@@ -175,15 +176,11 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-
-    &:hover {
-        color: $color-accent;
-    }
 }
 
-.tagcloud a:hover {
-    background: $color-accent;
-    color: #fff;
+.tag-top-link:hover, .tagcloud a:hover {
+    background: $gray-lighter;
+    color: $black;
 }
 
 ul.archive-posts-list {

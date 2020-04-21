@@ -10,11 +10,11 @@ Following on from my look at the [non-critical errors](/ndepend-non-critical-err
 let's look at the more serious stuff - the critical errors. Our old friend the Queries and Rules 
 explorer shows me this:
 
-![CriticalErrors](/images/posts/2016-02-11/CriticalErrors.png)
+![CriticalErrors]({{ site.post_images_dir }}2016-02-11/CriticalErrors.png)
 
 So - mutually dependent namespaces, uncalled methods, and types with the same name as other types. Taking these in reverse order:
 
-![SameNamedTypes](/images/posts/2016-02-11/SameNamedTypes.png)
+![SameNamedTypes]({{ site.post_images_dir }}2016-02-11/SameNamedTypes.png)
 
 ...the third rule has matched `ExpressionExtensions` and `TypeExtensions`. As an aside, it's 
 worth mentioning how elegant the rule definition language is and how easily you can express complex
@@ -24,7 +24,7 @@ As you might expect, `ExpressionExtensions` and `TypeExtensions` contain extensi
 Types and Expressions respectively. I only have one class of each name, so where's the conflict? 
 Clicking '2 Types' tells me:
 
-![TypeExtensions](/images/posts/2016-02-11/TypeExtensions.png)
+![TypeExtensions]({{ site.post_images_dir }}2016-02-11/TypeExtensions.png)
 
 It's conflicted with another project of mine on which the mapper depends - 
 [ReadableExpressions](https://github.com/AgileObjects/ReadableExpressions) - which creates a 
@@ -35,13 +35,13 @@ class named `StringBuilder` this rule would apply, but I'd say these are a speci
 even use extension method classes directly - you import the namespace and use the methods - so it's
 not going to conflict with anything. With that in mind, let's update the rule:
 
-![SameNameTypesUpdate](/images/posts/2016-02-11/SameNameTypesUpdate.png)
+![SameNameTypesUpdate]({{ site.post_images_dir }}2016-02-11/SameNameTypesUpdate.png)
 
 Look how easy that was!
 
 Moving on to the dead methods:
 
-![DeadMethods](/images/posts/2016-02-11/DeadMethods.png)
+![DeadMethods]({{ site.post_images_dir }}2016-02-11/DeadMethods.png)
 
 I've got the rule description view selected this time instead of the query - this is a new version 
 6 feature and is again typical of how helpful the tool tries to be :) 
@@ -51,14 +51,14 @@ incarnation of the project and will be called in the future. As I mentioned befo
 which are called via reflection is going to be a very awkward task, but... hang on, we've got test 
 coverage data! So if we update the rule:
 
-![CoveredMethods](/images/posts/2016-02-11/CoveredMethods.png)
+![CoveredMethods]({{ site.post_images_dir }}2016-02-11/CoveredMethods.png)
 
 We can easily exclude anything which has coverage. Using `GetValueOrDefault()` in the query also 
 keeps it relevant if there's no coverage data available.
 
 So finally - those mutually-dependent namespaces again. Here's the details:
 
-![MutuallyDependent](/images/posts/2016-02-11/MutuallyDependent.png)
+![MutuallyDependent]({{ site.post_images_dir }}2016-02-11/MutuallyDependent.png)
 
 You can see that all but one of the violations is for the `AgileMapper` or 
 `AgileMapper.Configuration` namespaces. Most of the links to the former are to a `Constants` 

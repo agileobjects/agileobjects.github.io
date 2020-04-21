@@ -38,7 +38,7 @@ That's better! Admittedly only OCD-better, but that still counts :p No point exc
 Well, once I started using [Gulp](https://docs.asp.net/en/latest/client-side/using-gulp.html) for 
 [CSS minification](https://www.npmjs.com/package/gulp-cssmin) my project wouldn't build! I got this:
 
-![_config.yml](/images/posts/2016-03-15/NodeError.png)
+![_config.yml]({{ site.post_images_dir }}2016-03-15/NodeError.png)
 
 "The design time host build failed with the following error:" - with no further error details. With 
 diagnostic build output I found a 'path too long' error as detailed 
@@ -123,11 +123,11 @@ Bower, there's sense in using it instead of NuGet for that... I guess?
 
 Anyway, package.json does not appear in Solution Explorer:
 
-![_config.yml](/images/posts/2016-03-15/SolutionExplorer.png)
+![_config.yml]({{ site.post_images_dir }}2016-03-15/SolutionExplorer.png)
 
 ...you get to it like this:
 
-![_config.yml](/images/posts/2016-03-15/PackageJsonMenu.png)
+![_config.yml]({{ site.post_images_dir }}2016-03-15/PackageJsonMenu.png)
 
 ...that wasn't terribly intuitive to me given that project.json (which contains the server-side 
 dependencies) appears in Solution Explorer just fine. You can actually make package.json appear by 
