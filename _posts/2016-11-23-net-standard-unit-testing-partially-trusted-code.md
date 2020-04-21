@@ -3,6 +3,7 @@ layout: post
 title: .NET Standard and Testing Partially Trusted Code
 excerpt: Because libraries written for .NET Standard can run on multiple platforms - with more to come in the future - it's worth considering how or if they run in partially trusted environments. Here's some pointers on how.
 tags: [C&#35;, .NET Core, AgileMapper, ReadableExpressions, Programming Practices]
+images_dir: '2016-11-23/'
 ---
 
 Because libraries written for 
@@ -165,7 +166,7 @@ public class WhenUnwrappingLists
 ...then as the test helper's method executes, you can see that the current `AppDomain` is only 
 partially-trusted:
 
-![_config.yml](/images/posts/2016-11-23/UntrustedAppDomain.png)
+![Untrusted AppDomain]({{ site.post_images_dir }}{{ page.images_dir }}UntrustedAppDomain.png)
 
 
 ## From Red to Green
@@ -173,7 +174,7 @@ partially-trusted:
 So, one problem - the test we've written fails, because as mentioned, Partially-Trusted code can't
 use reflection to access the values of private fields:
 
-![_config.yml](/images/posts/2016-11-23/Exception.png)
+![Exception]({{ site.post_images_dir }}{{ page.images_dir }}Exception.png)
 
 To fix this, we're going to need to provide a work-around.
 

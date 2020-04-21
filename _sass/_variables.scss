@@ -1,12 +1,29 @@
 // Fonts
-$font-primary: 'Karla', sans-serif;
-$font-secondary: 'Crimson Text', serif;
+$font-title: 'Segoe UI Light', 'Calibri Light', 'Arial Narrow', sans-serif;
+$font-primary: 'Segoe UI', 'Calibri', Arial, sans-serif;
 
 // Colors
-$color-accent: #d4a259;
-$gray-darkest: #1d1d1d;
+$color-accent: #fffac4;
+$black: #000;
+$gray-darkest: #1e1e1e;
 $gray-dark: #333;
 $gray: #666;
 $gray-light: #aaa;
 $gray-lighter: #eee;
 $yellow: #fffac4;
+$white: #fff;
+
+// Abstractions
+$header-bg-color: $black;
+$header-text-color: $white;
+
+$body-bg-color: $gray-darkest;
+$body-title-color: $white;
+$body-title-weight: 300;
+$body-subheading-color: $gray-light;
+$body-text-color: $white;
+$body-code-color: $gray-lighter;
+
+$code-border-color: $gray-light;
+$code-bg-color: $gray-lighter;
+$code-text-color: $gray-darkest;

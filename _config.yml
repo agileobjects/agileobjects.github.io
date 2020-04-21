@@ -5,7 +5,8 @@ meta_description: 'Jekyll template, minimal style, perfect for bloggers.'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
-  image: 'authorimage.jpg'
+  name: Steve Wilkes
+  image: https://avatars1.githubusercontent.com/u/8459425?s=460&v=4
   greetings: "Hello! My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK. I deliver software."
 favicon: 'assets/images/favicon.ico'
 baseurl: 
@@ -34,7 +35,7 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Contact Me
+  - text: Contact
     url: /contact
   - text: Search
     url: /search
@@ -53,7 +54,14 @@ paginate_path: /page:num/
 permalink: /:title
 
 # Other
-markdown: kramdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
 
 # Sass
 sass:

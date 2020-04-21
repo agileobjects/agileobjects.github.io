@@ -9,8 +9,7 @@
                 {% elsif site.author %}
                 <p class="profile">
                     <a href="{{ site.baseurl }}/">
-                        <img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}" alt="{{ site.author.name }}'s Picture"
-                            class="avatar" />
+                        <img src="{{ site.author.image }}" alt="{{ site.author.name }}'s Picture" class="avatar" />
                     </a>
                 </p>
                 <div class="site-identity">
@@ -24,23 +23,24 @@
                     {% endif %}
                 </div><!-- .site-identity -->
                 {% endif %}
-                <button id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Main Menu</span><span
-                        class="icon-menu" aria-hidden="true"></span></button>
+                <button id="menu-toggle" class="menu-toggle">
+                    <span class="screen-reader-text">Main Menu</span><span class="icon-menu" aria-hidden="true"></span>
+                </button>
             </div><!-- .site-branding -->
 
             <nav id="main-navigation" class="site-navigation" aria-label="Main Navigation">
                 <div class="site-nav-wrap">
                     <div class="site-nav-inside">
-                    <ul class="menu">
-                        {% for link in site.navigation %}
-                        {% assign current = nil %}
-                        {% if page.url == link.url %}
-                        {% assign current = 'current-menu-item' %}
-                        {% endif %}
-                        <li class="menu-item {{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    {% include social-links.html %}
+                        <ul class="menu">
+                            {% for link in site.navigation %}
+                            {% assign current = nil %}
+                            {% if page.url == link.url %}
+                            {% assign current = 'current-menu-item' %}
+                            {% endif %}
+                            <li class="menu-item {{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% include social-links.html %}
                     </div><!-- .site-nav-inside -->
                 </div><!-- .site-nav-wrap -->
             </nav><!-- .site-navigation -->
