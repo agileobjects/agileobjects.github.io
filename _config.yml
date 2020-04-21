@@ -1,6 +1,6 @@
 # Site setings
 name: 'AgileObjects'
-description: 'Pragmatic, Practical Agile'
+description: 'Practical, Pragmatic Agile'
 meta_description: 'Jekyll template, minimal style, perfect for bloggers.'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
@@ -13,7 +13,6 @@ baseurl:
 post_images_dir: '/assets/images/posts/'
 production_url: https://agileobjects.co.uk/
 disqus: 'justgoodthemes'
-mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
 # Add your GA Tracking Id
 ga_analytics: 
 
@@ -23,11 +22,11 @@ contact_page_description: "Horace theme comes with a contact form built-in. You 
 thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
 # Social links
-email: steve@agileobjects.co.uk
 github: 'agileobjects'
 linkedin: 'agileobjects'
-rss: agileobjects
 stackoverflow: users/721236/steve-wilkes
+rss: agileobjects
+email: steve@agileobjects.co.uk
 
 # Navigation
 navigation:
@@ -35,10 +34,10 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Contact
-    url: /contact
   - text: Search
     url: /search
+  - text: Contact
+    url: /contact
 
 # Required Plugins
 plugins_dir:

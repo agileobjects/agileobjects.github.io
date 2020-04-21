@@ -107,8 +107,7 @@
 
 .comments-area,
 .read-next,
-.tagcloud,
-.newsletter-box {
+.tagcloud {
     margin-bottom: 3.33333em;
     margin-top: 3.33333em;
 }
@@ -195,20 +194,6 @@ ul.archive-posts-list {
     li {
         margin-bottom: 0.5555555555555556em
     }
-}
-
-/* Newsletter */
-.newsletter-box {
-    border: 1px solid $gray-lighter;
-    box-sizing: border-box;
-    margin-bottom: 3.33333em;
-    margin-top: 3.33333em;
-    padding: 1.66667em;
-}
-
-.newsletter-box-title {
-    font-size: 1.33333rem;
-    margin: 0 0 0.41667em;
 }
 
 /* Archives */
