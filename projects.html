@@ -1,0 +1,28 @@
+---
+layout: page
+title: Projects
+projects: [
+  { 
+    name: AgileMapper, 
+    url: 'https://nuget.org/packages/AgileObjects.AgileMapper' ,
+    image: AgileMapper.gif
+  }, 
+  { 
+    name: ReadableExpressions, 
+    url: 'https://nuget.org/packages/AgileObjects.ReadableExpressions',
+    image: ReadableExpressions.gif
+  }, 
+  {
+    name: NetStandardPolyfills,
+    url: 'https://nuget.org/packages/AgileObjects.NetStandardPolyfills',
+    image: ReadableExpressions.gif
+  }
+]
+---
+
+<!-- Personal -->
+<div id="personal-projects" class="featured-projects">
+    {% for project in page.projects %}
+    {% include projectbox.html %}
+    {% endfor %}
+</div>

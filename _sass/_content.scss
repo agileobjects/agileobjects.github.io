@@ -6,6 +6,7 @@
 .post {
     margin-bottom: 1.66667em;
     position: relative;
+    overflow: hidden;
 }
 
 .post-header {
@@ -37,6 +38,7 @@
     letter-spacing: 1px;
     line-height: 1.5;
     margin-bottom: 0.75em;
+    float: right;
 }
 
 .caption-text {
@@ -49,6 +51,7 @@
 .post-share {
     font-size: 0.77778rem;
     line-height: 1.5;
+    float: left;
 }
 
 .post-share-title {
@@ -84,6 +87,10 @@
 
 .post-full .post-tags {
     margin-top: 2.14285em;
+}
+
+.post-full .post-content {
+    clear: both;
 }
 
 .post-full .post-content > p:first-child:first-letter {
@@ -157,6 +164,10 @@
 
 .read-next .post-meta {
     margin-bottom: 0.5em;
+}
+
+.tag-top {
+    clear: both;
 }
 
 .tag-top-link,
@@ -295,35 +306,81 @@ ul.archive-posts-list {
 
 .post-featured {
     flex: 0 0 100%;
+
+    .post-inside {
+        padding: 0 0.833333em;
+    }
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .post-header {
+        margin: 0;
+    }
+
+    .post-thumbnail {
+        display: block;
+        height: 0;
+        padding-top: 60%;
+        position: relative;
+        width: 100%;
+    }
+
+    .post-meta {
+        margin-bottom: 0.5em;
+    }
 }
 
-.post-featured .post-inside {
-    padding: 0 0.833333em;
+/* Projects */
+.featured-projects {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -0.83333em 2.5em;
 }
 
-.post-featured .post-thumbnail {
-    display: block;
-    height: 0;
-    padding-top: 60%;
-    position: relative;
-    width: 100%;
-}
+.project-featured {
+    flex: 0 0 100%;
+    margin-bottom: .5em;
 
-.post-featured img {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+    .project-inside {
+        padding: 0 0.833333em;
+    }
 
-.post-featured .post-header {
-    margin: 0;
-}
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 27%;
+    }
 
-.post-featured .post-meta {
-    margin-bottom: 0.5em;
+    a {
+        font-family: $font-title;
+        color: $body-title-color;
+        text-decoration: none;
+    }
+
+    .project-header {
+        margin: -30% 0 30% 0;
+        padding-left: 30%;
+    }
+
+    .project-thumbnail {
+        display: block;
+        height: 0;
+        padding-top: 30%;
+        position: relative;
+        width: 100%;
+    }
 }
 
 /**
