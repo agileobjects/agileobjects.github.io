@@ -36,7 +36,7 @@ namespace AgileObjects.Email
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Host = "mail.agileobjects.co.uk",
-                Credentials = new NetworkCredential("steve@agileobjects.co.uk", "i%8T@LY1uP4G9BA")
+                Credentials = new NetworkCredential("steve@agileobjects.co.uk", "R$ZhAKPlXEU7U7P$3l")
             };
 
             try

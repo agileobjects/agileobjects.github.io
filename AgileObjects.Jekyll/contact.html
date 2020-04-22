@@ -3,23 +3,13 @@ layout: default
 title: Contact Me
 ---
 
-<!--
-  To make this form work you have to:
-  1. defined "email: youremail@email.com" in _config.yml file.
-  2. verify your form on formspree.io.
--->
-
 <main id="main" class="site-main">
   <div class="post-full inner">
     <header class="post-header">
-      <h1 class="post-title">Contact Me</h1>
+      <h1 class="post-title">Contact</h1>
     </header>
-    {% if site.contact_page_description %}
-    <p>{{ site.contact_page_description }}</p>
-    {{else}}
-    {% endif %}
     <section class="contact-form">
-      <form action="https://formspree.io/{{ site.email }}" method="post" id="contact-form">
+      <form action="{{ site.contact_form_action }}" method="post" id="contact-form">
         <div class="form-item">
           <label class="form-label">Your Email <span>(required)</span></label>
           <input type="text" name="email" placeholder="Your email address..." class="form-input" />
