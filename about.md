@@ -4,12 +4,11 @@ title: About
 featured_image: /assets/images/pages/about.jpg
 ---
 
-Charles Lavoie is a senior developer from Vilnius, Lithuania. After graduating from The College with a degree in **Computer Science**, he worked for three small web shops where he honed his development skills and love for JavaScript.
+My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK.
 
-His work has been recognized by Communication Arts, IBM, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. **Net** magazine named him a person to watch in 2018.
+In my couple of decades' experience, I've architected and written mission-critical, award-winning projects,
+introduced Agile methodologies to Waterfall companies and worked extensively in all areas of the web stack. 
+I'm comfortable talking plain English to stakeholders as well as techie to fellow programmers. 
+I am always practicing, learning and improving.
 
->The world always seems brighter when you’ve just made something that wasn’t there before. <cite>Neil Gaiman</cite>
-
-As a hobby, Daniel authors the most influential JavaScript blog in Lithuania with over 100,000 page views a month. He lives in Vilnius with his beautiful wife, two boys and one girl.
-
-*Thank You for reading!*
+*Thank you for reading!*

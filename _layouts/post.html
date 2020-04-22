@@ -25,12 +25,6 @@ post_class: post-template
         <div class="post-content">
             {{content}}
         </div>
-        <div class="post-meta">
-            <time class="post-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
-                {{ page.date | date: '%B %-d, %Y' }}
-            </time>
-        </div><!-- .post-meta -->
-        {% include to-top-link.html %}
         <footer class="post-footer">
             <div class="post-share">
                 <span class="post-share-title">Share:</span>
@@ -39,7 +33,13 @@ post_class: post-template
                 <a target="_blank"
                    href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}">Facebook</a>
             </div><!-- .share-post -->
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+                    {{ page.date | date: '%B %-d, %Y' }}
+                </time>
+            </div><!-- .post-meta -->
         </footer>
+        {% include to-top-link.html %}
         {% include disqus.html %}
     </article>
     <section class="read-next inner">
@@ -47,9 +47,6 @@ post_class: post-template
         {% if page.previous.url %}
         <article class="post">
             <header class="post-header">
-                <div class="post-meta">
-                    <time class="published" datetime="{{page.previous.date | date: '%B %-d, %Y'}}">{{page.previous.date | date: '%B %-d, %Y'}}</time>
-                </div>
                 <h3 class="post-title">
                     <a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a>
                 </h3>
@@ -60,15 +57,15 @@ post_class: post-template
                     {% endfor %}
                     {% endif %}
                 </p>
+                <div class="post-meta">
+                    <time class="published" datetime="{{page.previous.date | date: '%B %-d, %Y'}}">{{page.previous.date | date: '%B %-d, %Y'}}</time>
+                </div>
             </header>
         </article>
         {% endif %}
         {% if page.next.url %}
         <article class="post">
             <header class="post-header">
-                <div class="post-meta">
-                    <time class="published" datetime="{{ page.next.date | date: '%B %-d, %Y' }}">{{ page.next.date | date: '%B %-d, %Y' }}</time>
-                </div>
                 <h3 class="post-title"><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></h3>
                 <p class="post-tags">
                     {% if page.next.tags.size > 0 %}
@@ -77,6 +74,9 @@ post_class: post-template
                     {% endfor %}
                     {% endif %}
                 </p>
+                <div class="post-meta">
+                    <time class="published" datetime="{{ page.next.date | date: '%B %-d, %Y' }}">{{ page.next.date | date: '%B %-d, %Y' }}</time>
+                </div>
             </header>
         </article>
         {% endif %}

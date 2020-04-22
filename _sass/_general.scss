@@ -211,15 +211,14 @@ td {
 }
 
 th {
-    color: $gray-darkest;
+    color: $body-text-color;
     font-weight: bold;
 }
 
 /* Form fields */
 label {
-    color: $gray-darkest;
+    color: $body-text-color;
     font-size: 0.88889rem;
-    font-weight: bold;
 }
 
 input,
@@ -265,7 +264,8 @@ input[type="button"],
 input[type="reset"],
 a.button {
     background: $gray-darkest;
-    border: 0;
+    border: 1px solid $gray-lighter;
+    color: $body-text-color;
     box-sizing: border-box;
     color: #fff;
     display: inline-block;
@@ -292,7 +292,8 @@ input[type="reset"]:focus,
 input[type="reset"]:active,
 a.button:hover,
 a.button:focus {
-    background: $color-accent;
+    background: $gray-lighter;
+    color: $black;
     outline: 0;
 }
 
@@ -917,7 +918,7 @@ body.hidden-scroll {
     margin-bottom: 0.55556em;
 
     span {
-        color: $gray-dark;
+        color: $body-subheading-color;
         font-size: 0.77778rem;
         font-weight: normal;
     }
