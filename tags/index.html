@@ -21,7 +21,7 @@ title: Post list
             <ul class="archive-posts-list">
                 {% for post in site.tags[tag] %}
                 <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a> 
-                    <span class="post-meta"> — <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time></span>
+                    <span class="post-meta"><time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time></span>
                 </li>
                 {% endfor %}
             </ul>
