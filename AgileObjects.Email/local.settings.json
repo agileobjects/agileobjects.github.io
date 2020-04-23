@@ -1,8 +1,0 @@
-{
-    "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=agileobjectsltd;AccountKey=7bN23rHsmGWt/jpNxo+zWRzI0LcZBqULYBndpEcYYUcNcJVcu1bsIaCfwSuTbyjcmVzR+N5+5pQ91WhO7+1BIg==;BlobEndpoint=https://agileobjectsltd.blob.core.windows.net/;TableEndpoint=https://agileobjectsltd.table.core.windows.net/;QueueEndpoint=https://agileobjectsltd.queue.core.windows.net/;FileEndpoint=https://agileobjectsltd.file.core.windows.net/",
-        "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=agileobjectsltd;AccountKey=7bN23rHsmGWt/jpNxo+zWRzI0LcZBqULYBndpEcYYUcNcJVcu1bsIaCfwSuTbyjcmVzR+N5+5pQ91WhO7+1BIg==;BlobEndpoint=https://agileobjectsltd.blob.core.windows.net/;TableEndpoint=https://agileobjectsltd.table.core.windows.net/;QueueEndpoint=https://agileobjectsltd.queue.core.windows.net/;FileEndpoint=https://agileobjectsltd.file.core.windows.net/",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-    }
-}

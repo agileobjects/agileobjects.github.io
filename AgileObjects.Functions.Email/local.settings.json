@@ -1,0 +1,7 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=storageaccountagileb5cd;AccountKey=e4AG+oHz5Tnipopi3LFmpbfD58E3Tw1NmXZKc8bCBUCMTpL28d+02MrnQs41e7Fc24Yo3gMdxAfLBtOeinQt3Q==;BlobEndpoint=https://storageaccountagileb5cd.blob.core.windows.net/;TableEndpoint=https://storageaccountagileb5cd.table.core.windows.net/;QueueEndpoint=https://storageaccountagileb5cd.queue.core.windows.net/;FileEndpoint=https://storageaccountagileb5cd.file.core.windows.net/",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+    }
+}
