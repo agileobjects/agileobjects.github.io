@@ -18,8 +18,7 @@ ga_analytics:
 
 # Contact form setings
 email: steve@agileobjects.co.uk
-contact_form_action: 'https://email-agileobjects.azurewebsites.net/api/AgileObjectsEmail?code=/u5ymEV6UG2rxfiAYXrEeNM3MzBpaJAohehqn6c75UvHUe14K5rZQw=='
-thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
+contact_form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=NN7hdtxDPFe36oDsAs3KZbY3LEVIORs8XC2RjoYVlrSnWxqVTJDBLA=='
 
 # Social links
 github: 'agileobjects'
