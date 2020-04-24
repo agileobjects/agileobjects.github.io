@@ -70,8 +70,10 @@ sass:
 
 # Exclude these files from the production _site
 exclude:
-  - .vs
-  - .git
+  - .vs/*
+  - .git/*
+  - bin/*
+  - obj/*
   - Gemfile
   - Gemfile.lock
   - LICENSE

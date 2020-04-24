@@ -4,31 +4,46 @@ title: Contact
 ---
 
 <main id="main" class="site-main">
-  <div class="post-full inner">
-    <header class="post-header">
-      <h1 class="post-title">Contact</h1>
-    </header>
-    <section class="contact-form">
-      <form action="{{ site.contact_form_action }}" method="post" id="contact-form">
-        <div class="form-item">
-          <label class="form-label">Your email</label>
-          <input type="text" name="email" placeholder="Your email address..." class="form-input" />
-        </div>
+    <div class="post-full inner">
+        <header class="post-header">
+            <h1 class="post-title">Contact</h1>
+        </header>
+        <form action="{{ site.contact_form_action }}" method="post" id="contact-form"
+              role="form" onsubmit="return AgileObjects.Web.pageManager.handleSend(this.action)">
+            <div class="form-item">
+                <label class="form-label">Your email</label>
+                <input type="text" name="email" class="form-input"
+                       data-val="true" data-val-required="Your email is required."
+                       data-val-email="Your email is not a valid e-mail address." />
+                <span class="error-message field-validation-valid"
+                      data-valmsg-for="email" data-valmsg-replace="true"></span>
+            </div>
 
-        <div class="form-item">
-          <label class="form-label">Your name</label>
-          <input type="text" name="name" placeholder="Your name..." class="form-input" />
-        </div>
+            <div class="form-item">
+                <label class="form-label">Your name</label>
+                <input type="text" name="name" class="form-input"
+                       data-val="true" data-val-required="Your name is required." />
+                <span class="error-message field-validation-valid"
+                      data-valmsg-for="name" data-valmsg-replace="true"></span>
+            </div>
 
-        <div class="form-item">
-          <label class="form-label">Your message</label>
-          <textarea name="message" placeholder="Your message..." class="form-textarea"></textarea>
-        </div>
+            <div class="form-item">
+                <label class="form-label">Your message</label>
+                <textarea name="message" class="form-textarea"
+                          data-val="true" data-val-required="Your message is required."></textarea>
+                <span class="error-message field-validation-valid"
+                      data-valmsg-for="message" data-valmsg-replace="true"></span>
+            </div>
 
-        <div class="form-item">
-          <input type="submit" value="Send" class="button" />
-        </div>
-      </form>
-    </section>
-  </div><!-- .inner-->
+            <div class="form-item">
+                <input type="submit" value="Send" class="button" />
+            </div>
+        </form>
+    </div><!-- .inner-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"
+            integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"
+            integrity="sha256-9GycpJnliUjJDVDqP0UEu/bsm9U+3dnQUH8+3W10vkY="
+            crossorigin="anonymous"></script>
 </main>
