@@ -13,7 +13,7 @@ class: 'contact-form'
               role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this.action);">
             <div class="form-item">
                 <label class="form-label">Your email</label>
-                <input type="text" name="email" class="form-input"
+                <input type="text" id="contact-form-email" name="email" class="form-input"
                        data-val="true" data-val-required="Your email is required"
                        data-val-email="That's not a valid e-mail address" />
                 <span class="error-message"
@@ -22,7 +22,7 @@ class: 'contact-form'
 
             <div class="form-item">
                 <label class="form-label">Your name</label>
-                <input type="text" name="name" class="form-input"
+                <input type="text" id="contact-form-name" name="name" class="form-input"
                        data-val="true" data-val-required="Your name is required" />
                 <span class="error-message"
                       data-valmsg-for="name" data-valmsg-replace="true"></span>
@@ -30,7 +30,7 @@ class: 'contact-form'
 
             <div class="form-item">
                 <label class="form-label">Your message</label>
-                <textarea name="message" class="form-textarea"
+                <textarea  id="contact-form-message" name="message" class="form-textarea"
                           data-val="true" data-val-required="Your message is required"></textarea>
                 <span class="error-message"
                       data-valmsg-for="message" data-valmsg-replace="true"></span>
