@@ -24,9 +24,9 @@
                             async: true,
                             data: JSON.stringify(formData)
                         }).fail(function() {
-                        that._$showPopupPanel('send-error');
+                        that._$showPopupPanel('sent-error');
                     }).done(function() {
-                        that._$showPopupPanel('sent');
+                        that._$showPopupPanel('sent-ok');
                     });
                     return false;
                 };
@@ -45,7 +45,7 @@
                 }
 
                 contactForm.prototype._$showPopupPanel = function(contentId) {
-                    return this._$getPopupPanel().html(getById(contentId).outerHTML);
+                    return this._$getPopupPanel().html($getById(contentId).html());
                 };
 
                 function $getById(id) {
@@ -60,7 +60,7 @@
             }();
 
             $(function () {
-                return web.contactForm = new ContactForm();
+                web.contactForm = new ContactForm();
             });
         })(ao.Web || (ao.Web = {}));
     })(window.AgileObjects || (window.AgileObjects = {}));

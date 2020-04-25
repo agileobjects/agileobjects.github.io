@@ -216,6 +216,7 @@ a.button {
     text-transform: uppercase;
     -webkit-transition: .3s ease;
     transition: .3s ease;
+    text-decoration: none;
 }
 
 button:hover,
@@ -336,7 +337,46 @@ img {
     width: 1px;
 }
 
-/* Custom icons */
+/* Icons */
+.icon-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 1.66667em;
+
+    svg {
+        fill: currentColor;
+    }
+}
+
+.icons-sm svg {
+    height: 18px
+}
+
+.icons-md svg {
+    height: 24px
+}
+
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
 .icon-arrow-left,
 .icon-arrow-right,
 .icon-arrow-up {

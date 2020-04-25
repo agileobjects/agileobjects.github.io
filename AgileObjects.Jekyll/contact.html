@@ -42,18 +42,18 @@ class: 'contact-form'
         </form>
     </div><!-- .inner-->
 
-    <div id="popup" class="hidden">
+    <div id="popup" class="hidden icon-container icons-md">
     </div>
 
     <div id="sending" class="hidden">
-        Sending...
+        {% include icons/spinner.html %} <span>Sending...</span>
     </div>
 
-    <div id="sent" class="hidden">
-        Sent <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(true);">OK</a>
+    <div id="sent-ok" class="hidden">
+        {% include icons/check.html %} <span>Sent</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(true);">OK</a>
     </div>
 
-    <div id="send-error" class="hidden">
-        Error <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(false);">OK</a>
+    <div id="sent-error" class="hidden">
+        {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(false);">OK</a>
     </div>
 </main>
