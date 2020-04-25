@@ -5,6 +5,7 @@ class: 'contact-form'
 ---
 
 <main id="main" class="site-main">
+    <div id="contact-form-cover" class="hidden"></div>
     <div class="post-full inner">
         <header class="post-header">
             <h1 class="post-title">Contact</h1>
@@ -15,7 +16,7 @@ class: 'contact-form'
                 <label class="form-label">Your email</label>
                 <input type="text" id="contact-form-email" name="email" class="form-input"
                        data-val="true" data-val-required="Your email is required"
-                       data-val-email="That's not a valid email address" />
+                       data-val-email="That's not a valid email address"/>
                 <span class="error-message"
                       data-valmsg-for="email" data-valmsg-replace="true"></span>
             </div>
@@ -23,7 +24,7 @@ class: 'contact-form'
             <div class="form-item">
                 <label class="form-label">Your name</label>
                 <input type="text" id="contact-form-name" name="name" class="form-input"
-                       data-val="true" data-val-required="Your name is required" />
+                       data-val="true" data-val-required="Your name is required"/>
                 <span class="error-message"
                       data-valmsg-for="name" data-valmsg-replace="true"></span>
             </div>
@@ -37,7 +38,7 @@ class: 'contact-form'
             </div>
 
             <div class="form-item">
-                <input id="contact-form-submit" type="submit" value="Send" class="button" />
+                <input id="contact-form-submit" type="submit" value="Send" class="button"/>
             </div>
         </form>
     </div><!-- .inner-->

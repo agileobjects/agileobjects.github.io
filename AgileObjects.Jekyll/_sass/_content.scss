@@ -248,6 +248,17 @@ ul.archive-posts-list {
     }
 }
 
+#contact-form-cover {
+    background: $gray-darkest;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.75;
+    top: 0;
+    width: 100%;
+    z-index: 8;
+}
+
 #icon-check {
     color: $green;
 }

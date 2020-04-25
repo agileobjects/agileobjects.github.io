@@ -10,6 +10,7 @@
                         return false;
                     }
 
+                    this._coverForm();
                     this._$getFormElements().prop('disabled', true);
                     this._$showPopupPanel('sending').hide().removeClass('hidden').fadeIn();
 
@@ -35,21 +36,38 @@
                 };
 
                 contactForm.prototype.handleSent = function (sent) {
+                    if (sent) {
+                        document.location.href = '/';
+                        return;
+                    }
                     this._$getFormElements().prop('disabled', false);
-                    sent ? document.location.href = '/' : this._$getPopupPanel().fadeOut();
+                    this._uncoverForm();
+                    this._$getPopupPanel().fadeOut();
                 };
 
                 contactForm.prototype._$getFormElements = function () {
                     return $('#contact-form input,#contact-form textarea,#contact-form-submit');
                 };
 
-                contactForm.prototype._$getPopupPanel = function () {
-                    return $getById('popup');
+                contactForm.prototype._coverForm = function () {
+                    this._$getFormCover().removeClass('hidden');
+                };
+
+                contactForm.prototype._uncoverForm = function () {
+                    this._$getFormCover().addClass('hidden');
+                };
+
+                contactForm.prototype._$getFormCover = function () {
+                    return $getById('contact-form-cover');
                 }
 
                 contactForm.prototype._$showPopupPanel = function (contentId) {
                     return this._$getPopupPanel().html($getById(contentId).html());
                 };
+
+                contactForm.prototype._$getPopupPanel = function () {
+                    return $getById('popup');
+                }
 
                 function $getById(id) {
                     return $(getById(id));
