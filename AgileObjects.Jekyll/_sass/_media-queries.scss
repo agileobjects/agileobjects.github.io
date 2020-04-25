@@ -212,7 +212,6 @@
 }
 
 @media only screen and (min-width: 1086px) {
-    blockquote,
     .kg-gallery-card {
         margin-left: calc(510px - 47vw);
         margin-right: calc(510px - 47vw);
@@ -231,7 +230,6 @@
 }
 
 @media only screen and (min-width: 1469px) {
-    blockquote,
     .kg-gallery-card {
         margin-left: -180px;
         margin-right: -180px;
@@ -309,16 +307,6 @@
         font-size: 1rem;
     }
 
-    blockquote {
-        font-size: 1.5rem;
-    }
-
-    blockquote small,
-    blockquote cite {
-        font-size: 0.58333em;
-        letter-spacing: 2px;
-    }
-
     .post-full .post-content > p:first-child:first-letter {
         font-size: 60px;
         margin-right: 10px;
@@ -326,20 +314,6 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .gh-subscribe-form {
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .gh-subscribe-form .button {
-        -webkit-align-self: flex-start;
-        align-self: flex-start;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-        margin: 10px 0 0;
-    }
-
     .sl-wrapper button {
         height: 30px;
         width: 30px;

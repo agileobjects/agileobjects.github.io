@@ -223,6 +223,12 @@ ul.archive-posts-list {
 }
 
 /* Error pages */
+.error-message {
+    color: $form-error-color;
+    font-size: 90%;
+    margin-left: 1em;
+}
+
 .error-template {
     background-color: $gray-darkest;
     color: $gray-light;

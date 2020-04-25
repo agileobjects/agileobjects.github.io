@@ -114,50 +114,6 @@ pre code {
     padding: 0;
 }
 
-blockquote {
-    color: $gray-darkest;
-    font-family: $font-primary;
-    font-size: 2rem;
-    line-height: 1.25;
-    margin: 0 0 1.25em;
-    padding-top: 45px;
-    position: relative;
-    text-align: center;
-}
-
-blockquote:before {
-    color: $color-accent;
-    content: "\201C";
-    display: block;
-    font-size: 72px;
-    left: 50%;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-blockquote p {
-    margin-bottom: 0.5em;
-}
-
-blockquote p:last-child {
-    margin-bottom: 0;
-}
-
-blockquote small,
-blockquote cite {
-    color: $gray-light;
-    display: block;
-    font-family: $font-primary;
-    font-size: 0.5em;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.66667;
-    margin-top: 1em;
-}
-
 dl {
     margin: 0;
 }
@@ -192,14 +148,6 @@ hr {
     margin: 1.66667em 0;
 }
 
-table {
-    font-size: 0.88889rem;
-    line-height: 1.5;
-    margin: 0 0 1.875em;
-    text-align: left;
-    width: 100%;
-}
-
 caption {
     color: $gray;
     font-size: 0.875em;
@@ -226,7 +174,6 @@ label {
 }
 
 input,
-select,
 textarea {
     background: #fff;
     border: 1px solid $gray-darkest;
@@ -242,22 +189,12 @@ textarea {
 }
 
 input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-select,
 textarea {
     display: block;
     width: 100%;
 }
 
 input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-select:focus,
 textarea:focus {
     outline: 0;
 }
@@ -265,7 +202,6 @@ textarea:focus {
 button,
 input[type="submit"],
 input[type="button"],
-input[type="reset"],
 a.button {
     background: $gray-darkest;
     border: 1px solid $gray-lighter;
@@ -291,37 +227,11 @@ input[type="submit"]:active,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="button"]:active,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:active,
 a.button:hover,
 a.button:focus {
     background: $gray-lighter;
     color: $black;
     outline: 0;
-}
-
-.gh-subscribe-form {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.gh-subscribe-form .form-group {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-}
-
-.gh-subscribe-form .subscribe-email {
-    height: 2.5em;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.gh-subscribe-form .button {
-    height: 3.33333em;
-    margin-left: 10px;
 }
 
 /* Placeholder text color */
@@ -837,4 +747,8 @@ body.hidden-scroll {
 
 .form-textarea {
     min-height: 230px;
+}
+
+.hidden {
+    display: none;
 }

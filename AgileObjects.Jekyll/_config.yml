@@ -25,7 +25,7 @@ github: 'agileobjects'
 linkedin: 'agileobjects'
 stackoverflow: users/721236/steve-wilkes
 rss: agileobjects
-email: steve@agileobjects.co.uk
+contact_icon: true
 
 # Navigation
 navigation:
@@ -70,10 +70,10 @@ sass:
 
 # Exclude these files from the production _site
 exclude:
-  - .vs/*
-  - .git/*
-  - bin/*
-  - obj/*
+  - /.vs
+  - /.git
+  - /bin
+  - /obj
   - Gemfile
   - Gemfile.lock
   - LICENSE
