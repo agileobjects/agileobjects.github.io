@@ -5,7 +5,8 @@
                 function contactForm() { };
 
                 contactForm.prototype.handleSend = function (url) {
-                    if (!$getById('contact-form').valid()) {
+                    var $form = $getById('contact-form');
+                    if (!$form.valid()) {
                         return false;
                     }
 
@@ -18,16 +19,18 @@
                         message: getById('contact-form-message').value
                     };
                     var that = this;
-                    $.ajax(url,
-                        {
-                            type: 'POST',
-                            async: true,
-                            data: JSON.stringify(formData)
-                        }).fail(function () {
-                            that._$showPopupPanel('sent-error');
-                        }).done(function () {
-                            that._$showPopupPanel('sent-ok');
-                        });
+                    $.ajax({
+                        type: 'post',
+                        url: url,
+                        data: formData,
+                        xhrFields: {
+                            withCredentials: false
+                        }
+                    }).fail(function () {
+                        that._$showPopupPanel('sent-error');
+                    }).done(function () {
+                        that._$showPopupPanel('sent-ok');
+                    });
                     return false;
                 };
 

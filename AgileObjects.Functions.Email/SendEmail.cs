@@ -1,24 +1,32 @@
-using System;
-using System.Net;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using System.Web.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
-
 namespace AgileObjects.Functions.Email
 {
-    public static class SendEmail
+    using System;
+    using System.Net;
+    using System.Net.Mail;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Azure.WebJobs.Extensions.Http;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Logging;
+
+    public class SendEmail
     {
+        private readonly IConfiguration _configuration;
+
+        public SendEmail(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [FunctionName("SendEmail")]
-        public static async Task<IActionResult> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest request,
             ILogger log)
         {
-            log.LogTrace("AgileObjects.Functions.Email triggered");
+            log.LogTrace("AgileObjects.Functions.Email.SendEmail triggered");
 
             var formContent = await request.ReadFormAsync();
 
@@ -27,13 +35,16 @@ namespace AgileObjects.Functions.Email
                 return new BadRequestErrorMessageResult(errorMessage);
             }
 
-            var client = new SmtpClient
+            var smtpHost = _configuration["SmtpHost"];
+            var smtpUsername = _configuration["SmtpUsername"];
+            var smtpPassword = _configuration["SmtpPassword"];
+
+            var client = new SmtpClient(smtpHost)
             {
                 EnableSsl = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Host = "mail.agileobjects.co.uk",
-                Credentials = new NetworkCredential("steve@agileobjects.co.uk", "R$ZhAKPlXEU7U7P$3l")
+                Credentials = new NetworkCredential(smtpUsername, smtpPassword)
             };
 
             try
@@ -97,6 +108,15 @@ namespace AgileObjects.Functions.Email
 
             errorMessage = null;
             return true;
+        }
+
+        private class MailDetails
+        {
+            public string Name { get; set; }
+            
+            public string Email { get; set; }
+            
+            public string Message { get; set; }
         }
     }
 }
