@@ -66,7 +66,7 @@ namespace AgileObjects.Functions.Email
             }
         }
 
-        private static bool TryGetEmailDetails(
+        private bool TryGetEmailDetails(
             IFormCollection formContent,
             out MailMessage mail,
             out string errorMessage)
@@ -102,7 +102,7 @@ namespace AgileObjects.Functions.Email
 
             mail = new MailMessage(
                 $"{name} {email}",
-                "steve@agileobjects.co.uk",
+                _configuration["SmtpRecipient"],
                 "Email from agileobjects.co.uk",
                 message);
 

@@ -18,8 +18,8 @@ ga_analytics:
 
 # Contact form setings
 email: steve@agileobjects.co.uk
-# contact_form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=NN7hdtxDPFe36oDsAs3KZbY3LEVIORs8XC2RjoYVlrSnWxqVTJDBLA=='
-contact_form_action: 'http://localhost:7071/api/SendEmail'
+contact_form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=NN7hdtxDPFe36oDsAs3KZbY3LEVIORs8XC2RjoYVlrSnWxqVTJDBLA=='
+# contact_form_action: 'http://localhost:7071/api/SendEmail'
 
 # Social links
 github: 'agileobjects'
