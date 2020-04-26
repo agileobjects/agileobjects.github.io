@@ -11,5 +11,5 @@ introduced Agile methodologies to Waterfall companies, migrated .NET Framework a
 extensively in all areas of the web stack. I'm comfortable talking plain English to stakeholders as well as
 techie to fellow programmers. I am always practicing, learning and improving.
 
-If your codebase keeps springing bugs, it takes an age to add a new feature, or you want to migrate a legacy
-app to .NET Core, [get in touch](/contact) - I may be able to help! 
+If your codebase keeps throwing up bugs, it takes an age to add a new feature, your application is difficult
+to test, or you want to migrate a legacy app to .NET Core, [get in touch](/contact) - I may be able to help! 
