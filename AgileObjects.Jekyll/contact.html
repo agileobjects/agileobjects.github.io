@@ -1,0 +1,60 @@
+---
+layout: default
+title: Contact
+class: 'contact-form'
+---
+
+<main id="main" class="site-main">
+    <div id="contact-form-cover" class="hidden"></div>
+    <div class="post-full inner">
+        <header class="post-header">
+            <h1 class="post-title">Contact</h1>
+        </header>
+        <form action="{{ site.contact_form_action }}" method="post" id="contact-form"
+              role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this.action);">
+            <div class="form-item">
+                <label class="form-label">Your email</label>
+                <input type="text" id="contact-form-email" name="email" class="form-input"
+                       data-val="true" data-val-required="Your email is required"
+                       data-val-email="That's not a valid email address"/>
+                <span class="error-message"
+                      data-valmsg-for="email" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Your name</label>
+                <input type="text" id="contact-form-name" name="name" class="form-input"
+                       data-val="true" data-val-required="Your name is required"/>
+                <span class="error-message"
+                      data-valmsg-for="name" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Your message</label>
+                <textarea  id="contact-form-message" name="message" class="form-textarea"
+                          data-val="true" data-val-required="Your message is required"></textarea>
+                <span class="error-message"
+                      data-valmsg-for="message" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="form-item">
+                <input id="contact-form-submit" type="submit" value="Send" class="button"/>
+            </div>
+        </form>
+    </div><!-- .inner-->
+
+    <div id="popup" class="hidden icon-container icons-md">
+    </div>
+
+    <div id="sending" class="hidden">
+        {% include icons/spinner.html %} <span>Sending...</span>
+    </div>
+
+    <div id="sent-ok" class="hidden">
+        {% include icons/check.html %} <span>Sent</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(true);">OK</a>
+    </div>
+
+    <div id="sent-error" class="hidden">
+        {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(false);">OK</a>
+    </div>
+</main>

@@ -1,0 +1,83 @@
+# Site setings
+name: 'AgileObjects'
+description: 'Practical, Pragmatic Agile'
+meta_description: 'Jekyll template, minimal style, perfect for bloggers.'
+logo:
+# Author image is used in site sidebar and greetings in the home page hero text
+author:
+  name: Steve Wilkes
+  image: https://avatars1.githubusercontent.com/u/8459425?s=460&v=4
+  greetings: "Hello! My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK. I deliver software."
+favicon: 'assets/images/favicon.ico'
+baseurl: 
+post_images_dir: '/assets/images/posts/'
+production_url: https://agileobjects.co.uk
+disqus: 'agileobjects'
+# Add your GA Tracking Id
+ga_analytics: 
+
+# Contact form setings
+email: steve@agileobjects.co.uk
+contact_form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=NN7hdtxDPFe36oDsAs3KZbY3LEVIORs8XC2RjoYVlrSnWxqVTJDBLA=='
+# contact_form_action: 'http://localhost:7071/api/SendEmail'
+
+# Social links
+github: 'agileobjects'
+linkedin: 'agileobjects'
+stackoverflow: users/721236/steve-wilkes
+rss: agileobjects
+contact_icon: true
+
+# Navigation
+navigation:
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  - text: Projects
+    url: /projects
+  - text: Search
+    url: /search
+  - text: Contact
+    url: /contact
+
+# Required Plugins
+plugins_dir:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Permalinks
+permalink: /:title
+
+# Other
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude these files from the production _site
+exclude:
+  - /.vs
+  - /.git
+  - /bin
+  - /obj
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - .gitignore

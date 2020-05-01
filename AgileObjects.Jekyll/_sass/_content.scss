@@ -1,0 +1,486 @@
+/**
+ * 4. Content
+ * 4.1 Posts and Pages
+ * ----------------------------------------------------------------------------
+ */
+.post {
+    margin-bottom: 1.66667em;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-header {
+    margin-bottom: 1.66667em;
+}
+
+.post-title {
+    font-size: 2rem;
+    margin: 0 0 0.5em;
+}
+
+.post-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-thumbnail {
+    display: block;
+    margin-bottom: 1.66667em;
+}
+
+.post-thumbnail img {
+    width: 100%;
+}
+
+.post-meta, .caption-text {
+    color: $body-subheading-color;
+    font-size: 0.77778rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-bottom: 0.75em;
+    float: right;
+}
+
+.caption-text {
+    margin-bottom: 1.66667em;
+    padding-top: 1%;
+    text-align: center;
+}
+
+.post-tags,
+.post-share {
+    font-size: 0.77778rem;
+    line-height: 1.5;
+    float: left;
+}
+
+.post-share-title {
+    color: $body-subheading-color;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.post-tags a,
+.post-share a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.post-full .post-title {
+    font-size: 2.66667rem;
+    margin: 0;
+}
+
+.post-full .post-title:after {
+    background-color: $color-accent;
+    display: block;
+    content: "";
+    height: 1px;
+    margin-top: 0.35em;
+    width: 60px;
+}
+
+.post-full .post-meta {
+    margin-bottom: 1.42857em;
+}
+
+.post-full .post-tags {
+    margin-top: 2.14285em;
+}
+
+.post-full .post-content {
+    clear: both;
+}
+
+.post-full .post-content > p:first-child:first-letter {
+    color: $body-text-color;
+    font-size: 72px;
+    font-family: $font-title;
+    float: left;
+    line-height: 0.8;
+    margin-right: 5px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: bottom;
+}
+
+@-moz-document url-prefix() {
+    .post-full .post-content > p:first-child:first-letter {
+        padding-top: 0.08em;
+    }
+}
+
+.comments-area,
+.read-next,
+.tagcloud {
+    margin-bottom: 3.33333em;
+    margin-top: 3.33333em;
+}
+
+.post-feed-title,
+.comments-title,
+.read-next-title,
+.tagcloud-title {
+    color: $body-subheading-color;
+    font-family: $font-primary;
+    font-size: 0.77778rem;
+    font-weight: normal;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    margin: 0 0 2.14285em;
+    text-transform: uppercase;
+}
+
+.post-feed-title:after,
+.comments-title:after,
+.read-next-title:after,
+.tagcloud-title:after,
+.page-header:after {
+    background-color: $body-text-color;
+    display: block;
+    content: "";
+    height: 1px;
+    margin-top: 1.25em;
+    width: 60px;
+}
+
+.post-feed .post {
+    border-bottom: 1px solid $gray-lighter;
+}
+
+.post-feed .post-header {
+    margin-bottom: 0.83333em;
+}
+
+.post-feed .post-content {
+    font-size: 0.88889rem;
+    margin-bottom: 1.66667em;
+}
+
+.read-next .post-title {
+    font-size: 1.33333rem;
+}
+
+.read-next .post-meta {
+    margin-bottom: 0.5em;
+}
+
+.tag-top {
+    clear: both;
+}
+
+.tag-top-link,
+.tagcloud a {
+    border: 1px solid $gray-lighter;
+    color: $body-text-color;
+    display: inline-block;
+    font-size: 0.77778rem;
+    line-height: 1.5;
+    margin: 0 0.25em 0.5em 0;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+}
+
+.tag-top-link {
+    color: $body-text-color;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tag-top-link:hover, .tagcloud a:hover {
+    background: $gray-lighter;
+    color: $black;
+}
+
+ul.archive-posts-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        margin-bottom: 0.5555555555555556em
+    }
+}
+
+/* Archives */
+.page-header {
+    margin-bottom: 1.66667em;
+}
+
+.page-title {
+    font-size: 1.33333rem;
+    margin: 0;
+}
+
+.page-description {
+    color: $gray-light;
+    font-size: 0.77778rem;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    margin: 0.25em 0 0;
+    text-transform: uppercase;
+}
+
+/* Error pages */
+#popup {
+    background: $gray-darkest;
+    border: 1px solid $gray-lighter;
+    color: $body-text-color;
+    height: 2em;
+    left: 50%;
+    margin-left: -6em;
+    padding: .6em;
+    position: fixed;
+    text-align: center;
+    top: 20em;
+    width: 12em;
+    z-index: 10;
+
+    span {
+        margin: 2px 0 0 10px;
+    }
+
+    a.button {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+    }
+}
+
+#contact-form-cover {
+    background: $gray-darkest;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.75;
+    top: 0;
+    width: 100%;
+    z-index: 8;
+}
+
+#icon-check {
+    color: $green;
+}
+
+#icon-error {
+    color: $red;
+    width: 30px;
+}
+
+.error-message {
+    color: $form-error-color;
+    font-size: 90%;
+    margin-left: 1em;
+}
+
+.error-template {
+    background-color: $gray-darkest;
+    color: $gray-light;
+}
+
+.error-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    opacity: 0.15;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.error-template .site {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-template .site-content {
+    margin: 0;
+    text-align: center;
+}
+
+.error-code {
+    color: #fff;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.error-link {
+    font-family: $font-primary;
+    font-style: italic;
+}
+
+.error-link:hover {
+    color: $gray-light;
+}
+
+/* Hero section */
+.hero {
+    margin-bottom: 2.5em;
+}
+
+.hero:after {
+    background-color: $color-accent;
+    display: block;
+    content: "";
+    margin-top: 1.66667em;
+    height: 1px;
+    width: 60px;
+}
+
+.hero-text {
+    color: $body-text-color;
+    font-family: $font-title;
+    font-size: 1.66667rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Featured posts */
+.featured-posts {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -0.83333em 2.5em;
+}
+
+.post-featured {
+    flex: 0 0 100%;
+
+    .post-inside {
+        padding: 0 0.833333em;
+    }
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .post-header {
+        margin: 0;
+    }
+
+    .post-thumbnail {
+        display: block;
+        height: 0;
+        padding-top: 60%;
+        position: relative;
+        width: 100%;
+    }
+
+    .post-meta {
+        margin-bottom: 0.5em;
+    }
+}
+
+/* Projects */
+.featured-projects {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -0.83333em 2.5em;
+}
+
+.project-featured {
+    flex: 0 0 100%;
+    margin-bottom: .5em;
+
+    .project-inside {
+        padding: 0 0.833333em;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 27%;
+    }
+
+    .project-header {
+        margin: -30% 0 30% 0;
+        padding-left: 30%;
+    }
+
+    .project-thumbnail {
+        display: block;
+        height: 0;
+        padding-top: 30%;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .project-content {
+        left: 30%;
+        position: absolute;
+        top: 23%;
+    }
+}
+
+/**
+ * 4.2 Pagination
+ * ----------------------------------------------------------------------------
+ */
+.pagination {
+    margin-bottom: 3.33333em;
+    margin-top: 3.33333em;
+    text-align: center;
+}
+
+.pagination .nav-links {
+    padding: 0 60px;
+    position: relative;
+}
+
+.page-number {
+    color: $gray-light;
+    display: inline-block;
+    font-size: 0.77778rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.newer-posts,
+.older-posts {
+    height: 30px;
+    position: absolute;
+    top: 0;
+    width: 40px;
+}
+
+.newer-posts {
+    left: 0;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.icons-md svg {
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: auto .5em;
+}
