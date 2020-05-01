@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-featured_image: /assets/images/pages/about.jpg
 ---
 
 My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK.
