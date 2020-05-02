@@ -7,9 +7,8 @@ tags: [C&#35;, .NET Core, AgileMapper, ReadableExpressions]
 
 With [the RTM](https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/) of the 
 lovely .NET Core, I've now added support for [.NET Standard 1.0](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
-to [ReadableExpressions](https://www.nuget.org/packages/AgileObjects.ReadableExpressions) and 
-[AgileMapper](https://www.nuget.org/packages/AgileObjects.AgileMapper). Targeting .NET Standard 1.0
-gives support for the following for free!
+to [ReadableExpressions]({{ sit.re_nuget }}) and [AgileMapper]({{ sit.am_nuget }}). Targeting .NET 
+Standard 1.0 gives support for the following for free!
 
 - .NET Core
 - .NET Framework 4.5
@@ -40,21 +39,21 @@ xproj [may not be here to stay](https://blogs.msdn.microsoft.com/dotnet/2016/05/
 
 So! I removed the old, out-dated Class Library project:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/Remove.png)
+![Remove old project]({{ site.post_images_dir }}2016-10-07/Remove.png)
 
 ...and added a new, sparkly .NET Core one:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/AddNew.png)
+![Add new]({{ site.post_images_dir }}2016-10-07/AddNew.png)
 
 ...naming the new project something different to the old csproj library of course, because that 
 still existed on disk. Next, I removed the *new* project:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/RemoveCore.png)
+![Remove new project]({{ site.post_images_dir }}2016-10-07/RemoveCore.png)
 
 ...and headed to windows explorer where I renamed it to match the old csproj, and moved it and its 
 project.json into the original csproj folder. Then I re-added it to the solution, giving me this:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/AddedXProj.png)
+![Add XProj]({{ site.post_images_dir }}2016-10-07/AddedXProj.png)
 
 Because of the wonder of xproj, the folder contents all show up without having to manually add them.
 Hurrah!
@@ -120,7 +119,7 @@ Shame.
 With these changes made to the project.json, I started getting errors about the `DynamicExpression` 
 class not being supported:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/DynamicExpression.png)
+![DynamicExpression not supported]({{ site.post_images_dir }}2016-10-07/DynamicExpression.png)
 
 There's a couple of things to note in that screenshot:
 
@@ -135,7 +134,7 @@ I removed this code from the .NET Standard version by wrapping the whole class w
 defined in the project.json - and compiled again*. Here's where I ran into problems with the 
 [changes to the reflection API](https://blogs.msdn.microsoft.com/dotnet/2012/08/28/evolving-the-reflection-api):
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/PolyfillErrors.png)
+![Polyfill errors]({{ site.post_images_dir }}2016-10-07/PolyfillErrors.png)
 
 Some of them were resolved by adding a reference to 
 [System.Reflection.TypeExtensions](https://www.nuget.org/packages/System.Reflection.TypeExtensions):
@@ -214,7 +213,7 @@ doesn't use the [.nuspec](https://docs.nuget.org/ndocs/schema/nuspec) file that 
 I added the old package information into the project.json. `dotnet pack` also uses the name of the 
 project's folder for the output assembly name, so I had to specify that in project.json's 
 `buildOptions`. The final project.json can be seen on GitHub 
-[here](https://github.com/agileobjects/ReadableExpressions/blob/master/ReadableExpressions/project.json).
+[here]({{ site.re_github }}/blob/master/ReadableExpressions/project.json).
 
 ## Testing (some of) the Polyfills
 
@@ -257,19 +256,19 @@ looked like this:
 
 And that... didn't work. The package restore completed, but I had the following build errors:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/NoPackage.png)
+![No package error]({{ site.post_images_dir }}2016-10-07/NoPackage.png)
 
 The classes under test are internal, so I added an 
 [`InternalsVisibleToAttribute`](https://msdn.microsoft.com/en-us/library/system.runtime.compilerservices.internalsvisibletoattribute%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
 to the project... and it built! But... looking like this:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/BuildSucceeded.png)
+![Build succeeded]({{ site.post_images_dir }}2016-10-07/BuildSucceeded.png)
 
 ...still saying the classes under test weren't accessible, 'The dependency ReadableExpressions 
 could not be resolved' and 'The given key was not present in the dictionary'. The tests didn't show 
 up in Test Explorer. The project looked like this:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/Project.png)
+![Project]({{ site.post_images_dir }}2016-10-07/Project.png)
 
 A bit more research led me to [global.json](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/global-json),
 where you can list the folders in which the projects in your solution exist, so other .NET Core 
@@ -284,7 +283,7 @@ projects can reference them. Like this:
 That must have been it! But... the error list still looked the same. I unloaded the project and 
 reloaded it, and finally!
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/ProjectOK.png)
+![Project OK]({{ site.post_images_dir }}2016-10-07/ProjectOK.png)
 
 It still claimed (and continues to claim) an error in the references, but the error list now only 
 stated 'The given key was not present in the dictionary' - it built, and nothing had a red 
@@ -294,7 +293,7 @@ So, final thing... actually running the tests. The Test Explorer didn't find the
 them but couldn't run them... so I went to [`dotnet test`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-test).
 And that worked:
 
-![_config.yml]({{ site.post_images_dir }}2016-10-07/DotNetTest.gif)
+![dotnet test]({{ site.post_images_dir }}2016-10-07/DotNetTest.gif)
 
 At last! Not perfect, but... good enough. Maybe all this trial and error will help someone else get 
 to the result more quickly :)

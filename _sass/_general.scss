@@ -276,6 +276,10 @@ img {
     max-width: 100%;
 }
 
+img[src*="#light-border"] {
+    border: 1px solid $gray;
+}
+
 .kg-image-card,
 .kg-gallery-card {
     margin: 0 0 1.66667em;

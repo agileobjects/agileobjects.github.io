@@ -30,14 +30,14 @@ means Extension Manager can't perform update installs itself; you get the follow
 ...but 'Updates will appear on the Updates tab'; you just have to download and install them 
 yourself when notified.
 
-But there was [the problem](https://github.com/agileobjects/ReadableExpressions/issues/4). Updates 
+But there was [the problem]({{ site.re_github }}/issues/4). Updates 
 of my extension weren't appearing on the Updates tab. Why not?
 
 After trying various changes to the extension.vsixmanifest and the version number format, I turned 
 to [StackOverflow](https://stackoverflow.com/questions/37349459/vs2015-extension-manager-not-reporting-update-for-msi-intalled-extension/37553852)
 and [the MSDN forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/01eea18b-7933-498b-bac3-425a0132bde2/msiinstalled-extension-updates-not-appearing-in-extension-manager?forum=vsx)
 for help. Despite offering 50 of my sweet, sweet StackOverflow points I didn't get anything which
-led to a fix from either. I got [some help](https://github.com/agileobjects/ReadableExpressions/issues/2#issuecomment-221586470)
+led to a fix from either. I got [some help]({{ site.re_github }}/issues/2#issuecomment-221586470)
 on GitHub which pointed me at [the Extensions Service](https://visualstudiogallery.msdn.microsoft.com/Services/VStudio/Extension.svc),
 from which a query for the current versions of 
 [NuGet Client Tools](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d),

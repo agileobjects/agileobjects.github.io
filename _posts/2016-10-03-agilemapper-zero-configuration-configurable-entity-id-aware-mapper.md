@@ -66,40 +66,39 @@ var plan = mapper.GetPlanFor<PersonViewModel>().ToANew<Person>();
 
 ## Other Stuff
 
-- You can use it via a [static or instance API](https://agilemapper.readthedocs.io/Static-vs-Instance-Mappers)
+- You can use it via a [static or instance API]({{ site.am_docs }}/Static-vs-Instance-Mappers)
 
-- It performs [object merges](https://agilemapper.readthedocs.io/Performing-Merges)
+- It performs [object merges]({{ site.am_docs }}/Performing-Merges)
 
-- It [parses and converts](https://agilemapper.readthedocs.io/Type-Conversion) numeric types, `Guids`,
+- It [parses and converts]({{ site.am_docs }}/Type-Conversion) numeric types, `Guids`,
   `DateTime`s and `string`s out of the box
 
-- It maps [lists, collections, enumerables and arrays](https://agilemapper.readthedocs.io/Collections) 
+- It maps [lists, collections, enumerables and arrays]({{ site.am_docs }}/Collections) 
   out of the box
 
-- It maps to [constructor arguments](https://agilemapper.readthedocs.io/Object-Construction)
+- It maps to [constructor arguments]({{ site.am_docs }}/Object-Construction)
 
 - It handles circular references out of the box
 
-- You can configure custom [data sources](https://agilemapper.readthedocs.io/configuration/Member-Values), 
-  members to [ignore](https://agilemapper.readthedocs.io/configuration/Ignoring-Target-Members), 
-  [callbacks](https://agilemapper.readthedocs.io/configuration/Mapping-Callbacks) at  precise points 
-  within a mapping, custom [object factories](https://agilemapper.readthedocs.io/configuration/Object-Construction), 
-  [exception handling](https://agilemapper.readthedocs.io/configuration/Exception-Handling), 
-  [naming patterns](https://agilemapper.readthedocs.io/configuration/Member-Name-Patterns) with 
-  which to match members... and [more](https://agilemapper.readthedocs.io/configuration)!
+- You can configure custom [data sources]({{ site.am_docs }}/configuration/Member-Values), members 
+  to [ignore]({{ site.am_docs }}/configuration/Ignoring-Target-Members), 
+  [callbacks]({{ site.am_docs }}/configuration/Mapping-Callbacks) at  precise points within a mapping, 
+  custom [object factories]({{ site.am_docs }}/configuration/Object-Construction), 
+  [exception handling]({{ site.am_docs }}/configuration/Exception-Handling), 
+  [naming patterns]{{ site.am_docs }}/configuration/Member-Name-Patterns) with which to match members... 
+  and [more]({{ site.am_docs }}/configuration)!
 
 ## Check it out!
 
-AgileMapper is free, [MIT licensed](https://github.com/agileobjects/AgileMapper/blob/master/LICENCE.md),
-available at version 0.6 [on NuGet](https://www.nuget.org/packages/AgileObjects.AgileMapper), and 
-can be installed via the package manager console with:
+AgileMapper is free, [MIT licensed]({{ site.am_github }}/blob/master/LICENCE.md),
+available at version 0.6 [on NuGet]({{ site.am_nuget }}), and can be installed via the package manager
+console with:
 
-```console
+```shell
 PM> Install-Package AgileObjects.AgileMapper
 ```
 
-It's hosted [on GitHub](https://github.com/agileobjects/AgileMapper) with pretty decent 
-[documentation](https://agilemapper.readthedocs.io), and the public API is all documented. I'll be 
-reporting on and fine-tuning performance over the coming weeks, as well as adding new features like 
-better support for Dictionaries. If you give it a try and find a bug please feel free to add it [on 
-GitHub](https://github.com/agileobjects/AgileMapper/issues). Enjoy!
+It's hosted [on GitHub]({{ site.am_nuget }}) with pretty decent [documentation]({{ site.am_docs }}), 
+and the public API is all documented. I'll be reporting on and fine-tuning performance over the 
+coming weeks, as well as adding new features like better support for Dictionaries. If you give it 
+a try and find a bug please feel free to add it [on GitHub]({{ site.am_github }}/issues). Enjoy!

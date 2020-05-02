@@ -45,8 +45,8 @@ supports unflattening as well as flattening.
 
 ## The Tests
 
-[The performance test project](https://github.com/agileobjects/AgileMapper/tree/master/AgileMapper.PerformanceTester)
-is a console project based on [the AutoMapper benchmark](https://github.com/AutoMapper/AutoMapper/tree/master/src/Benchmark)
+[The performance test project]({{ site.am_github }}/tree/master/AgileMapper.PerformanceTester) is a 
+console project based on [the AutoMapper benchmark](https://github.com/AutoMapper/AutoMapper/tree/master/src/Benchmark)
 which performs each of the following, for each mapper, 1 million times:
 
 - Constructor mapping - creating a POCO with a single constructor parameter from a POCO with a 

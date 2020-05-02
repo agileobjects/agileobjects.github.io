@@ -6,11 +6,10 @@ tags: [C&#35;, NDepend, Patterns, Programming Practices]
 ---
 
 There's a [new version of NDepend](https://www.ndepend.com/ndepend-v6) (the uber-comprehensive 
-project analysis tool) out in the wild, and the lovely folks over there updated my licence so I thought I'd give it a 
-whirl on the latest incarnation of my pet 
-[object-object mapper project](https://github.com/AgileObjects/AgileMapper). Yes, I've been playing
-with that project on and off for ages - I'm using it as a kind of extended programming haiku - but 
-I do think I've nailed the approach this time. Seriously.
+project analysis tool) out in the wild, and the lovely folks over there updated my licence so I thought 
+I'd give it a whirl on the latest incarnation of my pet [object-object mapper project]({{ site.am_github }}).
+Yes, I've been playing with that project on and off for ages - I'm using it as a kind of extended 
+programming haiku - but I do think I've nailed the approach this time. Seriously.
 
 NDepend v6 integrates with Visual Studio 2015 and various CI tools, a new, colourised metrics view,
 and includes bug fixes and other polish. The CI tool integration allows you to fail builds if code 

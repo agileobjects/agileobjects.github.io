@@ -7,7 +7,7 @@ tags: [C&#35;, AgileMapper, Programming Practices]
 
 Ok, first of all, I'm definitely going to write about something other than mapper performance soon.
 This is my third blog on the subject and I want to talk a bit about some unique AgileMapper features!
-But we've got new versions of [AgileMapper](https://www.nuget.org/packages/AgileObjects.AgileMapper),
+But we've got new versions of [AgileMapper]({{ site.am_nuget }}),
 [AutoMapper](https://www.nuget.org/packages/AutoMapper) and 
 [Mapster](https://www.nuget.org/packages/mapster) - the latter including a fix for 
 [the bug](https://github.com/eswann/Mapster/issues/89) I found writing 
@@ -22,8 +22,8 @@ The mappers I'll be comparing are:
 
 #### AgileMapper
 
-[My mapper project](https://www.nuget.org/packages/AgileObjects.AgileMapper), now on version 0.9. 
-AgileMapper focuses on ease of use, flexibility and transparency.
+[My mapper project]({{ site.am_nuget }}), now on version 0.9. AgileMapper focuses on ease of use, 
+flexibility and transparency.
 
 #### AutoMapper
 
@@ -39,7 +39,7 @@ written as a faster alternative to the AutoMapper 4.x.x series.
 
 [Mapster](https://www.nuget.org/packages/Mapster) is another 'lightweight' mapper, written to be 
 "kind of like AutoMapper, just simpler and way, way faster" (quoted from their NuGet page). Now on 
-version 2.6.1, and the author [has optimised](https://github.com/agileobjects/AgileMapper/pull/4) 
+version 2.6.1, and the author [has optimised]({{ site.am_github }}/pull/4) 
 its use in my tests.
 
 #### ValueInjecter
@@ -49,8 +49,8 @@ supports unflattening as well as flattening.
 
 ## The Tests
 
-[The performance test project](https://github.com/agileobjects/AgileMapper/tree/master/AgileMapper.PerformanceTester)
-is a console project based on [the AutoMapper benchmark](https://github.com/AutoMapper/AutoMapper/tree/master/src/Benchmark)
+[The performance test project]({{ site.am_github }}/tree/master/AgileMapper.PerformanceTester) is a 
+console project based on [the AutoMapper benchmark](https://github.com/AutoMapper/AutoMapper/tree/master/src/Benchmark)
 which performs each of the following, for each mapper, 1 million times:
 
 - Constructor mapping - creating a POCO with a single constructor parameter from a POCO with a 
@@ -71,7 +71,7 @@ which performs each of the following, for each mapper, 1 million times:
 
 ## The Nuances
 
-I had [a pull request](https://github.com/agileobjects/AgileMapper/pull/5) to add the 
+I had [a pull request]({{ site.am_github }}/pull/5) to add the 
 [`AllowPartiallyTrustedCallers`](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute%28v=vs.110%29.aspx)
 attribute to the test project. As explained [in this StackOverflow question](https://stackoverflow.com/questions/5053032/performance-of-compiled-to-delegate-expression/5160513),
 Funcs compiled from Expression trees are hosted in dynamically-created, partially-trusted 

@@ -10,9 +10,8 @@ Because libraries written for
 [.NET Standard](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard) can run 
 on multiple platforms - with more to come in the future - it's worth considering how or if they run
 in [partially trusted](https://stackoverflow.com/questions/376049/what-is-a-partially-trusted-assembly-application-code-etc-in-net)
-environments. Having implemented support in both 
-[ReadableExpressions](https://www.nuget.org/packages/AgileObjects.ReadableExpressions) and 
-[AgileMapper](https://github.com/agileobjects/AgileMapper), here's some pointers on how.
+environments. Having implemented support in both [ReadableExpressions]({{ site.re_nuget }}) and 
+[AgileMapper]({{ site.am_nuget }}), here's some pointers on how.
 
 ## What is Partial Trust?
 

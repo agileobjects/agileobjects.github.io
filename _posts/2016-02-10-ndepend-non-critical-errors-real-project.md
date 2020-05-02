@@ -7,9 +7,8 @@ tags: [C&#35;, NDepend, Patterns, Programming Practices]
 
 Following on from [last time](/ndepend-v6-new-features-on-real-project), let's take a look at some 
 of the non-critical errors [NDepend 6](https://www.ndepend.com/ndepend-v6) told me about on 
-[my project](https://github.com/AgileObjects/AgileMapper). There were 29 rules violated, and 712 
-total violations - sounds like a lot but there's 274 rules being checked in this version, so I've 
-broken about 10.5% of them.
+[my project]({{ site.am_github }}). There were 29 rules violated, and 712 total violations - sounds 
+like a lot but there's 274 rules being checked in this version, so I've broken about 10.5% of them.
 
 Rule violations are viewed in the Queries and Rules Explorer, which looks like this:
 
@@ -71,8 +70,8 @@ switch off.
 
 I'm conscious that so far I've just been saying 'so I ignored that' over and over again, but I did 
 use the results to make several updates 
-([here's the commit](https://github.com/AgileObjects/AgileMapper/commit/1d643f1237e4494feb8a25d3ddccc9a76ff948d5) 
-to prove it) around:
+([here's the commit]({{ site.am_github }}/commit/1d643f1237e4494feb8a25d3ddccc9a76ff948d5) to prove 
+it) around:
 
 - Removing uncalled methods
 

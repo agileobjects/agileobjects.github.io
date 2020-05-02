@@ -27,6 +27,14 @@ stackoverflow: users/721236/steve-wilkes
 rss: agileobjects
 contact_icon: true
 
+# Projects
+am_nuget: 'https://www.nuget.org/packages/AgileObjects.AgileMapper'
+am_github: 'https://github.com/agileobjects/AgileMapper'
+am_docs: 'https://agilemapper.readthedocs.io'
+re_nuget: 'https://www.nuget.org/packages/AgileObjects.ReadableExpressions'
+re_viz: 'https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers'
+re_github: 'https://github.com/agileobjects/ReadableExpressions'
+
 # Navigation
 navigation:
   - text: Home

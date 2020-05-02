@@ -6,7 +6,7 @@ tags: [C&#35;, NDepend, Patterns, Programming Practices]
 ---
 
 Following on from my look at the [non-critical errors](/ndepend-non-critical-errors-real-project) 
-[NDepend 6](https://www.ndepend.com/ndepend-v6) found on [my project](https://github.com/AgileObjects/AgileMapper), 
+[NDepend 6](https://www.ndepend.com/ndepend-v6) found on [my project]({{ site.am_github }}), 
 let's look at the more serious stuff - the critical errors. Our old friend the Queries and Rules 
 explorer shows me this:
 
@@ -27,8 +27,8 @@ Clicking '2 Types' tells me:
 ![TypeExtensions]({{ site.post_images_dir }}2016-02-11/TypeExtensions.png)
 
 It's conflicted with another project of mine on which the mapper depends - 
-[ReadableExpressions](https://github.com/AgileObjects/ReadableExpressions) - which creates a 
-friendly view of an expression tree. So how big a problem is that?
+[ReadableExpressions]({{ site.re_github }}) - which creates a friendly view of an expression tree.
+So how big a problem is that?
 
 Naming things is hard, and following naming conventions is almost always a good idea. If I'd made a 
 class named `StringBuilder` this rule would apply, but I'd say these are a special case. You don't
