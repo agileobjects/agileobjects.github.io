@@ -405,34 +405,34 @@ ul.archive-posts-list {
 
     .project-inside {
         padding: 0 0.833333em;
+        margin-bottom: 1.5em;
+        overflow: hidden;
     }
 
     img {
-        position: absolute;
-        left: 0;
-        top: 0;
+        float: left;
+        margin-right: 3%;
         width: 27%;
     }
 
     .project-header {
-        margin: -30% 0 30% 0;
-        padding-left: 30%;
+        float: left;
+    }
+
+    h2 {
+        margin-bottom: 6px;
     }
 
     .project-thumbnail {
-        display: block;
-        height: 0;
-        padding-top: 30%;
-        position: relative;
         text-decoration: none;
-        width: 100%;
     }
 
     .project-content {
-        font-size: 0.88889rem;
-        left: 30%;
-        position: absolute;
-        top: 23%;
+        font-size: 0.75rem;
+        float: left;
+        margin-bottom: 0;
+        padding-left: 15px;
+        width: 63%;
     }
 }
 

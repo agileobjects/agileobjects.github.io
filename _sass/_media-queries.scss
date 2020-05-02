@@ -204,10 +204,13 @@
     }
 
     .post-featured:only-child .post-title,
-    .post-featured:first-child:nth-last-child(3) .post-title/*,
-    .project-featured:only-child .project-title,
-    .project-featured:first-child:nth-last-child(3) .project-title*/ {
+    .post-featured:first-child:nth-last-child(3) .post-title {
         font-size: 2rem;
+    }
+
+    .project-featured .project-content {
+        font-size: .9rem;
+        padding-left: 20px;
     }
 }
 
@@ -244,6 +247,10 @@
         margin-right: -180px;
         max-width: none;
         width: 1080px;
+    }
+
+    .project-featured .project-content {
+        font-size: 1rem;
     }
 }
 
