@@ -10,5 +10,11 @@
     "inputFiles": [
       "assets/js/contact.js"
     ]
+  },
+  {
+    "outputFileName": "assets/js/util.min.js",
+    "inputFiles": [
+      "assets/js/util.js"
+    ]
   }
 ]

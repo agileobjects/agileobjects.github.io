@@ -15,8 +15,12 @@ production_url: https://agileobjects.co.uk
 ga_analytics: 
 
 # Comment settings
-# comment_form_action: 'https://agileobjects-postblogcomment.azurewebsites.net/api/PostBlogComment?code=4M3vF5qIkyTCwtOWjvjJzuPWm7DAyKNxhMLLlj2gaFFHSyLUYQRK5A=='
-contact_form_action: 'http://localhost:7071/api/PostBlogComment'
+comments:
+  enabled: truec
+  show_count: true
+  empty: []
+#  form_action: 'https://agileobjects-postblogcomment.azurewebsites.net/api/PostBlogComment?code=4M3vF5qIkyTCwtOWjvjJzuPWm7DAyKNxhMLLlj2gaFFHSyLUYQRK5A=='
+  form_action: 'http://localhost:7071/api/PostBlogComment'
 
 # Contact form setings
 email: steve@agileobjects.co.uk

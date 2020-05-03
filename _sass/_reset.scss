@@ -145,6 +145,7 @@ button {
 button,
 html [type="button"],
 [type="submit"] {
+  -moz-appearance: button;
   -webkit-appearance: button;
   cursor: pointer;
 }

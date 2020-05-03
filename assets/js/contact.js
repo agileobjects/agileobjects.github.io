@@ -4,8 +4,8 @@
             var ContactForm = function () {
                 function contactForm() { };
 
-                contactForm.prototype.handleSend = function (url) {
-                    var $form = $getById('contact-form');
+                contactForm.prototype.handleSend = function (form) {
+                    var $form = $(form);
                     if (!$form.valid()) {
                         return false;
                     }
@@ -15,14 +15,14 @@
                     this._$showPopupPanel('sending').hide().removeClass('hidden').fadeIn();
 
                     var formData = {
-                        name: getById('contact-form-name').value,
-                        email: getById('contact-form-email').value,
-                        message: getById('contact-form-message').value
+                        name: ao.getById('contact-form-name').value,
+                        email: ao.getById('contact-form-email').value,
+                        message: ao.getById('contact-form-message').value
                     };
                     var that = this;
                     $.ajax({
                         type: 'post',
-                        url: url,
+                        url: commentForm.action,
                         data: formData,
                         xhrFields: {
                             withCredentials: false
@@ -58,24 +58,16 @@
                 };
 
                 contactForm.prototype._$getFormCover = function () {
-                    return $getById('contact-form-cover');
+                    return ao.$getById('contact-form-cover');
                 }
 
                 contactForm.prototype._$showPopupPanel = function (contentId) {
-                    return this._$getPopupPanel().html($getById(contentId).html());
+                    return this._$getPopupPanel().html(ao.$getById(contentId).html());
                 };
 
                 contactForm.prototype._$getPopupPanel = function () {
-                    return $getById('popup');
+                    return ao.$getById('popup');
                 }
-
-                function $getById(id) {
-                    return $(getById(id));
-                };
-
-                function getById(id) {
-                    return document.getElementById(id);
-                };
 
                 return contactForm;
             }();

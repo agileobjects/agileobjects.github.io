@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contact
-class: 'contact-form'
+scripts: 'contact'
 ---
 
 <main id="main" class="site-main">
@@ -10,13 +10,13 @@ class: 'contact-form'
         <header class="post-header">
             <h1 class="post-title">Contact</h1>
         </header>
-        <form action="{{ site.contact_form_action }}" method="post" id="contact-form"
-              role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this.action);">
+        <form id="contact-form" action="{{ site.contact_form_action }}" method="post"
+              role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this);">
             <div class="form-item">
                 <label class="form-label">Your email</label>
                 <input type="text" id="contact-form-email" name="email" class="form-input"
                        data-val="true" data-val-required="Your email is required"
-                       data-val-email="That's not a valid email address"/>
+                       data-val-email="That's not a valid email address" />
                 <span class="error-message"
                       data-valmsg-for="email" data-valmsg-replace="true"></span>
             </div>
@@ -24,21 +24,21 @@ class: 'contact-form'
             <div class="form-item">
                 <label class="form-label">Your name</label>
                 <input type="text" id="contact-form-name" name="name" class="form-input"
-                       data-val="true" data-val-required="Your name is required"/>
+                       data-val="true" data-val-required="Your name is required" />
                 <span class="error-message"
                       data-valmsg-for="name" data-valmsg-replace="true"></span>
             </div>
 
             <div class="form-item">
                 <label class="form-label">Your message</label>
-                <textarea  id="contact-form-message" name="message" class="form-textarea"
+                <textarea id="contact-form-message" name="message" class="form-textarea"
                           data-val="true" data-val-required="Your message is required"></textarea>
                 <span class="error-message"
                       data-valmsg-for="message" data-valmsg-replace="true"></span>
             </div>
 
             <div class="form-item">
-                <input id="contact-form-submit" type="submit" value="Send" class="button"/>
+                <input id="contact-form-submit" type="submit" value="Send" class="button" />
             </div>
         </form>
     </div><!-- .inner-->

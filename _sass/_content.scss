@@ -72,7 +72,7 @@
     margin: 0;
 }
 
-.post-full .post-title:after {
+.post-full .post-title:after, .highlight-underline:after {
     background-color: $color-accent;
     display: block;
     content: "";

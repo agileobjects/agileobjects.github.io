@@ -1,0 +1,136 @@
+﻿#comments {
+    margin-top: 10px;
+
+    #comment-count {
+        padding: 8px;
+    }
+
+    img.avatar {
+        float: left;
+        height: 48px;
+        width: 48px;
+    }
+
+    #comments-list {
+        list-style-type: none;
+
+        li {
+            padding: 8px;
+            clear: both;
+            min-height: 48px;
+            font-size: 15px;
+            line-height: 21px;
+            margin-top: 8px;
+
+            blockquote {
+                margin-left: 60px;
+
+                cite {
+                    font-style: normal;
+                    font-size: 12px;
+
+                    span.author {
+                        font-weight: 700;
+                        font-size: 13px;
+                    }
+
+                    a.muted {
+                        color: #656c7a;
+                        font-size: 12px;
+                    }
+                }
+
+                div.comment-body {
+                    line-height: 21px;
+                    font-size: 15px;
+                }
+            }
+
+            &.byauthor {
+                border-radius: 4px;
+                background-color: #fcf9eb;
+            }
+        }
+
+        .bullet {
+            padding: 0;
+            color: #c2c6cc;
+            line-height: 1.4;
+        }
+    }
+    // #comments-list
+    #comment-form {
+
+        input {
+            transition: all .2s linear;
+            padding: 5px 9px;
+            margin: 10px 0 0 0;
+            font-size: 13px;
+            height: 32px;
+        }
+
+        div.textarea, div.status {
+            background: $white;
+            font-size: 14px;
+            height: auto;
+            line-height: 1.4;
+            padding: 6px 10px 8px;
+        }
+
+        div.textarea {
+            color: $black;
+            cursor: text;
+            min-height: 100px;
+            overflow: auto;
+            padding: 6px 10px 8px;
+            transition: all .15s ease-in-out;
+            word-wrap: break-word;
+        }
+
+        div.status:not(:empty) {
+            margin-bottom: 10px;
+            border: solid 1px #eaa;
+            background-color: #ecc;
+        }
+
+        div.status:empty {
+            display: none;
+        }
+
+        [contenteditable=PLAINTEXT-ONLY]:empty:not(:focus):before {
+            color: #687a86;
+            line-height: 30px;
+            font-size: 18px;
+            content: attr(aria-label);
+            display: block; /* For Firefox */
+        }
+
+        #comment-text {
+            margin-left: 60px;
+        }
+
+        #comment-box {
+            min-height: 48px;
+        }
+
+        #comment-author {
+            margin-left: 60px;
+        }
+
+        #comment-submit {
+            margin: 10px 0 0 0;
+        }
+
+        #remember-me {
+            display: inline-block;
+            padding: 10px 6px;
+
+            input {
+                margin: auto;
+                margin-right: 6px;
+                padding: 0;
+                height: auto;
+            }
+        }
+    }
+}

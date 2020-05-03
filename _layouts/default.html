@@ -48,8 +48,10 @@
             crossorigin="anonymous"></script>
     <script src="{{ site.baseurl }}/assets/js/custom.min.js"
             type="text/javascript"></script>
-    {% if page.class == 'contact-form' %}
-    {% include contact-scripts.html %}
+    {% if page.scripts == 'comments' %}
+    {% include scripts/comments.html %}
+    {% else if page.scripts == 'contact' %}
+    {% include scripts/contact.html %}
     {% endif %}
 </body>
 </html>
