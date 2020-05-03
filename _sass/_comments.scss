@@ -1,136 +1,79 @@
 ﻿#comments {
     margin-top: 10px;
 
-    #comment-count {
-        padding: 8px;
-    }
-
     img.avatar {
         float: left;
         height: 48px;
         width: 48px;
     }
+}
 
-    #comments-list {
-        list-style-type: none;
+#comment-count {
+    padding: 8px;
+}
 
-        li {
-            padding: 8px;
-            clear: both;
-            min-height: 48px;
-            font-size: 15px;
-            line-height: 21px;
-            margin-top: 8px;
+#comments-list {
+    list-style-type: none;
 
-            blockquote {
-                margin-left: 60px;
+    li {
+        clear: both;
+        line-height: 21px;
+        margin-top: 8px;
+        min-height: 48px;
+        padding: 8px;
 
-                cite {
-                    font-style: normal;
-                    font-size: 12px;
+        blockquote {
+            margin: 0 0 0 60px;
 
-                    span.author {
-                        font-weight: 700;
-                        font-size: 13px;
-                    }
+            cite {
+                font-style: normal;
 
-                    a.muted {
-                        color: #656c7a;
-                        font-size: 12px;
-                    }
+                span.author {
+                    font-family: $font-title;
                 }
 
-                div.comment-body {
-                    line-height: 21px;
-                    font-size: 15px;
+                a.comment-date {
+                    color: $gray-light;
+                    font-size: 80%;
+                    text-decoration: none;
                 }
             }
 
-            &.byauthor {
-                border-radius: 4px;
-                background-color: #fcf9eb;
+            div.comment-body {
+                line-height: 21px;
+                margin-top: 4px;
             }
         }
 
-        .bullet {
-            padding: 0;
-            color: #c2c6cc;
-            line-height: 1.4;
+        &.byauthor {
+            background-color: $black;
+            border: 1px solid $color-accent;
         }
     }
-    // #comments-list
-    #comment-form {
 
-        input {
-            transition: all .2s linear;
-            padding: 5px 9px;
-            margin: 10px 0 0 0;
-            font-size: 13px;
-            height: 32px;
-        }
+    .bullet {
+        padding: 0;
+        color: #c2c6cc;
+        line-height: 1.4;
+    }
+}
 
-        div.textarea, div.status {
-            background: $white;
-            font-size: 14px;
-            height: auto;
-            line-height: 1.4;
-            padding: 6px 10px 8px;
-        }
+#comment-box {
+    min-height: 48px;
+}
 
-        div.textarea {
-            color: $black;
-            cursor: text;
-            min-height: 100px;
-            overflow: auto;
-            padding: 6px 10px 8px;
-            transition: all .15s ease-in-out;
-            word-wrap: break-word;
-        }
+#comment-text, #comment-author {
+    margin-left: 60px;
+}
 
-        div.status:not(:empty) {
-            margin-bottom: 10px;
-            border: solid 1px #eaa;
-            background-color: #ecc;
-        }
+#remember-me {
+    display: inline-block;
+    padding: 10px 6px;
 
-        div.status:empty {
-            display: none;
-        }
-
-        [contenteditable=PLAINTEXT-ONLY]:empty:not(:focus):before {
-            color: #687a86;
-            line-height: 30px;
-            font-size: 18px;
-            content: attr(aria-label);
-            display: block; /* For Firefox */
-        }
-
-        #comment-text {
-            margin-left: 60px;
-        }
-
-        #comment-box {
-            min-height: 48px;
-        }
-
-        #comment-author {
-            margin-left: 60px;
-        }
-
-        #comment-submit {
-            margin: 10px 0 0 0;
-        }
-
-        #remember-me {
-            display: inline-block;
-            padding: 10px 6px;
-
-            input {
-                margin: auto;
-                margin-right: 6px;
-                padding: 0;
-                height: auto;
-            }
-        }
+    input {
+        margin: auto;
+        margin-right: 6px;
+        padding: 0;
+        height: auto;
     }
 }

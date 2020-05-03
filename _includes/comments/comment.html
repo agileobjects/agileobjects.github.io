@@ -16,7 +16,7 @@
             {% endif %}
         </span>
         <span class="bullet">•</span>
-        <a href="#{{ comment.id }}" class="muted" title="{{ comment.date | date_to_rfc822 }}">
+        <a href="#{{ comment.id }}" class="comment-date" title="{{ comment.date | date_to_rfc822 }}">
             {{ comment.date | date: '%B' }}
             {% assign d = comment.date | date: "%-d" %}
             {% case d %}

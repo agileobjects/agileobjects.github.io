@@ -1,14 +1,17 @@
 ﻿(function ($) {
     (function (ao) {
         (function (web) {
+            web.emailRegex = /[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
             var Avatar = function () {
                 function avatar() {
                     var that = this;
 
                     this.possibles = [];
                     this.currentIndex = 0;
-                    this.image = ao.getById('avatarPreview');
-                    this.image.onerror = function () { that.tryLoad(1); }
+                    this.image = ao.getById('avatar-preview');
+                    this.imageDefault = this.image.src;
+                    this.image.onerror = function () { that.tryLoad(true); }
                 }
 
                 avatar.prototype.load = function (identity) {
@@ -20,7 +23,7 @@
                 avatar.prototype.buildPossibles = function (identity) {
                     var possibles = [];
 
-                    if (identity.match(emailRegex)) {
+                    if (identity.match(web.emailRegex)) {
                         possibles.push('https://secure.gravatar.com/avatar/' + md5(identity) + '?s=80&d=identicon&r=pg');
                     } else {
                         possibles.push('https://github.com/' + identity + '.png');
@@ -32,7 +35,7 @@
 
                 avatar.prototype.tryLoad = function (increment) {
                     if (increment) {
-                        this.currentIndex += increment;
+                        ++this.currentIndex;
                     }
 
                     if (this.currentIndex < this.possibles.length) {
@@ -41,7 +44,7 @@
                     }
 
                     this.image.onerror = null;
-                    this.image.src = this.preview.dataset.fallbacksrc;
+                    this.image.src = this.imageDefault;
                 };
 
                 return avatar;
@@ -49,26 +52,27 @@
 
             var CommentForm = function () {
                 function commentForm() {
-                    this.emailRegex = /[^@\s]+@[^@\s]+\.[^@\s]+$/;
                     this.avatar = new Avatar();
+
+                    this.comment = ao.getById('comment');
                     this.name = ao.getById('name');
                     this.identity = ao.getById('identity');
+                    this.email = ao.getById('email');
                     this.rememberMe = ao.getById('remember');
                 };
 
                 commentForm.prototype.load = function () {
                     var that = this;
 
-                    ao.getById('comment-div').oninput = function (e) {
-                        ao.getById('message').value = e.target.innerText;
-                    }
-
                     this.identity.onchange = function () {
                         that.avatar.load(this);
                     }
 
                     this.retrieveUser();
-                    this.avatar.load(this.identity);
+
+                    if (this.identity.value) {
+                        this.avatar.load(this.identity);
+                    }
                 };
 
                 commentForm.prototype.retrieveUser = function () {
@@ -91,46 +95,56 @@
                     window.localStorage.identity = identity;
                 };
 
-                commentForm.prototype.handleSubmit = function (form) {
+                commentForm.prototype.handlePost = function (form) {
                     var $form = $(form);
                     if (!$form.valid()) { return false; }
 
                     var button = ao.getById('comment-submit');
 
-                    if (button.innerText !== 'Confirm comment') {
-                        button.innerText = 'Confirm comment';
+                    if (button.value !== 'Confirm comment') {
+                        button.value = 'Confirm comment';
                         button.title = 'Click again to confirm your comment';
                         button.classList.add('confirm-button');
                         return false;
                     }
 
                     this.rememberMe.checked
-                        ? storeUser(this.name.value, this.identity.value)
-                        : storeUser('', '');
-
-                    ao.getById('avatarInput').value = this.avatar.image.src;
-                    this.identity.value = '';
+                        ? this.storeUser(this.name.value, this.identity.value)
+                        : this.storeUser('', '');
 
                     var formData = {
-                        name: ao.getById('contact-form-name').value,
-                        email: ao.getById('contact-form-email').value,
-                        message: ao.getById('contact-form-message').value
+                        postId: ao.getById('post-id').value,
+                        commentSite: ao.getById('comment-site').value,
+                        message: this.comment.value,
+                        name: this.name.value,
+                        avatar: this.avatar.image.src
                     };
-                    var that = this;
+
+                    if (this.identity.value.match(web.emailRegex)) {
+                        formData.email = this.identity.value;
+                    }
+
                     $.ajax({
                         type: 'post',
-                        url: commentForm.action,
+                        url: form.action,
                         data: formData,
                         xhrFields: {
                             withCredentials: false
                         }
                     }).fail(function () {
-                        that._$showPopupPanel('sent-error');
+                        ao.formError();
                     }).done(function () {
-                        that._$showPopupPanel('sent-ok');
+                        ao.formOk();
                     });
 
                     return false;
+                };
+
+                commentForm.prototype.handlePosted = function (successful) {
+                    if (successful) {
+                        return;
+                    }
+                    ao.formReset(ao.$getById('comment-form'));
                 };
 
                 commentForm.prototype._getName = function () {

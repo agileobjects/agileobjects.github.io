@@ -1,28 +1,53 @@
-﻿
-<form id="comment-form" action="{{ site.comments.form_action }}" method="post"
-      role="form" onsubmit="return AgileObjects.Web.commentForm.handleSubmit(this);">
-    <input name="redirect" type="hidden" value="{{ site.url }}/thanks">
-    <input name="post_id" type="hidden" value="{{ slug }}">
-    <input name="comment-site" type="hidden" value="{{ site.production_url }}">
-    <div id="comment-box">
-        <img src="/assets/images/comments/avatar-unknown.gif" data-fallbacksrc="/assets/images/comments/avatar-unknown.gif" data-role="user-avatar" alt="avatar" class="avatar" id="avatarPreview" />
-        <div id="comment-text">
-            <div id="commentstatus" class="status"></div>
-            <div contenteditable="PLAINTEXT-ONLY" tabindex="0" role="textbox" aria-multiline="true" data-role="editable" class="textarea" aria-label="Join the discussion..." id="comment-div"></div>
-            <input type="hidden" name="message" id="message" data-required="true" value="" />
+﻿<div>
+    <div id="progress-cover" class="hidden"></div>
+
+    <form id="comment-form" action="{{ site.comments.form_action }}" method="post"
+          role="form" onsubmit="return AgileObjects.Web.commentForm.handlePost(this);">
+        <input id="post-id" name="post_id" type="hidden" value="{{ slug }}" />
+        <input id="comment-site" name="comment-site" type="hidden" value="{{ site.production_url }}" />
+
+        <div id="comment-box">
+            <img id="avatar-preview" class="avatar" data-role="user-avatar"
+                 src="{{ site.baseurl }}/assets/images/comments/avatar-unknown.gif" alt="avatar" />
+
+            <div id="comment-text">
+                <textarea id="comment" name="comment" class="form-textarea"
+                          placeholder="What do you think?"
+                          data-val="true" data-val-required="A comment is required"></textarea>
+                <span class="error-message" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+            </div>
         </div>
-    </div>
-    <div id="comment-author">
-        <div class="control-group">
-            <input type="hidden" name="avatar" id="avatarInput" />
-            <input type="text" name="name" id="name" placeholder="Display name" title="Name displayed with your comment" data-required="true" />
-            <input type="text" name="identity" id="identity" placeholder="email/@twitter/github" data-required="true" value="" />
-            <span class="info-circle" title="Identity is used to generate an avatar image only. It is not submitted with the form."></span>
-            <button type="button" id="comment-submit">Add comment</button>
+        <div id="comment-author">
+            <input type="text" id="name" name="name" class="form-input"
+                   placeholder="Your name" title="The name to display with your comment"
+                   data-val="true" data-val-required="Your name is required" />
+            <span class="error-message" data-valmsg-for="name" data-valmsg-replace="true"></span>
+
+            <input type="text" id="identity" name="identity" class="form-input"
+                   placeholder="email/@twitter/github" value="" />
+            <span class="info-circle" title="Identity is only used to generate an avatar. It is not submitted with the form."></span>
+
+            <input id="comment-submit" type="submit" value="Add comment" />
+
             <div id="remember-me">
                 <input type="checkbox" name="remember" id="remember"><label for="remember">Remember me</label>
                 <span class="info-circle" title="Stores your name and email in the browser so you don't have to fill out the form again. This does not set a cookie."></span>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
+<div id="popup" class="hidden icon-container icons-md">
+</div>
+
+<div id="progress" class="hidden">
+    {% include icons/spinner.html %} <span>Posting...</span>
+</div>
+
+<div id="complete-ok" class="hidden">
+    {% include icons/check.html %} <span>Posted</span> <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(true);">OK</a>
+</div>
+
+<div id="complete-error" class="hidden">
+    {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(false);">OK</a>
+</div>

@@ -248,7 +248,7 @@ ul.archive-posts-list {
     }
 }
 
-#contact-form-cover {
+#progress-cover {
     background: $gray-darkest;
     height: 100%;
     position: absolute;
@@ -272,6 +272,11 @@ ul.archive-posts-list {
     color: $form-error-color;
     font-size: 90%;
     margin-left: 1em;
+    display: none;
+}
+
+.field-validation-error {
+    display: block;
 }
 
 .error-template {

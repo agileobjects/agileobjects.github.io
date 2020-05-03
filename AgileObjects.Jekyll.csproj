@@ -7,4 +7,7 @@
     <EmbeddedResource Remove="_site\**" />
     <None Remove="_site\**" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\js\md5.min.js" />
+  </ItemGroup>
 </Project>

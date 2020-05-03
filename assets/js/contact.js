@@ -6,20 +6,17 @@
 
                 contactForm.prototype.handleSend = function (form) {
                     var $form = $(form);
-                    if (!$form.valid()) {
-                        return false;
-                    }
 
-                    this._coverForm();
-                    this._$getFormElements().prop('disabled', true);
-                    this._$showPopupPanel('sending').hide().removeClass('hidden').fadeIn();
+                    if (!$form.valid()) { return false; }
+
+                    ao.formSubmitting($form);
 
                     var formData = {
                         name: ao.getById('contact-form-name').value,
                         email: ao.getById('contact-form-email').value,
                         message: ao.getById('contact-form-message').value
                     };
-                    var that = this;
+
                     $.ajax({
                         type: 'post',
                         url: commentForm.action,
@@ -28,10 +25,11 @@
                             withCredentials: false
                         }
                     }).fail(function () {
-                        that._$showPopupPanel('sent-error');
+                        ao.formError();
                     }).done(function () {
-                        that._$showPopupPanel('sent-ok');
+                        ao.formOk();
                     });
+
                     return false;
                 };
 
@@ -40,34 +38,8 @@
                         document.location.href = '/';
                         return;
                     }
-                    this._$getFormElements().prop('disabled', false);
-                    this._uncoverForm();
-                    this._$getPopupPanel().fadeOut();
+                    ao.formReset(ao.$getById('contact-form'));
                 };
-
-                contactForm.prototype._$getFormElements = function () {
-                    return $('#contact-form input,#contact-form textarea,#contact-form-submit');
-                };
-
-                contactForm.prototype._coverForm = function () {
-                    this._$getFormCover().removeClass('hidden');
-                };
-
-                contactForm.prototype._uncoverForm = function () {
-                    this._$getFormCover().addClass('hidden');
-                };
-
-                contactForm.prototype._$getFormCover = function () {
-                    return ao.$getById('contact-form-cover');
-                }
-
-                contactForm.prototype._$showPopupPanel = function (contentId) {
-                    return this._$getPopupPanel().html(ao.$getById(contentId).html());
-                };
-
-                contactForm.prototype._$getPopupPanel = function () {
-                    return ao.$getById('popup');
-                }
 
                 return contactForm;
             }();

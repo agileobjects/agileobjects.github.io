@@ -9,13 +9,15 @@
 {% assign author = site.authors[page.author] %}
 <div id="comments">
     <h2 class="highlight-underline">Comments</h2>
+
     {% include comments/new.html %}
+
     <h3 id="comment-count">{% if comment_count == 1 %}One response{% else %}{{ comment_count }} responses{% endif %}</h3>
     <ol id="comments-list">
         {% assign sorted_comments = comments | sort: 'date' %}
         {% for comment in sorted_comments %}
-        <li{% if comment.name= =author.name %} class="byauthor" {% endif %}>
-            {% include comment.html %}
+        <li{% if comment.name == site.author.name %} class="byauthor" {% endif %}>
+            {% include comments/comment.html %}
             </li>
             {% endfor %}
     </ol>
