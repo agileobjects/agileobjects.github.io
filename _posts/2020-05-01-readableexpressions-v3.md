@@ -13,36 +13,39 @@ and [a NuGet package]({{ site.re_nuget }}) with the extension method which does 
 ReadableExpressions version 3 provides various options to customise translation, and colourizes the 
 visualizer source code view, adding light and dark themes.
 
-## An Example
+## Now in Technicolor <sup>&copy;</sup>
 
-ReadableExpressions v2 displays the following:
+For a simple lambda calling a `TryGet`-style method on its parameter and returning the `out` parameter
+value, ReadableExpressions v2 displays this:
 
 ![v2 translation]({{ site.post_images_dir }}{{ page.images_dir }}v2.gif)
 
-...for the same Expression, v3 displays the following:
+...for the same Expression, v3 displays this:
 
 ![v3 translation]({{ site.post_images_dir }}{{ page.images_dir }}v3.gif)
 
+Colourized with Visual Studio 2019's light theme colours!
+
 ## Translation options
 
-The options menu provides various ways to customise the translation, or switch the theme. Perhaps
-you prefer dark? (as I clearly do):
+The options menu let you switch the theme - perhaps you prefer dark? (as I obviously do):
 
 ![v3 dark theme]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark.gif#light-border)
 
-...and perhaps you prefer to declare out parameter variables inline?
+There's also various ways to customise the translation - maybe you'd prefer to declare out parameter 
+variable inline:
 
 ![v3 out param declared inline]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline.gif#light-border)
 
-Maybe you'd rather use the type name for the parameter, instead of `var`:
+...and perhaps you'd rather use the parameter type name, instead of `var`:
 
 ![v3 out param declared with type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit.gif#light-border)
 
-...and what type is the lambda's `ip` parameter?
+...or be shown the type of the lambda's `ip` parameter:
 
 ![v3 with lambda parameter type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit-lambda-param.gif#light-border)
 
-## Anything else?
+## More to come
 
 I'll be adding extra options in the future, but I think these are a good start to make the source 
 code view more personalisable and transparent. If there's any other options you'd find useful, 
