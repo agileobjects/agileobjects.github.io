@@ -80,3 +80,20 @@
 #comment-count {
     padding: 8px;
 }
+
+.info-icon {
+    color: $gray;
+    display: inline-block;
+    height: 18px;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+input + span.icon-wrapper {
+    left: -30px;
+    margin-right: -22px;
+    position: relative;
+    top: -48px;
+}

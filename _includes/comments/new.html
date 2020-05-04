@@ -23,13 +23,17 @@
 
             <input type="text" id="identity" name="identity" class="form-input"
                    placeholder="email/@twitter/github" value="" />
-            <span class="info-circle" title="Identity is only used to generate an avatar. It is not submitted with the form."></span>
+            <span class="icon-wrapper" title="Identity is only used to generate an avatar. It is not submitted with the form.">
+                {% include icons/info.html %}
+            </span>
 
             <input id="comment-submit" type="submit" value="Add comment" />
 
             <div id="remember-me">
                 <input type="checkbox" id="remember" name="remember"><label for="remember">Remember me</label>
-                <span class="info-circle" title="Stores your name and email in the browser so you don't have to fill out the form again. This does not set a cookie."></span>
+                <span title="Stores your name and email in the browser so you don't have to fill out the form again. This does not set a cookie.">
+                    {% include icons/info.html %}
+                </span>
             </div>
         </div>
 
