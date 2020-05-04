@@ -11,25 +11,30 @@
         ao.formSubmitting = function($form) {
             this._coverForm();
             this._$getFormElements($form).prop('disabled', true);
-            this.$showPopup('progress').hide().removeClass('hidden').fadeIn();
+            this._$showPopup('progress').hide().removeClass('hidden').fadeIn();
         };
 
         ao.formReset = function($form) {
-            this._$getPopup().fadeOut();
+            this._$getPopup().fadeOut().removeClass('with-message');
             this._$getFormElements($form).prop('disabled', false);
             this._uncoverForm();
         }
 
         ao.formOk = function() {
-            this.$showPopup('complete-ok');
+            this._$showPopup('complete-ok');
         }
 
         ao.formError = function() {
-            this.$showPopup('complete-error');
+            this._$showPopup('complete-error');
         }
 
-        ao.$showPopup = function(contentId) {
-            return this._$getPopup().html(ao.$getById(contentId).html());
+        ao._$showPopup = function(contentId) {
+            var $popup = this._$getPopup();
+            var $content = ao.$getById(contentId);
+            if ($content.find('.message:first').length) {
+                $popup.addClass('with-message');
+            }
+            return $popup.html($content.html());
         }
 
         ao._$getFormElements = function ($form) {

@@ -19,7 +19,7 @@
 
                     $.ajax({
                         type: 'post',
-                        url: commentForm.action,
+                        url: form.action,
                         data: formData,
                         xhrFields: {
                             withCredentials: false
@@ -27,6 +27,7 @@
                     }).fail(function () {
                         ao.formError();
                     }).done(function () {
+                        ao.formError();
                         ao.formOk();
                     });
 

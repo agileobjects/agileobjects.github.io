@@ -59,6 +59,9 @@
                     this.identity = ao.getById('identity');
                     this.email = ao.getById('email');
                     this.rememberMe = ao.getById('remember');
+                    this.submitButton = ao.getById('comment-submit');
+                    this.submitButtonDefaultText = this.submitButton.value;
+                    this.submitButtonDefaultTitle = this.submitButton.title;
                 };
 
                 commentForm.prototype.load = function () {
@@ -99,14 +102,14 @@
                     var $form = $(form);
                     if (!$form.valid()) { return false; }
 
-                    var button = ao.getById('comment-submit');
-
-                    if (button.value !== 'Confirm comment') {
-                        button.value = 'Confirm comment';
-                        button.title = 'Click again to confirm your comment';
-                        button.classList.add('confirm-button');
+                    if (this.submitButton.value !== 'Confirm comment') {
+                        this.submitButton.value = 'Confirm comment';
+                        this.submitButton.title = 'Click again to confirm your comment';
+                        this.submitButton.classList.add('confirm-button');
                         return false;
                     }
+
+                    ao.formSubmitting($form);
 
                     this.rememberMe.checked
                         ? this.storeUser(this.name.value, this.identity.value)
@@ -141,10 +144,14 @@
                 };
 
                 commentForm.prototype.handlePosted = function (successful) {
+                    var $form = ao.$getById('comment-form');
                     if (successful) {
-                        return;
+                        this.comment.value = '';
+                        this.submitButton.value = this.submitButtonDefaultText;
+                        this.submitButton.title = this.submitButtonDefaultTitle;
+                        this.submitButton.classList.remove('confirm-button');
                     }
-                    ao.formReset(ao.$getById('comment-form'));
+                    ao.formReset($form);
                 };
 
                 commentForm.prototype._getName = function () {

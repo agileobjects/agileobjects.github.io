@@ -1,7 +1,6 @@
 ﻿<div>
-    <div id="progress-cover" class="hidden"></div>
 
-    <form id="comment-form" action="{{ site.comments.form_action }}" method="post"
+    <form id="comment-form" action="{{ site.comments.form_action }}" method="post" class="ajax-form"
           role="form" onsubmit="return AgileObjects.Web.commentForm.handlePost(this);">
         <input id="post-id" name="post_id" type="hidden" value="{{ slug }}" />
         <input id="comment-site" name="comment-site" type="hidden" value="{{ site.production_url }}" />
@@ -34,20 +33,26 @@
                 <span class="info-circle" title="Stores your name and email in the browser so you don't have to fill out the form again. This does not set a cookie."></span>
             </div>
         </div>
+
+        <div id="progress-cover" class="hidden"></div>
+
+        <div id="popup" class="hidden icon-container icons-md">
+        </div>
+
+        <div id="progress" class="hidden">
+            {% include icons/spinner.html %} <span>Posting...</span>
+        </div>
+
+        <div id="complete-ok" class="hidden">
+            {% include icons/check.html %} <span>Posted</span>
+            <span class="message">Thanks for the feedback! Your comment is being moderated, and will appear soon.</span>
+            <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(true);">OK</a>
+        </div>
+
+        <div id="complete-error" class="hidden">
+            {% include icons/error.html %} <span>Error!</span>
+            <span class="message">Something went wrong, and I've been notified. Please try again?</span>
+            <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(false);">OK</a>
+        </div>
     </form>
-</div>
-
-<div id="popup" class="hidden icon-container icons-md">
-</div>
-
-<div id="progress" class="hidden">
-    {% include icons/spinner.html %} <span>Posting...</span>
-</div>
-
-<div id="complete-ok" class="hidden">
-    {% include icons/check.html %} <span>Posted</span> <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(true);">OK</a>
-</div>
-
-<div id="complete-error" class="hidden">
-    {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(false);">OK</a>
 </div>
