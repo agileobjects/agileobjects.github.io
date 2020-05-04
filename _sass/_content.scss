@@ -25,6 +25,16 @@
     text-decoration: none;
 }
 
+.updated {
+    background-color: #00aba9;
+    display: block;
+    padding: .2em .5em;
+}
+
+.first {
+    display: block;
+}
+
 .post-thumbnail {
     display: block;
     margin-bottom: 1.66667em;
@@ -95,8 +105,8 @@
     clear: both;
 }
 
-.post-full .post-content > p:first-child:first-letter {
-    color: $body-text-color;
+.post-full .post-content > p:first-child:first-letter,
+.post-full .post-content span.first:first-letter {
     font-size: 72px;
     font-family: $font-title;
     float: left;
@@ -107,9 +117,24 @@
     vertical-align: bottom;
 }
 
+span.updated:first-letter {
+    font-size: inherit;
+    font-family: $font-primary;
+    float: none;
+    line-height: inherit;
+    margin-right: 0;
+    text-transform: none;
+    vertical-align: inherit;
+}
+
 @-moz-document url-prefix() {
-    .post-full .post-content > p:first-child:first-letter {
+    .post-full .post-content > p:first-child:first-letter,
+    .post-full .post-content p span.first:first-letter {
         padding-top: 0.08em;
+    }
+
+    span.updated:first-letter {
+        padding-top: 0;
     }
 }
 

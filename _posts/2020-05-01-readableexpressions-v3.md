@@ -4,7 +4,6 @@ title: ReadableExpressions v3 Released
 excerpt: The ReadableExpressions Expression debugger visualizers now show colourized, themeable source code, with a variety of translation options.
 tags: [C&#35;, Expression Trees, ReadableExpressions]
 images_dir: '2020-05-01/'
-comments: true
 ---
 
 ReadableExpressions translates Expression trees to source code as an alternative to Visual Studio's 

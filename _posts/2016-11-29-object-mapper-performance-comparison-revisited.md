@@ -10,8 +10,10 @@ Update: I have [more up-to-date results](/object-mapper-performance-comparison-a
 than these, including updated versions of AgileMapper, AutoMapper and Mapster.
 </span>
 
+<span class="first">
 I recently wrote a blog on the performance of various object-object mappers, but it turns out my 
 tests weren't quite fair and equal at that point. Specifically:
+</span>
 
 #### Creating Empty Collections vs... Not
 

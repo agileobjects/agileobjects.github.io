@@ -11,11 +11,13 @@ I've [updated them and re-measured](/object-mapper-performance-comparison-revisi
 I'm leaving this blog in place as it describes the tests.
 </span>
 
+<span class="first">
 This is the first in a series of posts comparing a subset of the available mappers. I'm going to 
 compare performance, features and ease of use, and I'll turn those words into links as I write the 
 blogs. This blog is on that favourite thing 
 [we're not supposed to obsess too much about](https://wiki.c2.com/?PrematureOptimization) (in programming) -
 performance.
+</span>
 
 ## The Mappers
 
