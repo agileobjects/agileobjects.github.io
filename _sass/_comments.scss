@@ -1,4 +1,6 @@
-﻿#comments {
+﻿@import "_variables.scss";
+
+#comments {
     margin-top: 10px;
 
     img.avatar {
@@ -6,10 +8,6 @@
         height: 48px;
         width: 48px;
     }
-}
-
-#comment-count {
-    padding: 8px;
 }
 
 #comments-list {
@@ -68,6 +66,7 @@
 
 #remember-me {
     display: inline-block;
+    font-size: 90%;
     padding: 10px 6px;
 
     input {
@@ -76,4 +75,8 @@
         padding: 0;
         height: auto;
     }
+}
+
+#comment-count {
+    padding: 8px;
 }

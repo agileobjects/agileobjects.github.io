@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 /**
  * 1. General
  * ----------------------------------------------------------------------------
@@ -167,89 +169,6 @@ th {
     font-weight: bold;
 }
 
-/* Form fields */
-input,
-textarea {
-    background: #fff;
-    border: 1px solid $black;
-    border-radius: 0;
-    box-shadow: none;
-    box-sizing: border-box;
-    color: $gray-darkest;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 10px 0 0 0;
-    max-width: 100%;
-    padding: 8px 10px;
-    vertical-align: baseline;
-}
-
-input[type="text"],
-textarea {
-    display: block;
-    width: 100%;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-    outline: 0;
-}
-
-button,
-input[type="submit"],
-input[type="button"],
-a.button {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background: $gray-darkest;
-    border: 1px solid $gray-lighter;
-    box-sizing: border-box;
-    color: $body-text-color;
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    padding: 10px 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
-}
-
-button:hover,
-button:focus,
-button:active,
-input[type="submit"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:active,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="button"]:active,
-a.button:hover,
-a.button:focus {
-    background: $gray-lighter;
-    color: $black;
-    outline: 0;
-}
-
-/* Placeholder text color */
-::-webkit-input-placeholder {
-    color: $gray;
-}
-
-:-moz-placeholder {
-    color: $gray;
-}
-
-::-moz-placeholder {
-    color: $gray;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: $gray;
-}
-
 /* Videos, audios and embeds */
 embed,
 iframe,
@@ -273,7 +192,7 @@ img {
     max-width: 100%;
 }
 
-img[src*="#light-border"] {
+.light-border, img[src*="#light-border"] {
     border: 1px solid $gray;
 }
 

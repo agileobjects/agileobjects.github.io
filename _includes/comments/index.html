@@ -12,7 +12,7 @@
 
     {% include comments/new.html %}
 
-    <h3 id="comment-count">{% if comment_count == 1 %}One response{% else %}{{ comment_count }} responses{% endif %}</h3>
+    <h4 id="comment-count">{% if comment_count == 1 %}One comment{% else %}{{ comment_count }} comments{% endif %}</h4>
     <ol id="comments-list">
         {% assign sorted_comments = comments | sort: 'date' %}
         {% for comment in sorted_comments %}
