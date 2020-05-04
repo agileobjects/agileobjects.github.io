@@ -1,8 +1,20 @@
 [
   {
+    "outputFileName": "assets/js/util.min.js",
+    "inputFiles": [
+      "assets/js/util.js"
+    ]
+  },
+  {
     "outputFileName": "assets/js/custom.min.js",
     "inputFiles": [
       "assets/js/custom.js"
+    ]
+  },
+  {
+    "outputFileName": "assets/js/comments.min.js",
+    "inputFiles": [
+      "assets/js/comments.js"
     ]
   },
   {

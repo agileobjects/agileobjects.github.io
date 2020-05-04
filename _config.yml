@@ -11,14 +11,21 @@ favicon: 'assets/images/favicon.ico'
 baseurl: 
 post_images_dir: '/assets/images/posts/'
 production_url: https://agileobjects.co.uk
-disqus: 'agileobjects'
 # Add your GA Tracking Id
 ga_analytics: 
 
-# Contact form setings
-email: steve@agileobjects.co.uk
-contact_form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=v/fdE3E7FhUc9QgLaXeOXvOParYBoCXfiFesiy9Y7QEiMOYKq7lVrQ=='
-# contact_form_action: 'http://localhost:7071/api/SendEmail'
+# Comment settings
+comments:
+  enabled: truec
+  show_count: true
+  empty: []
+  form_action: 'https://agileobjects-postblogcomment.azurewebsites.net/api/PostBlogComment?code=4M3vF5qIkyTCwtOWjvjJzuPWm7DAyKNxhMLLlj2gaFFHSyLUYQRK5A=='
+#  form_action: 'http://localhost:7071/api/PostBlogComment'
+
+# Contact form settings
+contact:
+  form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=v/fdE3E7FhUc9QgLaXeOXvOParYBoCXfiFesiy9Y7QEiMOYKq7lVrQ=='
+# form_action: 'http://localhost:7071/api/SendEmail'
 
 # Social links
 github: 'agileobjects'

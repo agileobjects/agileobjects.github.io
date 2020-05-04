@@ -1,0 +1,82 @@
+﻿@import "_variables.scss";
+
+#comments {
+    margin-top: 10px;
+
+    img.avatar {
+        float: left;
+        height: 48px;
+        width: 48px;
+    }
+}
+
+#comments-list {
+    list-style-type: none;
+
+    li {
+        clear: both;
+        line-height: 21px;
+        margin-top: 8px;
+        min-height: 48px;
+        padding: 8px;
+
+        blockquote {
+            margin: 0 0 0 60px;
+
+            cite {
+                font-style: normal;
+
+                span.author {
+                    font-family: $font-title;
+                }
+
+                a.comment-date {
+                    color: $gray-light;
+                    font-size: 80%;
+                    text-decoration: none;
+                }
+            }
+
+            div.comment-body {
+                line-height: 21px;
+                margin-top: 4px;
+            }
+        }
+
+        &.byauthor {
+            background-color: $black;
+            border: 1px solid $color-accent;
+        }
+    }
+
+    .bullet {
+        padding: 0;
+        color: #c2c6cc;
+        line-height: 1.4;
+    }
+}
+
+#comment-box {
+    min-height: 48px;
+}
+
+#comment-text, #comment-author {
+    margin-left: 60px;
+}
+
+#remember-me {
+    display: inline-block;
+    font-size: 90%;
+    padding: 10px 6px;
+
+    input {
+        margin: auto;
+        margin-right: 6px;
+        padding: 0;
+        height: auto;
+    }
+}
+
+#comment-count {
+    padding: 8px;
+}
