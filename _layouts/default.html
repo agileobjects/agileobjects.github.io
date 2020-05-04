@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% include analytics.html %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +20,17 @@
 
     <!-- CSS Styles -->
     <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+
+    <!-- Javascript Assets -->
+    <script async src="https://code.jquery.com/jquery-3.5.0.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+            crossorigin="anonymous"></script>
+    <script async src="{{ site.baseurl }}/assets/js/custom.min.js"></script>
+    {% if page.layout == 'post' %}
+    {% include scripts/comments.html %}
+    {% elsif page.contact %}
+    {% include scripts/contact.html %}
+    {% endif %}
 </head>
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
@@ -40,18 +52,5 @@
             </div><!-- .inner-wide -->
         </div><!-- .site-content -->
     </div><!-- .site -->
-    {% include analytics.html %}
-    <!-- Javascript Assets -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-            type="text/javascript"
-            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-            crossorigin="anonymous"></script>
-    <script src="{{ site.baseurl }}/assets/js/custom.min.js"
-            type="text/javascript"></script>
-    {% if page.layout == 'post' %}
-    {% include scripts/comments.html %}
-    {% elsif page.contact %}
-    {% include scripts/contact.html %}
-    {% endif %}
 </body>
 </html>

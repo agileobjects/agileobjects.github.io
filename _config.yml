@@ -12,7 +12,7 @@ baseurl:
 post_images_dir: '/assets/images/posts/'
 production_url: https://agileobjects.co.uk
 # Add your GA Tracking Id
-ga_analytics: 
+ga_analytics: UA-165403546-1
 
 # Comment settings
 comments:
