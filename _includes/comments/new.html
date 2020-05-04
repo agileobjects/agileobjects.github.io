@@ -3,7 +3,6 @@
     <form id="comment-form" action="{{ site.comments.form_action }}" method="post" class="ajax-form"
           role="form" onsubmit="return AgileObjects.Web.commentForm.handlePost(this);">
         <input id="post-id" name="post_id" type="hidden" value="{{ slug }}" />
-        <input id="comment-site" name="comment-site" type="hidden" value="{{ site.production_url }}" />
 
         <div id="comment-box">
             <img id="avatar-preview" class="avatar light-border" data-role="user-avatar"

@@ -60,8 +60,6 @@
                     this.email = ao.getById('email');
                     this.rememberMe = ao.getById('remember');
                     this.submitButton = ao.getById('comment-submit');
-                    this.submitButtonDefaultText = this.submitButton.value;
-                    this.submitButtonDefaultTitle = this.submitButton.title;
                 };
 
                 commentForm.prototype.load = function () {
@@ -100,12 +98,8 @@
 
                 commentForm.prototype.handlePost = function (form) {
                     var $form = $(form);
-                    if (!$form.valid()) { return false; }
 
-                    if (this.submitButton.value !== 'Confirm comment') {
-                        this.submitButton.value = 'Confirm comment';
-                        this.submitButton.title = 'Click again to confirm your comment';
-                        this.submitButton.classList.add('confirm-button');
+                    if (!$form.valid() || !ao.submitConfirm(this.submitButton)) {
                         return false;
                     }
 
@@ -117,7 +111,6 @@
 
                     var formData = {
                         postId: ao.getById('post-id').value,
-                        commentSite: ao.getById('comment-site').value,
                         message: this.comment.value,
                         name: this.name.value,
                         avatar: this.avatar.image.src
@@ -147,9 +140,7 @@
                     var $form = ao.$getById('comment-form');
                     if (successful) {
                         this.comment.value = '';
-                        this.submitButton.value = this.submitButtonDefaultText;
-                        this.submitButton.title = this.submitButtonDefaultTitle;
-                        this.submitButton.classList.remove('confirm-button');
+                        ao.submitReset(this.submitButton);
                     }
                     ao.formReset($form);
                 };

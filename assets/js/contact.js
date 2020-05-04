@@ -2,19 +2,26 @@
     (function (ao) {
         (function (web) {
             var ContactForm = function () {
-                function contactForm() { };
+                function contactForm() {
+                    this.name = ao.getById('contact-form-name');
+                    this.email = ao.getById('contact-form-email');
+                    this.message = ao.getById('contact-form-message');
+                    this.submitButton = ao.getById('contact-form-submit');
+                };
 
                 contactForm.prototype.handleSend = function (form) {
                     var $form = $(form);
 
-                    if (!$form.valid()) { return false; }
+                    if (!$form.valid() || !ao.submitConfirm(this.submitButton)) {
+                        return false;
+                    }
 
                     ao.formSubmitting($form);
 
                     var formData = {
-                        name: ao.getById('contact-form-name').value,
-                        email: ao.getById('contact-form-email').value,
-                        message: ao.getById('contact-form-message').value
+                        name: this.name.value,
+                        email: this.email.value,
+                        message: this.message.value
                     };
 
                     $.ajax({
