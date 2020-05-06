@@ -1,56 +1,78 @@
 ---
 layout: post
 title: How to Moq
-excerpt: Moq provides various ways of setting up and verifying behaviour, and I've recently seen confusion over how. So here's a how-to.'
+excerpt: Moq provides various ways of setting up and verifying behaviour, and I've recently seen confusion over how. So here's a quick how-to.
 tags: [C&#35;, Moq, Programming Practices, Automated Testing]
 ---
 
 [Moq](https://github.com/moq/moq4) provides various ways of setting up and verifying behaviour, and 
 I've recently seen confusion over how. So here's some examples and pointers.
 
+### It.Is() for a constant value
+
+A quick one - this:
+
+```csharp
+loggerMock.Setup(l => l.Log(
+    It.Is<string>(msg => msg.Equals("Some logged value"))));
+```
+
+...is the same as this:
+
+```csharp
+loggerMock.Setup(l => l.Log("Some logged value"));
+```
+
 ### Redundant Loose Mock Setups
 
-A _loose_ mock is one ~~with questionable morals~~ which does not throw exceptions when you access 
-its members, and is what you get when you use the parameterless `new Mock<T>()` constructor.
+A _loose_ mock is ~~up for anything~~ one which allows you access its members without explicit 
+`Setup()`s, and is the default created by the parameterless `new Mock<T>()` constructor.
 
 So in the following:
 
 ```csharp
-interface ILogger
-{
-    void Log(string message);
-}
-
 var mockLogger = new Mock<ILogger>();
 mockLogger.Setup(l => l.Log(It.IsAny<string>()));
 
 // Use the mockLogger.Object ILogger in the test
 ```
 
-...calling `logger.Log()` on the mock `ILogger` won't throw an exception, doesn't return a value, 
-and therefore doesn't need to be `Setup()`.
+...calling `logger.Log()` on the mock `ILogger` is allowed, and therefore doesn't need to be 
+`Setup()`.
 
 ### Duplicate Loose Mock Setup() and Verify()
 
+`Verify()` asserts that a given action was performed on a mock during a test. Again with a loose
+mock, the action you're verifying doesn't need to be `Setup()`.
 
-
-### Strict Mock Verify()
-
-This time on a _strict_ mock, which will throw an exception if you access anything which hasn't been
-`Setup()`:
+So in this example:
 
 ```csharp
-var mockLogger = new Mock<ILogger>(MockBehavior.Strict);
-mockLogger.Setup(l => l.Log("BOOM"));
+var mockLogger = new Mock<ILogger>();
+mockLogger.Setup(l => l.Log("Asplode")).Verifiable();
 
 // Use the mockLogger.Object ILogger in the test
 
-mockLogger.Verify(l => l.Log("BOOM"));
-// ...and / or:
-mockLogger.VerifyAll();
+mockLogger.Verify(l => l.Log("Asplode"));
 ```
 
-...in this case the `Setup()` call is necessary as without it the mock will explode when that call 
-is made during the test. However, because we're using a _strict_ mock, there's no point calling either
-`Verify` method - if `Setup` calls aren't made, or calls are made which weren't `Setup`, the mock
-would have thrown an exception.
+...the `Verify()` method is self-contained - it doesn't need the `Setup()` call. 
+
+### Verifiable without VerifyAll()
+
+Marking a `Setup()` as `Verifiable()` includes it in a set of actions which a call to `VerifyAll()`
+will assert have taken place. 
+
+In this example:
+
+```csharp
+var mockLogger = new Mock<ILogger>();
+mockLogger.Setup(l => l.Log("BOOM"))).Verifiable();
+
+// Use the mockLogger.Object ILogger in the test
+
+mockLogger.Verify(l => l.Log("Started"));
+mockLogger.Verify(l => l.Log("Completed"));
+```
+
+...specific `Verify()`s are used instead of a `VerifyAll()`, and `Verifiable()` is unecessary.
