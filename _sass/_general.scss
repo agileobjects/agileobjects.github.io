@@ -19,13 +19,11 @@ body {
 
 a {
     color: $color-accent;
-    text-decoration: underline;
-    -webkit-transition: background .3s ease, color .3s ease;
-    transition: background .3s ease, color .3s ease;
+    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
+a:hover, a:focus {
+    text-decoration: underline;
 }
 
 h1,

@@ -79,6 +79,11 @@
     text-decoration: none;
 }
 
+.post-tags a:hover, .post-tags a:focus,
+.post-share a:hover, .post-share a:focus {
+    text-decoration: underline;
+}
+
 .post-full .post-title {
     font-size: 2.66667rem;
     margin: 0;
@@ -219,6 +224,7 @@ span.updated:first-letter {
 .tag-top-link:hover, .tagcloud a:hover {
     background: $gray-lighter;
     color: $black;
+    text-decoration: none;
 }
 
 ul.archive-posts-list {
