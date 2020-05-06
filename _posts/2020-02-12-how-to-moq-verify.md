@@ -1,12 +1,12 @@
 ---
 layout: post
 title: How to Moq
-excerpt: Moq provides various ways of setting up and verifying behaviour, and I've recently seen confusion over how. So here's a quick how-to.
+excerpt: Moq provides various ways of setting up and verifying behaviour, and I've recently seen some confusion over how. So here's some examples and pointers.
 tags: [C&#35;, Moq, Programming Practices, Automated Testing]
 ---
 
 [Moq](https://github.com/moq/moq4) provides various ways of setting up and verifying behaviour, and 
-I've recently seen confusion over how. So here's some examples and pointers.
+I've recently seen some confusion over how. So here's some examples and pointers.
 
 ### It.Is() for a constant value
 
@@ -23,6 +23,9 @@ loggerMock.Setup(l => l.Log(
 loggerMock.Setup(l => l.Log("Some logged value"));
 ```
 
+`It.Is()` should be used to specify a condition an argument should match, not the complete argument 
+value.
+
 ### Redundant Loose Mock Setups
 
 A _loose_ mock is ~~up for anything~~ one which allows you access its members without explicit 
@@ -37,7 +40,7 @@ mockLogger.Setup(l => l.Log(It.IsAny<string>()));
 // Use the mockLogger.Object ILogger in the test
 ```
 
-...calling `logger.Log()` on the mock `ILogger` is allowed, and therefore doesn't need to be 
+...the mock `ILogger` will allow all `logger.Log()` calls, and they therefore don't need to be 
 `Setup()`.
 
 ### Duplicate Loose Mock Setup() and Verify()
@@ -49,14 +52,14 @@ So in this example:
 
 ```csharp
 var mockLogger = new Mock<ILogger>();
-mockLogger.Setup(l => l.Log("Asplode")).Verifiable();
+mockLogger.Setup(l => l.Log("Asplode"));
 
 // Use the mockLogger.Object ILogger in the test
 
 mockLogger.Verify(l => l.Log("Asplode"));
 ```
 
-...the `Verify()` method is self-contained - it doesn't need the `Setup()` call. 
+...the `Verify()` method is self-contained, and doesn't need the `Setup()` call. 
 
 ### Verifiable without VerifyAll()
 
@@ -76,3 +79,5 @@ mockLogger.Verify(l => l.Log("Completed"));
 ```
 
 ...specific `Verify()`s are used instead of a `VerifyAll()`, and `Verifiable()` is unecessary.
+
+Hope that was helpful for someone :)
