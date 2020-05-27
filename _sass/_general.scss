@@ -141,6 +141,10 @@ li {
     clear: both;
 }
 
+ol li:not(last-child) {
+    margin-bottom: .33334em;
+}
+
 hr {
     background-color: $gray-lighter;
     border: 0;
