@@ -41,6 +41,7 @@ am_docs: 'https://agilemapper.readthedocs.io'
 re_nuget: 'https://www.nuget.org/packages/AgileObjects.ReadableExpressions'
 re_viz: 'https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers'
 re_github: 'https://github.com/agileobjects/ReadableExpressions'
+em_github: 'https://github.com/agileobjects/AgileObjects.Functions.Email'
 
 # Navigation
 navigation:
