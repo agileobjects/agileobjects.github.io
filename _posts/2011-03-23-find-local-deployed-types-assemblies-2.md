@@ -77,7 +77,8 @@ public static class AssemblyExtensions
 
             if ((assemblyFilter == null) || assemblyFilter.Invoke(availableAssembly))
             {
-                IEnumerable<Type> matchingTypesFromThisAssembly = availableAssembly.GetTypes();
+                IEnumerable<Type> matchingTypesFromThisAssembly = 
+                    availableAssembly.GetTypes();
 
                 if (typeFilter != null)
                 {
