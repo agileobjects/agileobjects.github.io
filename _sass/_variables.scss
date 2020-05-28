@@ -3,7 +3,7 @@ $font-title: 'Segoe UI Light', 'Calibri Light', 'Arial Narrow', sans-serif;
 $font-primary: 'Segoe UI', 'Calibri', Arial, sans-serif;
 
 // Colors
-$color-accent: #E3C651;
+$color-accent: #EFE524;
 $black: #1a1a1a;
 $gray-darkest: #1e1e1e;
 $gray-dark: #333;
@@ -14,6 +14,7 @@ $yellow: #fffac4;
 $white: #fff;
 $red: #E55065;
 $green: #50D174;
+$teal: #00aba9;
 
 // Abstractions
 $header-bg-color: $black;
@@ -29,5 +30,8 @@ $body-code-color: $gray-lighter;
 $code-border-color: $gray-light;
 $code-bg-color: $gray-lighter;
 $code-text-color: $gray-darkest;
+
+$updated-bg-color: $teal;
+$updated-text-color: $white;
 
 $form-error-color: $red;

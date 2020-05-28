@@ -26,7 +26,8 @@
 }
 
 .updated {
-    background-color: #00aba9;
+    background-color: $updated-bg-color;
+    color: $updated-text-color;
     display: block;
     padding: .2em .5em;
 }
