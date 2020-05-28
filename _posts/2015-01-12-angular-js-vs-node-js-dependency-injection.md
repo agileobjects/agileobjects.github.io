@@ -2,7 +2,7 @@
 layout: post
 title: Dependency Injection, Angular and Node
 excerpt: My current pet project uses Node, Angular and TypeScript. This is my first time working with Node or Angular and the differences in the way they approach Dependency Injection led to this post.
-tags: [JavaScript, TypeScript, Node.js, Angular.js, Dependency Injection (DI), Programming Practices, Patterns]
+tags: [JavaScript, TypeScript, Node.js, Angular.js, Programming Practices, Patterns, Dependency Injection (DI)]
 ---
 
 [My current pet project](https://github.com/SteveWilkes/BoardGameEngine) is a chess-type board game using 

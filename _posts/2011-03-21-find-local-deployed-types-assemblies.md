@@ -27,10 +27,10 @@ IEnumerable<Type> services = Assembly
 That would dynamically load all the local assemblies, then load each of their types and add any which 
 match the given `typeFilter` to the set of types returned.
 
-I've used this method to set up Enterprise Library Validation; picking out all available `Validator` 
-objects and registering them against the objects they validate, as well as setting up authorisation 
-on a Service Layer using Unity Interception - both with no configuration files or attributes! I've 
-found it very handy indeed for static scope initialisation tasks like these.
+I've used this method to set up [Enterprise Library Validation](auto-configure-enterprise-library-validation); 
+picking out all available `Validator` objects and registering them against the objects they validate, 
+as well as setting up authorisation on a Service Layer using Unity Interception - both with no configuration 
+files or attributes! I've found it very handy indeed for static scope initialisation tasks like these.
 
 Anyway, here's the code - it's in C#4:
 
