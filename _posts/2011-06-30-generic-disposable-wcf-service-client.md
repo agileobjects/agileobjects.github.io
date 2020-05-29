@@ -139,3 +139,6 @@ using (var wrapper = new ManagementServiceClientWrapper(config))
 
 The underlying WCF client created by the `CreateServiceClient()` call will be disposed after the 
 `using()`, and hey presto - a disposable WCF service client.
+
+**Edit**: I've added an example application using the client at 
+[https://bitbucket.org/MrSteve/wcfserviceclientexample](https://bitbucket.org/MrSteve/wcfserviceclientexample).
