@@ -1,0 +1,15 @@
+id: cjdi81iw
+date: 2017-10-04T11:36:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hey Gavin!
+
+  1) If the core website writes URLs in its output to port 80 (or writes relative URLs with no specified port), they'll automatically point back to the webforms site - the URL rewrite happens transparently, so as far as the browser knows the core content comes from port 80.
+ 
+  2) If the rewrite rules point to the IIS Express port and the site is running, I think it will work, yes. I haven't tried it, but I see no reason why it wouldn't be ok :)
+
+  Cheers,<br />
+  Steve

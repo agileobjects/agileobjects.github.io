@@ -1,0 +1,12 @@
+id: idj18jwy
+date: 2017-05-05T08:02:00.2306994Z
+name: Artyom
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Thanks for reply. Well, it's turned out the issue is quite known and not related to asp.net core, but rather to rewriting peer... it looks like no acceptable and working solution found yet, e.g.:
+
+  [https://forums.iis.net/t/1187225.aspx?ARR+POST+requests+causing+502+3+timeouts](https://forums.iis.net/t/1187225.aspx?ARR+POST+requests+causing+502+3+timeouts)
+
+  [https://stackoverflow.com/questions/5475608/iis7-application-request-routing-arr-reverse-proxy-combined-with-managed-modul](https://stackoverflow.com/questions/5475608/iis7-application-request-routing-arr-reverse-proxy-combined-with-managed-modul)

@@ -1,0 +1,15 @@
+id: 82iwmqkw
+date: 2017-10-04T09:22:00.2306994Z
+name: Gavin Sutherland
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Hi Steve ... this is a helpful article. I have a couple questions though:
+
+  1) Using this approach how do you route requests from the Core site back to the Web Forms site? Where it's on a different port number would it require a corresponding rewrite section in it's config?
+
+  2) Can this setup be achieved on developers machines using Visual Studio and IIS Express without the need for a publish of the Core site?
+
+  Thanks,<br />
+  Gavin
