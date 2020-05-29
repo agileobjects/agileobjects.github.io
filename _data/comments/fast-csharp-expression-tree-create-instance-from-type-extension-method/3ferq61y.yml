@@ -1,0 +1,10 @@
+id: 3uqi18qo
+date: 2012-02-20T13:47:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hi Nadav,
+
+  Thanks very much for the feedback - both good spots! - I've now updated the code. As a lock statement would have to cover the entire Cache method I've attended to thread safety by using the dictionary's indexed setter instead of .Add(); it's possible two threads could overlap inside the method, but they'd both add the same thing to the dictionary, so I *think* it's ok. Thanks again! :)

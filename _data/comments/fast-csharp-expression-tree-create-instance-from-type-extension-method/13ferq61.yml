@@ -1,0 +1,10 @@
+id: 11ferq61
+date: 2016-09-19T12:09:00.2306994Z
+name: Thread-Safety
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  To ensure thread-safety, you can also use `ConcurrentDictionary<Type, Func<TArg, TArg2, object>>`
+
+  Kind regards

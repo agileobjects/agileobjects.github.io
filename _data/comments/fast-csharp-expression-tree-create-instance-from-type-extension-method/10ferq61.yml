@@ -1,0 +1,14 @@
+id: 9ferq61y
+date: 2012-02-21T12:31:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hi Nadav,
+
+  Interesting findings! I'll have a play around with that myself soon. Thanks!
+
+  The casting I've referred to is from my first attempt at these methods rather than Activator.CreateInstance() - I've never seen the inside of that.
+
+  For the Ticks measurement I subtracted a start DateTime from an end DateTime; I'm vaguely aware that's not the same thing as StopWatch, but I was only interested in relative speeds.

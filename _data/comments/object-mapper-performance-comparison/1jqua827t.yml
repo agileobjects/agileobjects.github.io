@@ -1,0 +1,14 @@
+id: 1wuq81uq
+date: 2016-11-22T07:55:00.2306994Z
+name: mantzas
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=77b9abe2cc4f99740bdc9592ecbe1b13&size=50
+url: 
+message: |
+  hi,
+
+  you should use benchmarkdotnet project ([https://github.com/dotnet/BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet)) to do the benchmarks and record memory stats with it too(GC etc..)
+
+  Just a thought
+
+  mantzas

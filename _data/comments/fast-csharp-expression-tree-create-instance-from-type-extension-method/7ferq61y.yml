@@ -1,0 +1,7 @@
+id: 7ferq61y
+date: 2012-02-21T09:12:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: Yeah, that's a fair point - the performance test results do show Activator.CreateInstance() as faster in the parameterless case, and I did use it for the parameterless overload in my first attempt at these methods. Then again it's the difference between 2 and 5 ticks, so I think personal taste between absolute speed and consistency plays a part in the decision, too.

@@ -1,0 +1,7 @@
+id: 1hayqiw2
+date: 2013-09-11T05:37:00.2306994Z
+name: ewb
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: Nice work. I appreciate you taking the time to share this and provide an explanation. Having come through a number of MVC implementations I still struggle with this piece of the puzzle - self-building models, auto-mappers, etc. This is another interesting approach. One thing I would like to see is the original Details controller method sample after adoption of the new base controller utilizing ViewModelBuilderLibrary. Anyhow, good stuff - thanks!

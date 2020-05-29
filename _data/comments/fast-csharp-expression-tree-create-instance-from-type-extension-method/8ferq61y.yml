@@ -1,0 +1,18 @@
+id: 8ferq61y
+date: 2012-02-21T09:43:00.2306994Z
+name: Nadav
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Hi Steve,
+
+  I've been playing around with the code trying different things and here are my conclusions:
+
+  1. The caching in the dictionary takes a big chunk of the time, you can get a 40% speed improvement if instead of using Contains()&Get_Item you use TryGetValue().
+
+  2. If you use a ConcurrentDictionary instead of a dictionary (TryGetValue & adding using TryAdd ) you still get a better performance than your code.<br />
+  The strange thing is that GetOrAdd() seems to be slower than (TryGetValue+TryAdd). For one of by test classes it was 20% slower, for the other it was 28 TIMES slower!!!
+
+  For what it's worth, I don't think the bad performance of Activator.CreateInstance is because of the casting. The cost of the casting is insignificant relative to the time it take to execute the CreateInstance function.<br />
+  I think the problem is that the CreateInstance gets it's parameters as object[] and then need to get the types of the parameters out of them. The Activator code probably also uses shared code that is used by the other overrides of CreateInstance so it's probably much more complicated...

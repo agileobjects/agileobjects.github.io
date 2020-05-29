@@ -1,0 +1,22 @@
+id: 12ferq61
+date: 2015-02-14T10:57:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hi Andy,
+
+  You'd have to convert from the name of the Type to a Type object and then call the Type overload - as coincidence would have it the very first (and second) blog(s) I posted were on finding Type objects based on filters, so you could call:
+
+  ```csharp
+  var type = Assembly
+      .GetExecutingAssembly()
+      .GetAvailableTypes(
+          typeFilter: t => (t.Name == "MyTypeName"))
+      .First();
+  
+  var instance = type.GetInstance();
+  ```
+
+  The blog with the Type-finding code is [here](find-local-deployed-types-assemblies-2).

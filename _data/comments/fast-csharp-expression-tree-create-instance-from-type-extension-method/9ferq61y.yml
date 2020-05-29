@@ -1,0 +1,9 @@
+id: 9ferq61y
+date: 2012-02-21T10:30:00.2306994Z
+name: Nadav
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  BTW, what ticks are you using for measurement? StopWatch.ElapsedTicks?<br />
+  If so, then what computer are you running these tests on? My results are 2 orders of magnitude slower than yours...

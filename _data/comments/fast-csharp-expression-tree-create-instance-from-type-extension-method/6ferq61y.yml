@@ -1,0 +1,7 @@
+id: 6ferq61y
+date: 2012-02-21T09:11:00.2306994Z
+name: Hilário Cunha
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: If the type is not known at design time probably the best option is to call Activator.CreateInstance for the parameterless constructor. If i'm not wrong the BCL team have that case optimized.

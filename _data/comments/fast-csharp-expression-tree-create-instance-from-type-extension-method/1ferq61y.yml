@@ -1,0 +1,9 @@
+id: 1uqi18qo
+date: 2012-02-20T14:40:00.2306994Z
+name: Nadav
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Instead of GetConstructorParameterExpressions()<br />
+  can't you just use lamdaParameterExpressions.Take(constructorArgumentTypes.Lenth).ToArray()?

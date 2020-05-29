@@ -1,0 +1,17 @@
+id: 4ferq61y
+date: 2012-02-21T09:09:00.2306994Z
+name: Hilário Cunha
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  For the parameterless constructor you can use the following code.
+
+  ```csharp
+  static T GetInstance<T>() where T : new()
+  {
+      return new T();
+  }
+  ```
+
+  It's much faster.
