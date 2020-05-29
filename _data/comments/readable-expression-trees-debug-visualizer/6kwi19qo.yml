@@ -1,0 +1,10 @@
+id: 6kwi19qo
+date: 2016-08-30T20:24:00.2306994Z
+name: Max
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Any chance you could add an explicit license file to the source code on GitHub? The only license I can find is on the NuGet package.
+
+  By default, open source code is not usable for most if it doesn't have a license, and even looking at it is a bad idea.
