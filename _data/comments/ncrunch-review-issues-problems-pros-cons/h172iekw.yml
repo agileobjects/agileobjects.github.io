@@ -1,0 +1,18 @@
+id: h172iekw
+date: 2012-10-30T11:05:00.2306994Z
+name: Robert TIlling
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Just 2 minor points!
+  
+  "NCrunch (currently) costs $159 (about £100) for a personal licence and $289 (about £180) for a commercial one"
+  
+  You would use the personal one I imagine. All this means is you own it so can take it with you wherever you go.
+  
+  The commercial one is intended to be used by organisations. That way, when a developer leaves the team, the company retains the licence and can assign it to the next person they employ.
+  
+  "NCrunch has two 'engine modes' in which it can run tests for you"
+  
+  I am using 1.41b and it has several engine modes, and you can also design your own. I have one that I sometimes use that runs all tests automatically, unless they are assigned a certain category (e.g. 'Database' or perhaps 'Integration').
