@@ -13,7 +13,7 @@
 #comments-list {
     list-style-type: none;
 
-    li {
+    & > li {
         clear: both;
         line-height: 21px;
         margin-top: 8px;
@@ -40,6 +40,14 @@
             div.comment-body {
                 line-height: 21px;
                 margin-top: 4px;
+
+                p {
+                    margin-bottom: 1em;
+                }
+
+                li > p {
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -47,6 +55,10 @@
             background-color: $black;
             border: 1px solid $color-accent;
         }
+    }
+
+    & > li:nth-child(even) {
+        background: $gray-dark-alt;
     }
 
     .bullet {

@@ -1,0 +1,32 @@
+id: kw9eo3lm
+date: 2011-08-04T05:05:00.2306994Z
+name: Ryan
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=6488193b550d30755030a1906a7c91e6&size=50
+url: 
+message: |
+  Well aside from the fact that I'd probably use an OOB shopping cart (don't reinvent the wheel and all...) there are quite a few changes I'd make.
+
+  Approaching this from a DDD perspective:
+  
+  - You're mixing aggregates in a way that probably doesn't make sense. Customer and Order probably shouldn't be directly connected so I'd have an OrderService with a method like:
+  
+    Order PlaceOrder(Customer, ShoppingCart);
+  
+  - The Customer entity shouldn't have data access logic in it.
+  
+  - You shouldn't use public setters to manipulate state. Wrap state transitions in methods like Order.CreateOrderFor(Customer, ReferenceId, Cart);
+  
+  - orderReference.Trim() bothers me. If that's really necessary couldn't the Order entity do it? (Validate it's inputs)
+  
+  - I don't see any transaction around creating an order. How do you rollback a failure?
+  
+  - Getting the product entities causes a SELECT N+1 scenario. Also, why do you need the whole entity? Isn't an id good enough to create a foreign key?
+  
+  - Unused variable i;
+  
+  - Logging and sending email could be aspects handled outside your entity.
+  
+  - Short of an exception, PlaceOrder doesn't provide any feedback to the caller.
+  
+  Would I get the job? :D

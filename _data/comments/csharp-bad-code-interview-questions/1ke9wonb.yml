@@ -1,0 +1,23 @@
+id: 1ke9wonb
+date: 2011-08-03T22:34:00.2306994Z
+name: Alastair Smith
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=177b8cdf4cd767f8fced70769872af51&size=50
+url: 
+message: |
+  1. I'm just going to catch up-front all the various things like incorrect casing (e.g., sqlserverdatabase.findproduct) and Egyptian notation brackets under the heading "Style doesn't match the coding guidelines published by MS."
+  2. The guard clause for orderReference is assigning the value "" to the variable, not checking that it is "".
+  2a. string.Empty should be used in place of "".
+  2b. An Argument[Null]Exception should be thrown instead of an OrderCreationException().
+  3. orderReference is a string. This feels weakly-typed and I would argue it should be an instance of a separate class.
+  4. Much of the work completed in this method on Customer is actually the responsibility of an Order, thus the class violates the SRP.
+  5. Variable i is assigned but never used
+  5a. The loop should be a foreach, not a for.
+  6. The created Order's Customer property is set outside the constructor, thus making the class mutable and allowing the Customer property to change. I can't think of any reason why an Order would need to be assigned to a different Customer.
+  7. AddOrderItem is dealing directly with Products, when the PlaceOrder() method has an array of OrderedProductData. It would seem more sensible to make use of the OrderedProductData objects directly, because AddOrderItem() is losing any notion of quantities of products ordered.
+  8. The Order is never persisted via the sqlserverdatabase object.
+  8a. The sqlserverdatabase object is poorly-named, given that it seems to be functioning more like a Repository. Except FindProduct() is a static method.
+  9. How does the CommunicationService know where to send the email? It's not clear which of the two of the provided email addresses, if either, is supposed to be the Customer's, and if either of them *are* the Customer's email address, then the address has been hard-coded and one Customer will receive notifications on *all* orders placed.
+  10. Use of string.Format() would tidy up the logging and SendEmail functions.
+  
+  I just kept finding more stuff...!

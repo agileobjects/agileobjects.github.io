@@ -1,0 +1,7 @@
+id: jqiw82le
+date: 2011-08-06T22:25:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: "I've had the same experience, Ryan. Another question I ask is: say you have a Switch class which takes a Light object in its constructor and turns the Light on and off via a Switch.Flip() method - what changes would you make to be able to pass the Switch a CarEngine object? The answer is of course to define (something like) an ISwitchable interface, have Light and CarEngine implement it, and pass Switch an ISwitchable instead of a Light. One applicant (who had years of experience!) suggested we make CarEngine inherit from Light. I wasn't sure what to say."

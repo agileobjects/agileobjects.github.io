@@ -1,0 +1,18 @@
+id: w8ienw72
+date: 2011-08-05T13:03:00.2306994Z
+name: quachnguyen
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Hello admin,
+
+  I think this line cause compiler issues
+  
+  if (orderReference = "")
+  
+  And
+  
+  newOrder.Customer = this;
+  
+  Regards,

@@ -1,0 +1,22 @@
+id: j4l29sjs
+date: 2011-08-03T20:34:11.2306994Z
+name: John Kraft
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=d2595146288eedb58f7c5af8cf78c920&size=50
+url: 
+message: |
+  Here's the ones I picked out in about 30 seconds...
+
+  Place order doesn't belong on Customer. That's like putting a Bake method on a Pizza. The Pizza doesn't cook itself, the Oven cooks the Pizza. Same here. The OrderManager should take the orderReference, products, and customer as parameters.
+
+  orderReference is only checked against "" and not null or whitespace. Should read if(!string.IsNullOrWhitespace(orderReference))
+
+  Usage or newOrder and Product objects without ever checking to see if they are null.
+
+  varable i has no discernable purpose.
+
+  sqlserverdatabase, LoggingService and CommuncationServer should all be injected into the Customer class; and I don't see anywhere that the sqlserverdatabase class is instantiated. I'm assuming the other two are static 'global' classes.
+
+  I'd prefer to use string.Format rather than appending the messages.
+
+  I don't like the usings inside the namespace... but that's stylistic.
