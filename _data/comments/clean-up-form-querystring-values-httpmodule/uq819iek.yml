@@ -1,0 +1,12 @@
+id: uq819iek
+date: 2014-02-04T16:18:00.2306994Z
+name: Samrat Bhattacharjee
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Hi there,
+
+  this is a wonderful post. I was wondering if there is something which could be used to trim a parameter value which has been added by a user after the forms values.
+
+  Example: For my page Test.aspx, there is a text box. When the form parameter gets posted, it comes like test. If someone injects another value at last for the same text box in the posted request, the value would come like 'Test,MallicousValue'. I want to get rid of this injected value. In short, want to get rid of HTTP Parameter Pollution. Please help.

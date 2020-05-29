@@ -1,0 +1,8 @@
+id: tu81uq62
+date: 2014-02-08T12:24:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: "Hi,<br />
+Glad you've found it useful :) If someone decides to post junk to your site, there's not really anything you can do to identify which bits they've sent are junk, and which bits aren't. You could adapt the above HttpModule to add a parameter to requests where HTML tags have been removed or where there are multiple values for the same form key, but you'd have to review flagged requests manually to see if you thought they really were junk."
