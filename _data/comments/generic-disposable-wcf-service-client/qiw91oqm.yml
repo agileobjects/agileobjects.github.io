@@ -1,0 +1,14 @@
+id: qiw91oqm
+date: 2013-02-25T14:07:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hi Mike,
+  
+  I would probably look at using custom WCF Behaviours for those, for example an IClientMessageInspector for updating request headers. Either that or you could update the WebServiceConfig to have an EndpointAddress instead of a string for its Endpoint property, and add a header to that.
+  
+  [https://msdn.microsoft.com/en-us/library/system.servicemodel.dispatcher.iclientmessageinspector.aspx](https://msdn.microsoft.com/en-us/library/system.servicemodel.dispatcher.iclientmessageinspector.aspx)
+  
+  [https://stackoverflow.com/questions/4366412/setting-wcf-endpoint-headers-in-code](https://stackoverflow.com/questions/4366412/setting-wcf-endpoint-headers-in-code)

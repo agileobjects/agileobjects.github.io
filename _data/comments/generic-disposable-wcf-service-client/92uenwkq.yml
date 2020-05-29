@@ -1,0 +1,7 @@
+id: 92uenwkq
+date: 2013-04-30T14:17:53.2306994Z
+name: Jared Thigpen
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: "This solution works very nicely. One tip for anyone trying to use this within an async paradigm: you will probably need to take the explicit Dispose out of the finally block of the Execute methods and let the actual IDisposable.Dispose method clean everything up. Otherwise the client will eager-close the connection before the task is actually executed."

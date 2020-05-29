@@ -1,0 +1,7 @@
+id: jw81oqpx
+date: 2013-02-25T14:07:00.2306994Z
+name: Mike
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: I have been looking on your solution. How would you think that adding/Changing RequestHeaders (Within OperationContextScope) and HttpStatus on exception would be best handling within your solution.
