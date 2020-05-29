@@ -1,0 +1,7 @@
+id: 1hwiuq9q
+date: 2013-02-01T16:32:00.2306994Z
+name: Richard Hill
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: This is pretty cool, both in concept and implementation. In Silverlight, where there is no ConcurrentDictionary, you can use a vanilla Dictionary and the IDictionary.GetOrAdd extension method from [https://nuget.org/packages/netfx-System.Collections.Generic.DictionaryGetOrAdd/1.1.1.1](https://nuget.org/packages/netfx-System.Collections.Generic.DictionaryGetOrAdd/1.1.1.1]).
