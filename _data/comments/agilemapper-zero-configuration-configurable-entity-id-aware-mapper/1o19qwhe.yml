@@ -1,0 +1,16 @@
+id: 1o19qwhe
+date: 2016-10-04T18:19:00.2306994Z
+name: Nicholas Petersen
+email: 
+avatar: httpS://www.gravatar.com/avatar.php?gravatar_id=3565588a0d67326d62362d3db2d2984d&size=50
+url: 
+message: |
+  Definitely worth checking out sir, but it would really help to have a pure code comparison of let's say 10 examples where agilemapper does something (on the left) alongside on the right how to do that in automapper, if even available. It's not exactly clear to me the scope of what agilemapper does that automapper doesn't.
+
+  > "because we couldn't find a way in any of the available mappers to see what would and wouldn't be mapped"
+
+  ...please give a concrete example of what you mean by this! How while coding could you possibly see "what would be mapped", without just looking at the results in a debugger for instance?
+
+  By the way, it would help the clarity of your examples to not use var when the type returned is ambiguous and it's particular the types themselves were interested in.
+
+  Cheers

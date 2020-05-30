@@ -1,0 +1,14 @@
+id: 4wuq81uq
+date: 2016-10-05T19:28:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Hi Robert!
+
+  Thanks! I have to admit, ExpressMapper is a new one on me - I'll add it to future posts comparing features and performance.
+
+  I had specific ideas for things I wanted my mapper to do which didn't sit easily with existing mappers. AutoMapper (and ExpressMapper by the look of it) require up-front registration of the types you want to map - I didn't want to demand that. I wanted to surface the execution plans - I didn't know if that would fit into any of the existing options.
+
+  Still - thanks for the feedback! :)
