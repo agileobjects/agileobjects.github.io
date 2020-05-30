@@ -28,7 +28,6 @@ textarea:focus {
     outline: 0;
 }
 
-button,
 input[type="submit"],
 input[type="button"],
 a.button {
@@ -49,9 +48,6 @@ a.button {
     transition: .3s ease;
 }
 
-button:hover,
-button:focus,
-button:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active,
