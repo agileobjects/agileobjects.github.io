@@ -1,0 +1,22 @@
+id: 1xjw81j2
+date: 2014-01-08T17:12:00.2306994Z
+name: Patrick Smacchia
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  FYI, based on your feedback we modified the default Exception naming rule to take account generic Exception type. This is now delivered in the version 5.4.0 just released today.
+
+  ```csharp
+  // <Name>Exception class name should be suffixed with 'Exception'</Name>
+  warnif count > 0 from t in Application.Types where
+  t.IsExceptionClass &&
+  // We use SimpleName, because in case of generic Exception type
+  // SimpleName suppresses the generic suffix (like <T>).
+  !t.SimpleNameLike (@"Exception$") &&
+  !t.SimpleNameLike (@"ExceptionBase$") // Allow the second suffix Base
+  // for base exception classes.
+  select new { t, t.SimpleName }
+
+  // The name of an exception class should end with 'Exception'.
+  ```

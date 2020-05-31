@@ -1,0 +1,14 @@
+id: 1kqi82je
+date: 2016-02-16T13:28:00.2306994Z
+name: Patrick Smacchia
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  > I certainly agree with the rule in many scenarios - abstracting some types of components is vital to testable code. Are these examples worth fixing? I don't think so.
+
+  It makes perfectly sense to not 'fix/change' this particular.
+
+  On the other hand having a property on your code structure as strong as: 'there is no dependency cycle between namespaces in my code base, no exception to that' is super useful to keep the whole structure sane and maintainable in the long term.
+
+  So by fixing all reported cases, even edge cases like this one, you'll get the benefit of living with this strong property + the additional benefit of making this property verifiable each time NDepend rules are passed.

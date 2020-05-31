@@ -1,0 +1,7 @@
+id: 1kq92ogr
+date: 2013-12-11T07:59:00.2306994Z
+name: Schmulik Raskin
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=eaba77004334cd3a3cdf11e4742adf01&size=50
+url: 
+message: Hi! Thanks for the series, helps that you are using a real-world project. Just wanted to point out that there is a ReSharper attribute, 'UsedImplicitlyAttribute', that is useful on methods called by Reflection. Perhaps NDepend has something similar?

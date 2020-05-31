@@ -1,0 +1,7 @@
+id: 2kq92ogr
+date: 2013-12-11T18:40:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: Hi! Yeah, NDepend has its own attribute for the same purpose, but nicer still because all its metrics and reports come from Linq queries you can edit, you can make the query to look for whatever attribute you like. I'll be summarising the fixes I put in place from the first round of changes at some point, so I'll use the ReSharper one and update NDepend's query. Good tip!
