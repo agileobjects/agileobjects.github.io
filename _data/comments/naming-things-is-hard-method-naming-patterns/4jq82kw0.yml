@@ -1,0 +1,12 @@
+id: 4jq82kw0
+date: 2015-01-01T18:40:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  If I've understood what you mean by 'fluent' correctly Rich, I don't think out parameters *prevent* a fluent interface, but they certainly do make it a lot more awkward to use.
+
+  Jon Skeet wrote a blog not too long ago (which I now can't find) on the TryBlah(out value) pattern, with a different solution using something like the Maybe Type. I really only use it in situations like the example - where I have a series of checks to do which yield values and I want to bail out of the method early if the checks fail.
+
+  Good to hear from you - happy new year! :)

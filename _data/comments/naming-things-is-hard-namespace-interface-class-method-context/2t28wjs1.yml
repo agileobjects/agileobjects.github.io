@@ -1,0 +1,12 @@
+id: 2t28wjs1
+date: 2015-01-11T08:31:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Intellisense is easier to use without the prefix because with it you have to type out 'c u s t o m e r' before you get to the characters which actually differentiate the properties.
+
+  Also (and this is a tiny point, but it's a real one) if it's 'Id' instead of 'CustomerId' then Customer can trivially implement an IEntity { Id } interface (or something like that) if that were to ever come in handy.
+
+  Glad you found it useful in any case :)

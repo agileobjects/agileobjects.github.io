@@ -1,0 +1,10 @@
+id: 3jq82kw0
+date: 2015-01-01T18:24:00.2306994Z
+name: Richard Hill
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  There's another problem with out parameters: they prevent the interface being fluent.
+
+  "Maybe It'll Work, Maybe It Won't". There is a actually a concept in functional programming called a "maybe type". This post suggests an implementation in C#: [https://twistedoakstudios.com/blog/Post1130_when-null-is-not-enough-an-option-type-for-c](https://twistedoakstudios.com/blog/Post1130_when-null-is-not-enough-an-option-type-for-c).

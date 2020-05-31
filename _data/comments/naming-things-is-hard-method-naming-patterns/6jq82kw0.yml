@@ -1,0 +1,7 @@
+id: 6jq82kw0
+date: 2015-01-04T17:21:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: ReSharper's annotations are certainly a useful tool for enforcing null-awareness, but for me the naming convention is simpler and more immediate, as well as being language-, tool- and environment-agnostic, so I wouldn't use `[CanBeNull]` instead.

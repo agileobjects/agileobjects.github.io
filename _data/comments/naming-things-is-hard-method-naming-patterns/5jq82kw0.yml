@@ -1,0 +1,10 @@
+id: 5jq82kw0
+date: 2015-01-04T12:38:00.2306994Z
+name: Enzi
+email: 
+avatar: http://www.gravatar.com/avatar.php?gravatar_id=5dddd9d1835b20d2ca23cad1a3520630&size=50&default=
+url: 
+message: |
+  I'm really fond of ReSharper's Code Annotations: [https://www.jetbrains.com/resharper/webhelp80/Code_Analysis__Code_Annotations.html](https://www.jetbrains.com/resharper/webhelp80/Code_Analysis__Code_Annotations.html)
+
+  Instead of calling a method `GetCustomerOrNull` I just annotate it with `[CanBeNull]`. Callers that do not null-check the result will get a compiler warning (or hint) that the object might be null.

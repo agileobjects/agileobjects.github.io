@@ -1,0 +1,25 @@
+id: 1t28wjs1
+date: 2015-01-11T02:11:00.2306994Z
+name: Bron Squire
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=d8dc161656fd447423038ab100f45556&size=50
+url: 
+message: |
+  Thanks for this article, it has reminded me of some very basic and important naming conventions!
+
+  So many times lately I've ended up in situations like
+
+  ```csharp
+  class Customer
+  {
+    int CustomerId;
+    string CustomerName;
+    // .... etc ....
+    CustomerAddress CustomerCustomerAddress;
+    // .... etc ....
+  }
+  ```
+
+  ... and I've felt dirty and wasteful! I forget about the simple point about context making it obviously what it is.
+
+  The only benefit I like is making intellisense easier, any thoughts on that??

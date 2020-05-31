@@ -1,0 +1,10 @@
+id: 1jq82kw0
+date: 2014-12-31T12:46:00.2306994Z
+name: Johannes
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Great article, thanks. I really like your naming conventions.<br />
+  I just want to add a concern on using out parameters: You can't use them in `async` methods.<br />
+  This may become a problem as more and more methods in the BCL are available `async`-only.
