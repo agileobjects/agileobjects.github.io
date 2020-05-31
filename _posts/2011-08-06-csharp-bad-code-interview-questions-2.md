@@ -2,7 +2,7 @@
 layout: post
 title: Interview question - there's a lot wrong with this code :)
 excerpt: I had some really great responses to my last post regarding some bad code I've shown to interviewees - pretty much everything I intended to be bad was spotted, as well as some interesting points I hadn't considered. Here's the code again along with the bad bits as I saw them, and then I'll go over the extra points raised in the comments.
-tags: [C&#35;, Programming Practices, Patterns, Domain Driven Design (DDD), Dependeny Injection (DI)]
+tags: [C&#35;, Programming Practices, Patterns, Domain Driven Design (DDD), Dependency Injection (DI)]
 ---
 
 I had some really great responses to [my last post](csharp-bad-code-interview-questions) regarding some 
