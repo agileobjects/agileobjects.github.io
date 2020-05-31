@@ -1,0 +1,14 @@
+id: 1j8qi172
+date: 2013-12-02T13:47:00.2306994Z
+name: Simon
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  I've yet to find a company/dev team (in and around London) that is interested in anything along the lines of DDD and BDD. A lot of the devs know all the buzz words but it's like they've skim read the relevant books and blogs purely to pass interviews.
+
+  The current company I'm contracted at (large hedge fund) has folders in the solution for Entities, Value Objects, Repositories, etc (read any more than the headings in the book and you'll realise that grouping should be by feature). All you'll find is auto-properties (c#) in any of the entities and static helper methods in the Value Objects. Aggregates are never mentioned. There are, however, lots and lots of *Manager and *Service classes :)
+
+  I've just found a real apathy towards anything that's not purely technical. Developers are just not interested in understanding the problem domain. They just want a peice of paper that has all the business requirements on so that they can just churn out lines of code (and complain at how bad the business requirements are).
+
+  I know I'm tarring everyone with the same brush, it's just very frustrating that this seems to be the norm.

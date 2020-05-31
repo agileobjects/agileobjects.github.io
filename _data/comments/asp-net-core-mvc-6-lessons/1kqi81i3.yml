@@ -1,0 +1,7 @@
+id: 1kqi81i3
+date: 2016-03-16T17:46:00.2306994Z
+name: Rob Prouse
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=fb02c83f50f10641cace3708e5a2dfe6&size=50
+url: 
+message: Great article. I am starting down the same path, so it is useful. Minor correction though, packages.json is not the Bower packages, it is the Node Package Manager (NPM) packages. The Bower packages are in Bower.json.

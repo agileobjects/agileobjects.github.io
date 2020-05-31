@@ -1,0 +1,7 @@
+id: 3j8qi172
+date: 2013-12-02T20:15:00.2306994Z
+name: Andy Miles
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: Agreed again. And it's the same in the USA. Having coped with the challenge of "learning to program" (or stated correctly "learning the syntax, libraries, and maybe some of the idiomatic use of a language") most developers go straight to "how can we do this" mode and just start coding. Part of it is pressure to get it done quickly; but part of it is fear of "can I even do it". Good developers know you have to consider options and their trade offs before selecting a solution. Poor developers seem to regard thinking things through as analysis paralysis. And then all we get is unmaintainable, technology-coupled anemic models fed by transaction scripts.

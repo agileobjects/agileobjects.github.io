@@ -1,0 +1,10 @@
+id: 5j8qi172
+date: 2013-12-08T10:28:00.2306994Z
+name: Sam Shiles
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  The service/manager plague that infests and continues to infect our code bases is the antithesis of good OO and DDD. Domain models as DTOs are the norm and I don't see that changing any time soon. I don't believe nhibernate helps with this situation much as it places too many constraints on the domain objects themselves and means you end up violating best practices just so your classes play better with nhibernate (think mutability, rich constructors that result in fulling instantiated objects).....oh and all those virtuals (for the love god!).
+
+  The one project I had the fortune of working with Steve on was the exceptional to the rule....you should see what they did to it after we left though!

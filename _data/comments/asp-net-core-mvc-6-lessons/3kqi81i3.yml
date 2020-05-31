@@ -1,0 +1,7 @@
+id: 3kqi81i3
+date: 2016-03-24T17:42:00.2306994Z
+name: Charles Nurse
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=954d212a5355c1747645554f291d0d45&size=50
+url: 
+message: I also had trouble finding package.json. Didn't find your solution but I did reveal it by using the "Show All Files" button in the Solution Explorer toolbar, with the relevant project selected. I like your solution better. Not sure why the default is hidden - I update package.json as often if not more often than project.json.

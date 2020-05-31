@@ -1,0 +1,7 @@
+id: 5kqi81i3
+date: 2016-08-18T17:42:00.2306994Z
+name: Steven Hall
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=44826c184d74516d3bbf706a74052a81&size=50
+url: 
+message: I had the same problem with routing being funky, and I asked on Stack Overflow. The answer is that you have to set attributes on both the class AND each action, or on neither. The other option is to put [action] in the class attribute, like&#58; [Route("[controller]/[action]")]. Here's that SO question&#58; [https://stackoverflow.com/questions/39008789](https://stackoverflow.com/questions/39008789)
