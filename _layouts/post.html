@@ -3,6 +3,8 @@ layout: default
 comments: true
 ---
 
+{% include comments/load.html %}
+
 <main id="main" class="site-main">
 
     <article class="post-full inner">
@@ -15,6 +17,7 @@ comments: true
                 {% unless forloop.last %} {% endunless %}{% endfor %}
             </p>
             {% endif %}
+            {% include comments/link.html %}
         </header><!-- .post-header -->
         {% if page.featured_image %}
         <div class="post-thumbnail">

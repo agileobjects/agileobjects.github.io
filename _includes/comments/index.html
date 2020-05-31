@@ -1,13 +1,4 @@
-﻿{% capture default_slug %}{{ page.slug | default: (page.title | slugify) }}{% endcapture %}
-{% capture slug %}{{ (page.slug | fallback: default_slug) | downcase | replace: '.', '-' }}{% endcapture %}
-{% assign comments_map = site.data.comments[slug] %}
-{% assign comments = site.comments.empty %}
-{% for comment in comments_map %}
-{% assign comments = comments | push: comment[1] %}
-{% endfor %}
-{% assign comment_count = comments | size %}
-{% assign author = site.authors[page.author] %}
-<div id="comments">
+﻿<div id="comments">
     <h2 class="highlight-underline">Comments</h2>
 
     {% include comments/new.html %}

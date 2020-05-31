@@ -204,7 +204,7 @@ span.updated:first-letter {
     clear: both;
 }
 
-.tag-top-link,
+.button-small,
 .tagcloud a {
     border: 1px solid $gray-lighter;
     color: $body-text-color;
@@ -216,14 +216,14 @@ span.updated:first-letter {
     text-decoration: none;
 }
 
-.tag-top-link {
+.button-small {
     color: $body-text-color;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.tag-top-link:hover, .tagcloud a:hover {
+.button-small:hover, .tagcloud a:hover {
     background: $gray-lighter;
     color: $black;
     text-decoration: none;
