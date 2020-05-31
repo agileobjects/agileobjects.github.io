@@ -1,0 +1,12 @@
+id: 2io29amw
+date: 2015-01-14T17:08:00.2306994Z
+name: Steve
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=bc7436a66cd16a47a5a382d2c6e7c6a3&size=50
+url: 
+message: |
+  Thanks for the correction on the module bit - I didn't realise it was synchronous module loading in Node... I don't have strong feelings about sync vs async for module loading on the server, but it's easy to see the advantages on the client. There's then a question of whether you want different methods on the client and server if you're developing one application which spans both.
+
+  The example code probably 'fails' because it's TypeScript rather than JavaScript - the 'import' statement is compiled to a JavaScript 'var' so it doesn't fall over.
+
+  Thanks again for your input! :)

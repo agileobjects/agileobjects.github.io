@@ -1,0 +1,11 @@
+id: 1r82uwje
+date: 2011-08-09T11:41:00.2306994Z
+name: AndyB
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  Steve
+
+  I tried following what you had implemented here, and everything is fine until the last line "context.Response.Redirect(newPath, true);"<br /> 
+  on which the unhandled error for maxium request length is actually thrown and unhandled. This means I am back to square one. Any thoughts?

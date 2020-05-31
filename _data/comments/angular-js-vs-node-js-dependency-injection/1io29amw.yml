@@ -1,0 +1,14 @@
+id: 1io29amw
+date: 2015-01-14T11:12:00.2306994Z
+name: AV
+email: 
+avatar: https://www.gravatar.com/avatar.php?gravatar_id=634fce01841a0d0946b4a575835f44ec&size=50
+url: 
+message: |
+  Okay, would just like to point out some error you had in the nodejs section.
+
+  Node doesn't use AMD, it uses CommonJS (CJS) and it doesn't load objects asynchronously. It loads modules synchronously, but preforms operations in an async manner.
+
+  Your example code staring with "import ..." fails in node 10.x.x and iojs 1.x.x. Something about "import" being a reserved word, which is true. Even running iojs with the following flags fails "iojs --es_staging --harmony_modules test.js".
+
+  I would, however, agree with your point about the second comment you received (requiring inside function). While it will work it will probably cause some problems. And why would you not want all your modules loaded up front when node starts? Node will load everything first, and then once there's no problems start everything.

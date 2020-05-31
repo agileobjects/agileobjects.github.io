@@ -1,0 +1,11 @@
+id: 3r82uwje
+date: 2011-08-10T13:22:00.2306994Z
+name: AndyB
+email: 
+avatar: /assets/images/comments/avatar-unknown.gif
+url: 
+message: |
+  thanks for the prompt response Steve.<br />
+  I did wonder about your custom appSetting "MaxFileUploadSize". So basically, you are circumventing the max file size by maxing the maxRequestLength and then checking against your own custom setting and dealing with your own exception as apposed to the HttpException?
+
+  I guess this is one way round this, but I just thought by now there would be a better way of dealing with it(i.e. it would be a solved problem). I have seen the aysnc file upload control, so maybe that is Microsoft's long term solution, I don't know.
