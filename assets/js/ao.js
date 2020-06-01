@@ -26,14 +26,19 @@
         aoObj._do = doOne;
     }
 
+    var ao = function (elem) {
+        return new AoObj(elem);
+    };
+
     // Instance members
+    // AoObj
     var AoObj = function (elemOrId) {
         this._data = {};
         if (typeof elemOrId === 'undefined') {
             single(this, empty);
         }
         else if (typeof elemOrId === 'string') {
-            single(this, Ao.get(elemOrId));
+            single(this, ao.get(elemOrId));
         }
         else {
             if (isArrayLike(elemOrId)) {
@@ -49,21 +54,6 @@
                 single(this, elemOrId);
             }
         }
-    };
-
-    var AoPopup = function () {
-        AoObj.call(this, 'popup');
-    };
-
-    var AoSubmit = function (formAoObj) {
-        AoObj.call(this, formAoObj.getByCss('input[type="submit"]'));
-    };
-
-    var AoForm = function (form) {
-        AoObj.call(this, form);
-        this._cover = new AoObj('progress-cover');
-        this._popup = new AoPopup();
-        this.submit = new AoSubmit(this);
     };
 
     AoObj.prototype = {
@@ -129,6 +119,11 @@
         }
     };
 
+    // AoSubmit
+    var AoSubmit = function (formAoObj) {
+        AoObj.call(this, formAoObj.getByCss('input[type="submit"]'));
+    };
+
     AoSubmit.prototype = Object.create(AoObj.prototype);
 
     AoSubmit.prototype.confirm = function () {
@@ -141,10 +136,15 @@
         return false;
     };
 
+    // AoPopup
+    var AoPopup = function () {
+        AoObj.call(this, 'popup');
+    };
+
     AoPopup.prototype = Object.create(AoObj.prototype);
 
     AoPopup.prototype.show = function (contentId) {
-        var content = new AoObj(contentId);
+        var content = ao(contentId);
         if (content.getByCss('.message')) {
             this.addClass('with-message');
         }
@@ -156,15 +156,61 @@
         return this.removeClass('with-message');
     };
 
+    // AoValidator
+    function required() {
+        return Boolean(this.e.value);
+    }
+
+    var AoValidator = function (input) {
+        AoObj.call(this, input);
+        this._msg = ao(input.nextElementSibling);
+        this._validators = [];
+        var requiredMsg = input.getAttribute('data-val-required');
+        if (Boolean(requiredMsg)) {
+            this._validators.push({ test: required, msg: requiredMsg });
+        }
+    };
+
+    AoValidator.prototype = Object.create(AoObj.prototype);
+
+    AoValidator.prototype.validate = function () {
+        for (var i = 0, l = this._validators.length; i < l; ++i) {
+            var validator = this._validators[i];
+            if (validator.test.call(this) === false) {
+                this._msg.e.innerHTML = validator.msg;
+                this._msg.removeClass('field-validation-valid').addClass('field-validation-error');
+                return false;
+            }
+        }
+        this._msg.removeClass('field-validation-error').addClass('field-validation-valid');
+        return true;
+    };
+
+    // AoForm
+    var AoForm = function (form) {
+        AoObj.call(this, form);
+        this._cover = ao('progress-cover');
+        this._popup = new AoPopup();
+        this.submit = new AoSubmit(this);
+
+        this._validators = [];
+        for (var i = 0, l = form.length; i < l; ++i) {
+            var input = form[i];
+            if (!Boolean(input.getAttribute('data-val'))) { continue; }
+            this._validators.push(new AoValidator(input));
+        }
+    };
+
     AoForm.prototype = Object.create(AoObj.prototype);
 
     AoForm.prototype.validate = function () {
-        for (var i = 0, l = this.e.length; i < l; ++i) {
-            var input = this.e[i];
-            if (!Boolean(input.getAttribute('data-val'))) { continue; }
-
+        var result = true;
+        for (var i = 0, l = this._validators.length; i < l; ++i) {
+            if (this._validators[i].validate() === false) {
+                result = false;
+            }
         }
-        return false;
+        return result;
     };
 
     AoForm.prototype.submitting = function () {
@@ -192,10 +238,6 @@
     };
 
     // Static members
-    var ao = function (elem) {
-        return new AoObj(elem);
-    };
-
     ao.ready = function (callback) {
         if (document.readyState === 'complete' ||
             (document.readyState !== 'loading' && !document.documentElement.doScroll)) {
