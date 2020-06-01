@@ -3,20 +3,21 @@
         (function (web) {
             var ContactForm = function () {
                 function contactForm() {
-                    this.name = ao.getById('contact-form-name');
-                    this.email = ao.getById('contact-form-email');
-                    this.message = ao.getById('contact-form-message');
-                    this.submitButton = ao.getById('contact-form-submit');
+                    this.name = ao.get('contact-form-name');
+                    this.email = ao.get('contact-form-email');
+                    this.message = ao.get('contact-form-message');
+                    this.submitButton = ao.get('contact-form-submit');
                 };
 
                 contactForm.prototype.handleSend = function (form) {
                     var $form = $(form);
+                    var aoForm = ao.form(form);
 
-                    if (!$form.valid() || !ao.submitConfirm(this.submitButton)) {
+                    if (!$form.valid() || !aoForm.submit.confirm()) {
                         return false;
                     }
 
-                    ao.formSubmitting($form);
+                    aoForm.submitting();
 
                     var formData = {
                         name: this.name.value,
@@ -24,19 +25,18 @@
                         message: this.message.value
                     };
 
-                    $.ajax({
-                        type: 'post',
-                        url: form.action,
-                        data: formData,
-                        xhrFields: {
-                            withCredentials: false
-                        }
-                    }).fail(function () {
-                        ao.formError();
-                    }).done(function () {
-                        ao.formError();
-                        ao.formOk();
-                    });
+                    //$.ajax({
+                    //    type: 'post',
+                    //    url: form.action,
+                    //    data: formData,
+                    //    xhrFields: {
+                    //        withCredentials: false
+                    //    }
+                    //}).fail(function () {
+                    //    ao.form().error();
+                    //}).done(function () {
+                    //    ao.form().ok();
+                    //});
 
                     return false;
                 };
@@ -46,15 +46,15 @@
                         document.location.href = '/';
                         return;
                     }
-                    ao.formReset(ao.$getById('contact-form'));
+                    ao.form().reset();
                 };
 
                 return contactForm;
             }();
 
-            $(function () {
+            ao.ready(function () {
                 web.contactForm = new ContactForm();
             });
-        })(ao.Web || (ao.Web = {}));
-    })(window.AgileObjects || (window.AgileObjects = {}));
+        })(Ao.Web || (Ao.Web = {}));
+    })(Ao);
 })(jQuery);

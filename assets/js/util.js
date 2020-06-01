@@ -8,16 +8,11 @@
             return document.getElementById(id);
         };
 
-        ao.formSubmitting = function ($form) {
-            this._coverForm();
-            this._$getFormElements($form).prop('disabled', true);
-            this._$showPopup('progress').hide().removeClass('hidden').fadeIn();
+        ao.formSubmitting = function () {
         };
 
-        ao.formReset = function ($form) {
-            this._$getPopup().fadeOut().removeClass('with-message');
-            this._$getFormElements($form).prop('disabled', false);
-            this._uncoverForm();
+        ao.formReset = function () {
+            this._$getPopup().fadeOut();
         }
 
         ao.formOk = function () {

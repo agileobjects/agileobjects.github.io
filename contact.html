@@ -11,7 +11,7 @@ contact: true
             <h1 class="post-title">Contact</h1>
         </header>
         <form id="contact-form" action="{{ site.contact.form_action }}" method="post" class="ajax-form"
-              role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this);">
+              role="form" onsubmit="return Ao.Web.contactForm.handleSend(this);">
 
             <input type="text" id="contact-form-name" name="name" class="form-input"
                    placeholder="Your name"

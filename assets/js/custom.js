@@ -29,19 +29,19 @@
 
         // Back to top button
         if (mobile === true) {
-            $toTop.initCanvas();
+            //$toTop.initCanvas();
         }
-        $toTop.click(function (e) {
-            $('html, body').animate({ 'scrollTop': 0 });
-            e.preventDefault();
-        });
+        //$toTop.click(function (e) {
+        //    $('html, body').animate({ 'scrollTop': 0 });
+        //    e.preventDefault();
+        //});
         $window.on('resize scroll', function () {
-            if (mobile === true) {
-                $toTop.initCanvas();
-            } else {
-                $toTop.hide();
-                $toTop.find('canvas').remove();
-            }
+            //if (mobile === true) {
+            //    $toTop.initCanvas();
+            //} else {
+            //    $toTop.hide();
+            //    $toTop.find('canvas').remove();
+            //}
         });
     });
 

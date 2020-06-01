@@ -27,7 +27,7 @@
 <body class="{{ layout }}">
     <div id="page" class="site">
         {% include header.html %}
-        <div id="content" class="site-content fadeInDown delay_075s">
+        <div id="content" class="site-content fade-in-down delay-025s">
             <div class="inner-wide">
                 {{ content }}
 
@@ -45,7 +45,8 @@
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
             integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
             crossorigin="anonymous"></script>
-    <script async src="{{ site.baseurl }}/assets/js/custom.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/ao.js"></script>
+    <script async src="{{ site.baseurl }}/assets/js/custom.js"></script>
     {% if page.layout == 'post' %}
     {% include scripts/comments.html %}
     {% elsif page.contact %}
