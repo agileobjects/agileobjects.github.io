@@ -1,14 +1,14 @@
 ﻿var Ao = (function () {
     // Helpers
     function doOne(callback) {
-        callback.call(this, this.e);
+        callback.call(this, this.e, 0);
         return this;
     }
 
     function doAll(callback) {
         var elems = this.e;
         for (var i = 0, l = elems.length; i < l; ++i) {
-            callback.call(this, elems[i]);
+            callback.call(this, elems[i], i);
         }
         return this;
     }
@@ -116,6 +116,26 @@
             return this._do(function (e) {
                 e.disabled = true;
             });
+        },
+        after: function (elemOrAoObj) {
+            var originElem = elemOrAoObj instanceof AoObj ? elemOrAoObj.e : elemOrAoObj;
+            return this._do(function (e, i) {
+                var elem = i === 0 ? originElem : originElem.cloneNode();
+                e.parentNode.insertBefore(elem, e.nextSibling);
+            });
+        },
+        on: function (eventTypes, callback) {
+            var events = eventTypes.split(' ');
+            var l = events.length;
+            var that = this;
+            var cxtCallback = function () {
+                callback.call(that);
+            };
+            return this._do(function (e) {
+                for (var i = 0; i < l; ++i) {
+                    e.addEventListener(events[i], cxtCallback);
+                }
+            });
         }
     };
 
@@ -157,17 +177,30 @@
     };
 
     // AoValidator
-    function required() {
-        return Boolean(this.e.value);
-    }
+    var emailMatcher = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var validators = {
+        required: function () {
+            return Boolean(this.e.value);
+        },
+        email: function () {
+            return validators.required.call(this) && emailMatcher.test(this.e.value.toLowerCase());
+        }
+    };
+    var validatorNames = Object.keys(validators);
+    var validatorsCount = validatorNames.length;
 
     var AoValidator = function (input) {
         AoObj.call(this, input);
-        this._msg = ao(input.nextElementSibling);
+        this.on('blur keyup', this.validate);
+        this._msg = ao(document.createElement('span')).addClass('error-message');
+        this.after(this._msg);
         this._validators = [];
-        var requiredMsg = input.getAttribute('data-val-required');
-        if (Boolean(requiredMsg)) {
-            this._validators.push({ test: required, msg: requiredMsg });
+        for (var i = 0; i < validatorsCount; ++i) {
+            var validatorName = validatorNames[i];
+            var msg = input.getAttribute('data-val-' + validatorName);
+            if (Boolean(msg)) {
+                this._validators.push({ test: validators[validatorName], msg: msg });
+            }
         }
     };
 

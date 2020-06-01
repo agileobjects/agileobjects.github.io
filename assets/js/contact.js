@@ -5,7 +5,6 @@
                 this.name = ao.get('contact-form-name');
                 this.email = ao.get('contact-form-email');
                 this.message = ao.get('contact-form-message');
-                this.submitButton = ao.get('contact-form-submit');
             };
 
             contactForm.prototype.handleSend = function (form) {
