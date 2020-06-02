@@ -2,7 +2,7 @@
 layout: post
 title: A Generic, Disposable WCF Service Client
 excerpt: WCF clients need to be cleaned up properly, but as they're usually auto-generated they don't implement IDisposable. I've been doing a fair bit of WCF work recently, so I wrote a generic WCF client wrapper which effectively gives me a disposable service client.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, WCF, Programming Practices, Patterns]
+tags: [C&#35;, WCF, Programming Practices, Patterns]
 ---
 
 <span class="updated">

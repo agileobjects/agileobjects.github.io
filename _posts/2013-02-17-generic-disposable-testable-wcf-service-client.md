@@ -2,7 +2,7 @@
 layout: post
 title: A Generic, Disposable, Unit-Testable, Error-Handling WCF Service Client
 excerpt: I recently reused my generic, disposable WCF service client, and made some changes to make it simpler to use and easier to unit test. Here's what I did.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, WCF, Programming Practices, Patterns, Dependency Injection (DI), Automated Testing]
+tags: [C&#35;, WCF, Patterns, Dependency Injection (DI), Automated Testing]
 ---
 
 I recently reused my [generic, disposable WCF service client](generic-disposable-wcf-service-client), 
