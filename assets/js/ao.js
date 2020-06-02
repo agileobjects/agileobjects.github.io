@@ -20,7 +20,10 @@
     }
 
     var empty = {
-        classList: { add: function () { }, remove: function () { } }
+        classList: { add: doNothing, remove: doNothing },
+        style: {},
+        addEventListener: doNothing,
+        dispatchEvent: doNothing
     };
 
     function single(aoObj, elem) {
@@ -41,7 +44,10 @@
         } else if (typeof elemOrId === 'string') {
             single(this, ao.get(elemOrId));
         } else {
-            if (isArrayLike(elemOrId)) {
+            if (elemOrId === window || elemOrId === document || elemOrId === document.body) {
+                single(this, elemOrId);
+            }
+            else if (isArrayLike(elemOrId)) {
                 if (elemOrId.length === 1) {
                     single(this, elemOrId[0]);
                 } else {
@@ -53,6 +59,14 @@
             }
         }
     };
+
+    function registerOrDispatch(eventName, callback) {
+        if (typeof callback === 'function') {
+            return this.on(eventName, callback);
+        }
+        this.e.dispatchEvent(new Event(eventName));
+        return this;
+    }
 
     AoObj.prototype = {
         getByCss: function (selector) {
@@ -71,7 +85,20 @@
                 e.classList.remove(name);
             });
         },
+        toggleClass: function (name) {
+            return this._do(function (e) {
+                e.classList.contains(name)
+                    ? e.classList.remove(name)
+                    : e.classList.add(name);
+            });
+        },
         css: function () {
+            if (arguments.length === 1) {
+                var name = arguments[0];
+                if (typeof name === 'string') {
+                    return getComputedStyle(this.e).getPropertyValue(name);
+                }
+            }
             var namesAndValues = arguments;
             var l = namesAndValues.length;
             return this._do(function (e) {
@@ -122,27 +149,37 @@
                 e.parentNode.insertBefore(elem, e.nextSibling);
             });
         },
-        on: function (eventTypes, callback) {
+        on: function (eventTypes, callback, ctx) {
             var events = eventTypes.split(' ');
             var l = events.length;
-            var that = this;
-            var cxtCallback = function () {
-                callback.call(that);
+            var that = ctx || this;
+            var cxtCallback = function (evt) {
+                callback.call(that, evt);
             };
             return this._do(function (e) {
                 for (var i = 0; i < l; ++i) {
                     e.addEventListener(events[i], cxtCallback);
                 }
             });
+        },
+        click: function (callback) {
+            return registerOrDispatch.call(this, 'click', callback);
+        },
+        blur: function (callback) {
+            return registerOrDispatch.call(this, 'blur', callback);
         }
     };
 
-    // AoSubmit
-    var AoSubmit = function (formAoObj) {
-        AoObj.call(this, formAoObj.getByCss('input[type="submit"]'));
+    ao.derive = function (ctor) {
+        ctor.prototype = Object.create(AoObj.prototype);
+        ctor.prototype._base = AoObj;
+        return ctor;
     };
 
-    AoSubmit.prototype = Object.create(AoObj.prototype);
+    // AoSubmit
+    var AoSubmit = ao.derive(function (formAoObj) {
+        AoObj.call(this, formAoObj.getByCss('input[type="submit"]'));
+    });
 
     AoSubmit.prototype.confirm = function () {
         if (this.e.value === 'Confirm') { return true; }
@@ -155,11 +192,9 @@
     };
 
     // AoPopup
-    var AoPopup = function () {
+    var AoPopup = ao.derive(function () {
         AoObj.call(this, 'popup');
-    };
-
-    AoPopup.prototype = Object.create(AoObj.prototype);
+    });
 
     AoPopup.prototype.show = function (contentId) {
         var content = ao(contentId);
@@ -187,7 +222,7 @@
     var validatorNames = Object.keys(validators);
     var validatorsCount = validatorNames.length;
 
-    var AoValidator = function (input) {
+    var AoValidator = ao.derive(function (input) {
         AoObj.call(this, input);
         this.on('blur keyup', this.validate);
         this._msg = ao(document.createElement('span')).addClass('error-message');
@@ -200,9 +235,7 @@
                 this._validators.push({ test: validators[validatorName], msg: msg });
             }
         }
-    };
-
-    AoValidator.prototype = Object.create(AoObj.prototype);
+    });
 
     AoValidator.prototype.validate = function () {
         for (var i = 0, l = this._validators.length; i < l; ++i) {
@@ -218,7 +251,7 @@
     };
 
     // AoForm
-    var AoForm = function (form) {
+    var AoForm = ao.derive(function (form) {
         AoObj.call(this, form);
         this._cover = ao('progress-cover');
         this._popup = new AoPopup();
@@ -230,9 +263,7 @@
             if (!Boolean(input.getAttribute('data-val'))) { continue; }
             this._validators.push(new AoValidator(input));
         }
-    };
-
-    AoForm.prototype = Object.create(AoObj.prototype);
+    });
 
     AoForm.prototype.validate = function () {
         var result = true;
