@@ -1,109 +1,29 @@
-/**
- * Main JS file for theme behaviours
- */
-(function ($) {
-    "use strict";
+(function (ao) {
+    (function (web) {
+        'use strict';
+        
+        var MenuToggle = ao.derive(function () {
+            this._base.call(this, 'menu-toggle');
 
-    var $window = $(window),
-        $body = $('body'),
-        $menuToggle = $('#menu-toggle'),
-        $toTop = $('#back-to-top'),
-        mobile = false;
+            this.click(function (evt) {
+                ao(document.body).toggleClass('menu--opened');
+                this.blur();
+                evt.preventDefault();
+            });
 
-    $(document).ready(function () {
-
-        detectMobile();
-
-        // Menu on small screens
-        $menuToggle.click(function (e) {
-            $body.toggleClass('menu--opened');
-            $menuToggle.blur();
-            e.preventDefault();
-        });
-        $window.on('resize orientationchange', function () {
-            detectMobile();
-            if (mobile === false) {
-                $body.removeClass('menu--opened');
-            }
+            ao(window).on('resize orientationchange', function () {
+                if (this.isMobile()) {
+                    ao(document.body).removeClass('menu--opened');
+                }
+            }, this);
         });
 
-        // Back to top button
-        if (mobile === true) {
-            $toTop.initCanvas();
-        }
-        $toTop.click(function (e) {
-            $('html, body').animate({ 'scrollTop': 0 });
-            e.preventDefault();
+        MenuToggle.prototype.isMobile = function () {
+            return this.css('display') !== 'none';
+        };
+
+        ao.ready(function () {
+            web.MenuToggle = new MenuToggle();
         });
-        $window.on('resize scroll', function () {
-            if (mobile === true) {
-                $toTop.initCanvas();
-            } else {
-                $toTop.hide();
-                $toTop.find('canvas').remove();
-            }
-        });
-    });
-
-    function detectMobile() {
-        if ($menuToggle.is(':hidden')) {
-            mobile = false;
-        } else {
-            mobile = true;
-        }
-    }
-
-    function calcScrollPct() {
-        var top = $window.scrollTop(),
-            docH = $(document).height(),
-            winH = $window.height(),
-            pct = Math.ceil((top / (docH - winH)) * 10000) / 10000;
-        return pct;
-    }
-
-    $.fn.initCanvas = function () {
-        var _this = $(this),
-            canvas = document.createElement('canvas');
-
-        if (canvas.getContext) {
-            var ctx = canvas.getContext('2d'),
-                options = {
-                    lineWidth: 2,
-                    rotate: 0,
-                    size: _this.height(),
-                    colorProgress: '#d4a259',
-                    colorBackground: '#eee'
-                },
-                perc = calcScrollPct();
-            _this.find('canvas').remove();
-            if (perc < 0.1 && _this.css('opacity') !== 0) {
-                _this.stop().fadeOut(300);
-            } else if (perc >= 0.1) {
-                _this.stop().fadeIn(600);
-                _this.append(canvas);
-                canvas.width = canvas.height = options.size;
-                ctx.translate(options.size / 2, options.size / 2);
-                ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI);
-                drawCircle(options.colorProgress, options.colorBackground, options.lineWidth);
-            }
-        }
-
-        function drawCircle(colorProgress, colorBackground, lineWidth) {
-            ctx.clearRect(-(options.size) / 2, -(options.size) / 2, options.size, options.size);
-            ctx.lineWidth = lineWidth;
-            ctx.lineCap = 'round';
-            // Background circle
-            ctx.beginPath();
-            ctx.arc(0, 0, (options.size - lineWidth) / 2, 0, Math.PI * 2, false);
-            ctx.strokeStyle = colorBackground;
-            ctx.stroke();
-            ctx.closePath();
-            // Progress circle
-            ctx.beginPath();
-            ctx.arc(0, 0, (options.size - lineWidth) / 2, 0, (Math.PI * 2) * perc, false);
-            ctx.strokeStyle = colorProgress;
-            ctx.stroke();
-            ctx.closePath();
-        }
-    };
-}(jQuery));
+    })(Ao.Web || (Ao.Web = {}));
+}(Ao));

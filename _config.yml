@@ -7,7 +7,7 @@ author:
   name: Steve Wilkes
   image: https://avatars1.githubusercontent.com/u/8459425?s=100&v=4
   greetings: "Hello! My name is Steve Wilkes. I'm a senior .NET programmer and hands-on architect from Bristol, UK. I enjoy delivering software."
-favicon: 'assets/images/favicon.ico'
+favicon: 'assets/images/favicon.png'
 baseurl: 
 post_images_dir: '/assets/images/posts/'
 production_url: https://agileobjects.co.uk
@@ -96,3 +96,5 @@ exclude:
   - README.md
   - CNAME
   - .gitignore
+  - '*.csproj'
+  - bundleconfig.json
