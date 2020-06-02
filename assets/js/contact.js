@@ -50,5 +50,5 @@
         ao.ready(function () {
             web.contactForm = new ContactForm();
         });
-    })(Ao.Web || (Ao.Web = {}));
+    })(ao.Web || (ao.Web = {}));
 })(Ao);

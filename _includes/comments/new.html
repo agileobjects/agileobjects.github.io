@@ -1,7 +1,7 @@
 ﻿<div>
 
     <form id="comment-form" action="{{ site.comments.form_action }}" method="post" class="ajax-form"
-          role="form" onsubmit="return AgileObjects.Web.commentForm.handlePost(this);">
+          role="form" onsubmit="return Ao.Web.commentForm.handlePost(this);">
         <input id="post-id" name="post_id" type="hidden" value="{{ slug }}" />
 
         <div id="comment-box">
@@ -12,14 +12,12 @@
                 <textarea id="comment" name="comment" class="form-textarea"
                           placeholder="What do you think?"
                           data-val="true" data-val-required="A comment is required"></textarea>
-                <span class="error-message" data-valmsg-for="comment" data-valmsg-replace="true"></span>
             </div>
         </div>
         <div id="comment-author">
             <input type="text" id="name" name="name" class="form-input"
                    placeholder="Your name" title="The name to display with your comment"
                    data-val="true" data-val-required="Your name is required" />
-            <span class="error-message" data-valmsg-for="name" data-valmsg-replace="true"></span>
 
             <input type="text" id="identity" name="identity" class="form-input"
                    placeholder="email/@twitter/github" value="" />
@@ -49,13 +47,13 @@
         <div id="complete-ok" class="hidden">
             {% include icons/check.html %} <span>Posted</span>
             <span class="message">Thanks for the feedback! Your comment is being moderated, and will appear soon.</span>
-            <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(true);">OK</a>
+            <a class="button" href="JavaScript:Ao.Web.commentForm.handlePosted(true);">OK</a>
         </div>
 
         <div id="complete-error" class="hidden">
             {% include icons/error.html %} <span>Error!</span>
             <span class="message">Something went wrong, and I've been notified. Please try again?</span>
-            <a class="button" href="JavaScript:AgileObjects.Web.commentForm.handlePosted(false);">OK</a>
+            <a class="button" href="JavaScript:Ao.Web.commentForm.handlePosted(false);">OK</a>
         </div>
     </form>
 </div>

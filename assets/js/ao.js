@@ -22,7 +22,7 @@
     }
 
     var empty = {
-        classList: { add: doNothing, remove: doNothing },
+        classList: { contains: function() { return false; }, add: doNothing, remove: doNothing },
         style: {},
         addEventListener: doNothing,
         dispatchEvent: doNothing
@@ -41,7 +41,7 @@
     // AoObj
     var AoObj = function (elemOrId) {
         this._data = {};
-        if (typeof elemOrId === 'undefined') {
+        if (!Boolean(elemOrId)) {
             single(this, empty);
         } else if (typeof elemOrId === 'string') {
             single(this, ao.get(elemOrId));
@@ -132,10 +132,13 @@
         fadeIn: function () {
             return this.removeClass('fade-out').css('opacity', 0).unhide().addClass('fade-in-down');
         },
-        fadeOut: function () {
+        fadeOut: function (callback) {
             this.removeClass('fade-in-down').css('opacity', 1).addClass('fade-out');
             var that = this;
             setTimeout(function () {
+                if (typeof callback === 'function') {
+                    callback.call(that);
+                }
                 that.hide();
                 that = undefined;
             }, 700);
@@ -191,128 +194,7 @@
         return ctor;
     };
 
-    // AoSubmit
-    var AoSubmit = ao.derive(function (formAoObj) {
-        AoObj.call(this, formAoObj.getByCss('input[type="submit"]'));
-    });
-
-    AoSubmit.prototype.confirm = function () {
-        if (this.e.value === 'Confirm') { return true; }
-        this.e.defaultText = this.e.value;
-        this.e.defaultTitle = this.e.title;
-        this.e.value = 'Confirm';
-        this.e.title = 'Click again to confirm';
-        this.addClass('confirm-button');
-        return false;
-    };
-
-    // AoPopup
-    var AoPopup = ao.derive(function () {
-        AoObj.call(this, 'popup');
-    });
-
-    AoPopup.prototype.show = function (contentId) {
-        var content = ao(contentId);
-        if (content.getByCss('.message')) {
-            this.addClass('with-message');
-        }
-        this.html(content.html());
-        return this;
-    };
-
-    AoPopup.prototype.reset = function () {
-        return this.removeClass('with-message');
-    };
-
-    // AoValidator
-    var emailMatcher = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var validators = {
-        required: function () {
-            return Boolean(this.e.value);
-        },
-        email: function () {
-            return validators.required.call(this) && emailMatcher.test(this.e.value.toLowerCase());
-        }
-    };
-    var validatorNames = Object.keys(validators);
-    var validatorsCount = validatorNames.length;
-
-    var AoValidator = ao.derive(function (input) {
-        AoObj.call(this, input);
-        this.on('blur keyup', this.validate);
-        this._msg = ao(document.createElement('span')).addClass('error-message');
-        this.after(this._msg);
-        this._validators = [];
-        for (var i = 0; i < validatorsCount; ++i) {
-            var validatorName = validatorNames[i];
-            var msg = input.getAttribute('data-val-' + validatorName);
-            if (Boolean(msg)) {
-                this._validators.push({ test: validators[validatorName], msg: msg });
-            }
-        }
-    });
-
-    AoValidator.prototype.validate = function () {
-        for (var i = 0, l = this._validators.length; i < l; ++i) {
-            var validator = this._validators[i];
-            if (validator.test.call(this) === false) {
-                this._msg.html(validator.msg);
-                this._msg.removeClass('field-validation-valid').addClass('field-validation-error');
-                return false;
-            }
-        }
-        this._msg.removeClass('field-validation-error').addClass('field-validation-valid');
-        return true;
-    };
-
-    // AoForm
-    var AoForm = ao.derive(function (form) {
-        AoObj.call(this, form);
-        this._cover = ao('progress-cover');
-        this._popup = new AoPopup();
-        this.submit = new AoSubmit(this);
-
-        this._validators = [];
-        for (var i = 0, l = form.length; i < l; ++i) {
-            var input = form[i];
-            if (!Boolean(input.getAttribute('data-val'))) { continue; }
-            this._validators.push(new AoValidator(input));
-        }
-    });
-
-    AoForm.prototype.validate = function () {
-        var result = true;
-        for (var i = 0, l = this._validators.length; i < l; ++i) {
-            if (this._validators[i].validate() === false) {
-                result = false;
-            }
-        }
-        return result;
-    };
-
-    AoForm.prototype.submitting = function () {
-        this._cover.removeClass('hidden');
-        this.disable();
-        this._popup.show('progress').hide().removeClass('hidden').fadeIn();
-        return this;
-    };
-
-    AoForm.prototype.ok = function () {
-        this._popup.show('complete-ok');
-        return this;
-    };
-
-    AoForm.prototype.error = function () {
-        this._popup.show('complete-error');
-        return this;
-    };
-
-    AoForm.prototype.reset = function () {
-        this._popup.fadeOut().reset();
-        this.enable();
-        this._cover.addClass('hidden');
-        return this;
-    };
+    
 
     // Static members
     ao.ready = function (callback) {
@@ -357,6 +239,12 @@
         return str.join('&');
     };
 
+    var emailMatcher = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    ao.isEmail = function(value) {
+        return Boolean(value) && emailMatcher.test(value.toLowerCase());
+    };
+
     // Ajax
     function getXhr() {
         return window.XMLHttpRequest ? new window.XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -385,7 +273,7 @@
                 }
                 response.statusCode = xhr.status;
                 var ctx = opts.hasOwnProperty('ctx') ? opts.ctx : null;
-                if (xhr.status >= 400) {
+                if (xhr.status === 0 || xhr.status >= 400) {
                     opts.onFail.call(ctx, response);
                 } else {
                     try {
@@ -411,13 +299,6 @@
         }
         xhr.setRequestHeader('Content-Type', 'application/' + dataType);
         xhr.send(data);
-    };
-
-    ao.form = function (form) {
-        if (typeof form === 'undefined') {
-            form = document.forms[0];
-        }
-        return new AoForm(form);
     };
 
     return ao;
