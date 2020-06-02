@@ -22,18 +22,18 @@
                     message: this.message.value
                 };
 
-                //$.ajax({
-                //    type: 'post',
-                //    url: form.action,
-                //    data: formData,
-                //    xhrFields: {
-                //        withCredentials: false
-                //    }
-                //}).fail(function () {
-                //    ao.form().error();
-                //}).done(function () {
-                //    ao.form().ok();
-                //});
+                ao.ajax({
+                    type: 'post',
+                    url: form.action,
+                    data: formData,
+                    state: aoForm,
+                    onFail: function(response) {
+                        response.state.error();
+                    },
+                    onSuccess: function(response) {
+                        response.state.ok();
+                    }
+                });
 
                 return false;
             };

@@ -1,5 +1,7 @@
 ﻿var Ao = (function () {
     // Helpers
+    function doNothing() { }
+
     function doOne(callback) {
         callback.call(this, this.e, 0);
         return this;
@@ -36,21 +38,17 @@
         this._data = {};
         if (typeof elemOrId === 'undefined') {
             single(this, empty);
-        }
-        else if (typeof elemOrId === 'string') {
+        } else if (typeof elemOrId === 'string') {
             single(this, ao.get(elemOrId));
-        }
-        else {
+        } else {
             if (isArrayLike(elemOrId)) {
                 if (elemOrId.length === 1) {
                     single(this, elemOrId[0]);
-                }
-                else {
+                } else {
                     this.e = elemOrId;
                     this._do = doAll;
                 }
-            }
-            else {
+            } else {
                 single(this, elemOrId);
             }
         }
@@ -293,6 +291,79 @@
     };
 
     ao.isArrayLike = isArrayLike;
+
+    ao.merge = function (to, from) {
+        for (var propertyName in from) {
+            if (from.hasOwnProperty(propertyName)) {
+                to[propertyName] = from[propertyName];
+            }
+        }
+        return to;
+    };
+
+    ao.serialize = function (obj) {
+        var str = [];
+        for (var propertyName in obj) {
+            if (obj.hasOwnProperty(propertyName)) {
+                str.push(encodeURIComponent(propertyName) + '=' + encodeURIComponent(obj[propertyName]));
+            }
+        }
+        return str.join('&');
+    };
+
+    // Ajax
+    function getXhr() {
+        return window.XMLHttpRequest ? new window.XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    }
+
+    var AjaxOpts = function () { };
+    AjaxOpts.prototype = {
+        type: 'GET',
+        async: true
+    };
+    AjaxOpts.prototype.onFail = doNothing;
+    AjaxOpts.prototype.onSuccess = doNothing;
+
+    var done = 4;
+
+    ao.ajax = function (userOpts) {
+        var opts = ao.merge(new AjaxOpts(), userOpts);
+        var xhr = getXhr();
+        xhr.open(opts.type, opts.url, opts.async);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === done) {
+                var response = Boolean(xhr.responseText) ? JSON.parse(xhr.responseText) : {};
+                response.statusCode = xhr.status;
+                if (opts.hasOwnProperty('state')) {
+                    response.state = opts.state;
+                }
+                if (xhr.status >= 400) {
+                    opts.onFail(response);
+                } else {
+                    try {
+                        opts.onSuccess(response);
+                    } catch (err) {
+                        response.error = err;
+                        opts.onFail(response);
+                    }
+                }
+            }
+        };
+        if (opts.hasOwnProperty('data') === false) {
+            xhr.send();
+            return;
+        }
+        var dataType, data;
+        if (opts.hasOwnProperty('isJson') && opts.isJson === true) {
+            dataType = 'json';
+            data = JSON.stringify(opts.data);
+        } else {
+            dataType = 'x-www-form-urlencoded';
+            data = ao.serialize(opts.data);
+        }
+        xhr.setRequestHeader('Content-Type', 'application/' + dataType);
+        xhr.send(data);
+    };
 
     ao.form = function (form) {
         if (typeof form === 'undefined') {
