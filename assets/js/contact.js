@@ -1,5 +1,7 @@
 (function (ao) {
     (function (web) {
+        'use strict';
+
         var ContactForm = function () {
             function contactForm() {
                 this.name = ao.get('contact-form-name');
@@ -26,13 +28,9 @@
                     type: 'post',
                     url: form.action,
                     data: formData,
-                    state: aoForm,
-                    onFail: function(response) {
-                        response.state.error();
-                    },
-                    onSuccess: function(response) {
-                        response.state.ok();
-                    }
+                    ctx: aoForm,
+                    onFail: function() { this.error(); },
+                    onSuccess: function() { this.ok(); }
                 });
 
                 return false;

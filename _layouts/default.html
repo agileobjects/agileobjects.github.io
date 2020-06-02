@@ -42,13 +42,12 @@
         </div><!-- .site-content -->
     </div><!-- .site -->
     <!-- Javascript Assets -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-            crossorigin="anonymous"></script>
-    <script src="{{ site.baseurl }}/assets/js/ao.js"></script>
-    <script async src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    <script src="/assets/js/ao.min.js"></script>
+    <script async src="/assets/js/custom.min.js"></script>
     {% if page.layout == 'post' %}
     {% include scripts/comments.html %}
+    {% elsif page.search %}
+    {% include scripts/search.html %}
     {% elsif page.contact %}
     {% include scripts/contact.html %}
     {% endif %}

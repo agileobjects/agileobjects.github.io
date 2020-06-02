@@ -1,4 +1,6 @@
 ﻿var Ao = (function () {
+    'use strict';
+
     // Helpers
     function doNothing() { }
 
@@ -60,20 +62,27 @@
         }
     };
 
-    function registerOrDispatch(eventName, callback) {
+    function registerOrDispatch(eventName, callback, ctx) {
         if (typeof callback === 'function') {
-            return this.on(eventName, callback);
+            return this.on(eventName, callback, ctx);
         }
         this.e.dispatchEvent(new Event(eventName));
         return this;
     }
 
     AoObj.prototype = {
-        getByCss: function (selector) {
+        getByCss: function(selector) {
             return this.e.querySelector(selector);
         },
-        getAllByCss: function (selector) {
+        getAllByCss: function(selector) {
             return this.e.querySelectorAll(selector);
+        },
+        html: function(updatedHtml) {
+            if (typeof updatedHtml === 'string') {
+                this.e.innerHTML = updatedHtml;
+                return this;
+            }
+            return this.e.innerHTML;
         },
         addClass: function (name) {
             return this._do(function (e) {
@@ -162,11 +171,17 @@
                 }
             });
         },
-        click: function (callback) {
-            return registerOrDispatch.call(this, 'click', callback);
+        click: function (callback, ctx) {
+            return registerOrDispatch.call(this, 'click', callback, ctx);
         },
-        blur: function (callback) {
-            return registerOrDispatch.call(this, 'blur', callback);
+        blur: function (callback, ctx) {
+            return registerOrDispatch.call(this, 'blur', callback, ctx);
+        },
+        keyup: function (callback, ctx) {
+            return registerOrDispatch.call(this, 'keyup', callback, ctx);
+        },
+        clear: function() {
+            return this.html('');
         }
     };
 
@@ -201,7 +216,7 @@
         if (content.getByCss('.message')) {
             this.addClass('with-message');
         }
-        this.e.innerHTML = content.e.innerHTML;
+        this.html(content.html());
         return this;
     };
 
@@ -241,7 +256,7 @@
         for (var i = 0, l = this._validators.length; i < l; ++i) {
             var validator = this._validators[i];
             if (validator.test.call(this) === false) {
-                this._msg.e.innerHTML = validator.msg;
+                this._msg.html(validator.msg);
                 this._msg.removeClass('field-validation-valid').addClass('field-validation-error');
                 return false;
             }
@@ -348,10 +363,7 @@
     }
 
     var AjaxOpts = function () { };
-    AjaxOpts.prototype = {
-        type: 'GET',
-        async: true
-    };
+    AjaxOpts.prototype = { type: 'GET', async: true };
     AjaxOpts.prototype.onFail = doNothing;
     AjaxOpts.prototype.onSuccess = doNothing;
 
@@ -363,19 +375,24 @@
         xhr.open(opts.type, opts.url, opts.async);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === done) {
-                var response = Boolean(xhr.responseText) ? JSON.parse(xhr.responseText) : {};
-                response.statusCode = xhr.status;
-                if (opts.hasOwnProperty('state')) {
-                    response.state = opts.state;
+                var response = {};
+                if (Boolean(xhr.responseText)) {
+                    try {
+                        response.data = JSON.parse(xhr.responseText);
+                    } catch (parseErr) {
+                        response.data = xhr.responseText;
+                    }
                 }
+                response.statusCode = xhr.status;
+                var ctx = opts.hasOwnProperty('ctx') ? opts.ctx : null;
                 if (xhr.status >= 400) {
-                    opts.onFail(response);
+                    opts.onFail.call(ctx, response);
                 } else {
                     try {
-                        opts.onSuccess(response);
+                        opts.onSuccess.call(ctx, response);
                     } catch (err) {
                         response.error = err;
-                        opts.onFail(response);
+                        opts.onFail.call(ctx, response);
                     }
                 }
             }

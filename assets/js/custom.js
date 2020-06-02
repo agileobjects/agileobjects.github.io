@@ -1,8 +1,7 @@
-/**
- * Main JS file for theme behaviours
- */
 (function (ao) {
     (function (web) {
+        'use strict';
+        
         var MenuToggle = ao.derive(function () {
             this._base.call(this, 'menu-toggle');
 
