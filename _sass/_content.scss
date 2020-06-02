@@ -145,7 +145,6 @@ span.updated:first-letter {
     }
 }
 
-.comments-area,
 .read-next,
 .tagcloud {
     margin-bottom: 3.33333em;
@@ -153,7 +152,6 @@ span.updated:first-letter {
 }
 
 .post-feed-title,
-.comments-title,
 .read-next-title,
 .tagcloud-title {
     color: $body-subheading-color;
@@ -167,7 +165,6 @@ span.updated:first-letter {
 }
 
 .post-feed-title:after,
-.comments-title:after,
 .read-next-title:after,
 .tagcloud-title:after,
 .page-header:after {
@@ -234,7 +231,7 @@ ul.archive-posts-list {
     padding-left: 0;
 
     li {
-        margin-bottom: 0.5555555555555556em
+        margin-bottom: 0.5556em
     }
 }
 
@@ -255,56 +252,6 @@ ul.archive-posts-list {
     line-height: 1.5;
     margin: 0.25em 0 0;
     text-transform: uppercase;
-}
-
-/* Error pages */
-
-.error-template {
-    background-color: $gray-darkest;
-    color: $gray-light;
-}
-
-.error-cover {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-    left: 0;
-    opacity: 0.15;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.error-template .site {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.error-template .site-content {
-    margin: 0;
-    text-align: center;
-}
-
-.error-code {
-    color: #fff;
-    font-size: 4rem;
-    margin: 0;
-}
-
-.error-link {
-    font-family: $font-primary;
-    font-style: italic;
-}
-
-.error-link:hover {
-    color: $gray-light;
 }
 
 /* Hero section */

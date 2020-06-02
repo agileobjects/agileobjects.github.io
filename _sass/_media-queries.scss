@@ -80,26 +80,6 @@
     }
 }
 
-@media only screen and (min-width: 701px) {
-    .sl-wrapper .sl-close {
-        right: 15px;
-        top: 15px;
-    }
-
-    .sl-wrapper .sl-next {
-        right: 15px;
-    }
-
-    .sl-wrapper .sl-prev {
-        left: 15px;
-    }
-
-    .sl-wrapper .sl-counter {
-        bottom: 15px;
-        right: 15px;
-    }
-}
-
 @media only screen and (min-width: 801px) {
     .site-content {
         margin-left: 30vw;
@@ -217,16 +197,9 @@
 }
 
 @media only screen and (min-width: 1086px) {
-    .kg-gallery-card {
-        margin-left: calc(510px - 47vw);
-        margin-right: calc(510px - 47vw);
-    }
-
     .post-full .post-thumbnail,
     .post-content img[src$='#wide'],
-    .post-content img[src$='#full'],
-    .kg-width-wide .kg-image,
-    .kg-width-full .kg-image {
+    .post-content img[src$='#full'] {
         margin-left: calc(510px - 47vw);
         margin-right: calc(510px - 47vw);
         max-width: none;
@@ -235,16 +208,9 @@
 }
 
 @media only screen and (min-width: 1469px) {
-    .kg-gallery-card {
-        margin-left: -180px;
-        margin-right: -180px;
-    }
-
     .post-full .post-thumbnail,
     .post-content img[src$='#wide'],
-    .post-content img[src$='#full'],
-    .kg-width-wide .kg-image,
-    .kg-width-full .kg-image {
+    .post-content img[src$='#full'] {
         margin-left: -180px;
         margin-right: -180px;
         max-width: none;
@@ -330,45 +296,6 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .sl-wrapper button {
-        height: 30px;
-        width: 30px;
-    }
-
-    .sl-close .icon-close {
-        width: 20px;
-    }
-
-    .sl-navigation .icon-arrow-left,
-    .sl-navigation .icon-arrow-right {
-        height: 2px;
-        width: 20px;
-    }
-
-    .sl-navigation .icon-arrow-left:before,
-    .sl-navigation .icon-arrow-right:before {
-        height: 8px;
-        width: 8px;
-    }
-
-    .sl-wrapper .sl-close {
-        right: 0;
-        top: 0;
-    }
-
-    .sl-wrapper .sl-next {
-        right: 0;
-    }
-
-    .sl-wrapper .sl-prev {
-        left: 0;
-    }
-
-    .sl-wrapper .sl-counter {
-        bottom: 3px;
-        right: 3px;
-    }
-
     .hero-text {
         font-size: 1.33333rem;
     }
