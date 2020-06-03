@@ -28,6 +28,10 @@ textarea:focus {
     outline: 0;
 }
 
+.form-textarea {
+    min-height: 180px;
+}
+
 input[type="submit"],
 input[type="button"],
 a.button {
@@ -96,7 +100,6 @@ input.confirm-button {
 }
 
 /* Form progress */
-
 .ajax-form {
     position: relative;
 }
@@ -168,4 +171,27 @@ input.confirm-button {
 #icon-error {
     color: $red;
     width: 30px;
+}
+
+/* Tooltips */
+.has-tooltip {
+    display: inline-block;
+    position: relative;
+
+    .tooltip {
+        background-color: $tooltip-bg-color;
+        border: 1px solid $gray-lighter;
+        color: $tooltip-text-color;
+        font-size: 80%;
+        left: 23px;
+        padding: 3px 5px;
+        position: absolute;
+        visibility: hidden;
+        width: 180px;
+        z-index: 1;
+    }
+
+    &:hover .tooltip {
+        visibility: visible;
+    }
 }

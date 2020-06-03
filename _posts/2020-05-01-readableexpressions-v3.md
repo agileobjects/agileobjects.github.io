@@ -30,20 +30,20 @@ Colourized with Visual Studio 2019's light theme colours!
 
 The options menu let you switch the theme - perhaps you prefer dark? (as I obviously do):
 
-![v3 dark theme]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark.gif#light-border)
+![v3 dark theme]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark.gif#medium-border)
 
 There's also various ways to customise the translation - maybe you'd prefer to declare out parameter 
 variable inline:
 
-![v3 out param declared inline]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline.gif#light-border)
+![v3 out param declared inline]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline.gif#medium-border)
 
 ...and perhaps you'd rather use the parameter type name, instead of `var`:
 
-![v3 out param declared with type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit.gif#light-border)
+![v3 out param declared with type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit.gif#medium-border)
 
 ...or be shown the type of the lambda's `ip` parameter:
 
-![v3 with lambda parameter type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit-lambda-param.gif#light-border)
+![v3 with lambda parameter type name]({{ site.post_images_dir }}{{ page.images_dir }}v3-dark-inline-explicit-lambda-param.gif#medium-border)
 
 ## More to come
 

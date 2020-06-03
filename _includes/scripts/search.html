@@ -1,0 +1,10 @@
+﻿<script type="text/javascript" src="/assets/js/ao-search.min.js"></script>
+<script type="text/javascript">
+    Ao.search({
+        input: 'search-input',
+        output: 'search-results',
+        url: '{{ site.baseurl }}/search.json',
+        template: '<li><a href="{url}" title="{desc}">{title}</a><span class="post-meta"><time class="published" datetime="{date}">{date}</time></span></li>',
+        limit: 15
+    });
+</script>

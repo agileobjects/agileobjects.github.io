@@ -1,14 +1,21 @@
 [
   {
-    "outputFileName": "assets/js/util.min.js",
+    "outputFileName": "assets/js/ao.min.js",
     "inputFiles": [
-      "assets/js/util.js"
+      "assets/js/ao.js",
+      "assets/js/custom.js"
     ]
   },
   {
-    "outputFileName": "assets/js/custom.min.js",
+    "outputFileName": "assets/js/ao-forms.min.js",
     "inputFiles": [
-      "assets/js/custom.js"
+      "assets/js/ao-forms.js"
+    ]
+  },
+  {
+    "outputFileName": "assets/js/ao-search.min.js",
+    "inputFiles": [
+      "assets/js/ao-search.js"
     ]
   },
   {

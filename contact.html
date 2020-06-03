@@ -11,26 +11,20 @@ contact: true
             <h1 class="post-title">Contact</h1>
         </header>
         <form id="contact-form" action="{{ site.contact.form_action }}" method="post" class="ajax-form"
-              role="form" onsubmit="return AgileObjects.Web.contactForm.handleSend(this);">
+              role="form" onsubmit="return Ao.Web.contactForm.handleSend(this);">
 
             <input type="text" id="contact-form-name" name="name" class="form-input"
                    placeholder="Your name"
                    data-val="true" data-val-required="Your name is required" />
-            <span class="error-message"
-                  data-valmsg-for="name" data-valmsg-replace="true"></span>
 
             <input type="text" id="contact-form-email" name="email" class="form-input"
                    placeholder="Your email address"
                    data-val="true" data-val-required="Your email is required"
                    data-val-email="That's not a valid email address" />
-            <span class="error-message"
-                  data-valmsg-for="email" data-valmsg-replace="true"></span>
 
             <textarea id="contact-form-message" name="message" class="form-textarea"
                       placeholder="Your message"
                       data-val="true" data-val-required="A message is required"></textarea>
-            <span class="error-message"
-                  data-valmsg-for="message" data-valmsg-replace="true"></span>
 
             <input id="contact-form-submit" type="submit" value="Send" />
 
@@ -44,11 +38,11 @@ contact: true
             </div>
 
             <div id="complete-ok" class="hidden">
-                {% include icons/check.html %} <span>Sent</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(true);">OK</a>
+                {% include icons/check.html %} <span>Sent</span> <a class="button" href="JavaScript:Ao.Web.contactForm.handleSent(true);">OK</a>
             </div>
 
             <div id="complete-error" class="hidden">
-                {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:AgileObjects.Web.contactForm.handleSent(false);">OK</a>
+                {% include icons/error.html %} <span>Error!</span> <a class="button" href="JavaScript:Ao.Web.contactForm.handleSent(false);">OK</a>
             </div>
         </form>
     </div><!-- .inner-->

@@ -13,29 +13,29 @@ ul.search-results {
     list-style: none;
     padding-left: 0px;
     padding-right: 0px;
-}
 
-.search-results li {
-    border-bottom: 1px solid $gray-lighter;
-    overflow: hidden;
-    padding-bottom: 0.8333334em;
-    padding-top: 0.555556em;
+    li {
+        border-bottom: 1px solid $gray-lighter;
+        overflow: hidden;
+        padding-bottom: 0.8333334em;
+        padding-top: 0.555556em;
 
-    &:last-child {
-        border-bottom: 0;
-    }
+        &:last-child {
+            border-bottom: 0;
+        }
 
-    a {
-        float: left;
-        text-decoration: none;
+        a {
+            float: left;
+            text-decoration: none;
 
-        &:hover, &:focus {
-            text-decoration: underline;
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        .post-meta {
+            display: block;
+            margin-bottom: 0;
         }
     }
-}
-
-.search-results li .post-meta {
-    display: block;
-    margin-bottom: 0;
 }

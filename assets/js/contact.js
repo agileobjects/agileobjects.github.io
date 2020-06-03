@@ -1,60 +1,54 @@
-(function ($) {
-    (function (ao) {
-        (function (web) {
-            var ContactForm = function () {
-                function contactForm() {
-                    this.name = ao.getById('contact-form-name');
-                    this.email = ao.getById('contact-form-email');
-                    this.message = ao.getById('contact-form-message');
-                    this.submitButton = ao.getById('contact-form-submit');
-                };
+(function (ao) {
+    (function (web) {
+        'use strict';
 
-                contactForm.prototype.handleSend = function (form) {
-                    var $form = $(form);
+        var ContactForm = function () {
+            function contactForm() {
+                this.name = ao.get('contact-form-name');
+                this.email = ao.get('contact-form-email');
+                this.message = ao.get('contact-form-message');
+            };
 
-                    if (!$form.valid() || !ao.submitConfirm(this.submitButton)) {
-                        return false;
-                    }
+            contactForm.prototype.handleSend = function (form) {
+                var aoForm = ao.form(form);
 
-                    ao.formSubmitting($form);
-
-                    var formData = {
-                        name: this.name.value,
-                        email: this.email.value,
-                        message: this.message.value
-                    };
-
-                    $.ajax({
-                        type: 'post',
-                        url: form.action,
-                        data: formData,
-                        xhrFields: {
-                            withCredentials: false
-                        }
-                    }).fail(function () {
-                        ao.formError();
-                    }).done(function () {
-                        ao.formError();
-                        ao.formOk();
-                    });
-
+                if (!aoForm.validate() || !aoForm.submit.confirm()) {
                     return false;
+                }
+
+                aoForm.submitting();
+
+                var formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    message: this.message.value
                 };
 
-                contactForm.prototype.handleSent = function (sent) {
-                    if (sent) {
-                        document.location.href = '/';
-                        return;
-                    }
-                    ao.formReset(ao.$getById('contact-form'));
-                };
+                ao.ajax({
+                    type: 'post',
+                    url: form.action,
+                    data: formData,
+                    ctx: aoForm,
+                    onFail: function() { this.error(); },
+                    onSuccess: function() { this.ok(); }
+                });
 
-                return contactForm;
-            }();
+                return false;
+            };
 
-            $(function () {
-                web.contactForm = new ContactForm();
-            });
-        })(ao.Web || (ao.Web = {}));
-    })(window.AgileObjects || (window.AgileObjects = {}));
-})(jQuery);
+            contactForm.prototype.handleSent = function (sent) {
+                if (sent) {
+                    document.location.href = '/';
+                    return;
+                }
+                ao.form().reset();
+            };
+
+            return contactForm;
+        }();
+
+        ao(function () {
+            web.contactForm = new ContactForm();
+        });
+    })(ao.Web || (ao.Web = {}));
+})(Ao);
