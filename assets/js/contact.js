@@ -47,7 +47,7 @@
             return contactForm;
         }();
 
-        ao.ready(function () {
+        ao(function () {
             web.contactForm = new ContactForm();
         });
     })(ao.Web || (ao.Web = {}));

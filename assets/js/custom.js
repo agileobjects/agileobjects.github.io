@@ -22,7 +22,7 @@
             return this.css('display') !== 'none';
         };
 
-        ao.ready(function () {
+        ao(function () {
             web.MenuToggle = new MenuToggle();
         });
     })(Ao.Web || (Ao.Web = {}));

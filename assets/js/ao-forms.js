@@ -54,15 +54,15 @@
         this._base.call(this, input);
 
         this.on('blur keyup', this.validate);
-        this._msg = ao(this.e.nextElementSibling);
-        if (this._msg.e.classList.contains('error-message') === false) {
-            this._msg = ao(document.createElement('span')).addClass('error-message');
+        this._msg = ao(input.nextElementSibling);
+        if (this._msg.hasClass('error-message') === false) {
+            this._msg = ao('<span>').addClass('error-message');
             this.after(this._msg);
         }
         this._validators = [];
         for (var i = 0; i < validatorsCount; ++i) {
             var validatorName = validatorNames[i];
-            var msg = input.getAttribute('data-val-' + validatorName);
+            var msg = this.attr('data-val-' + validatorName);
             if (Boolean(msg)) {
                 this._validators.push({ test: validators[validatorName], msg: msg });
             }
@@ -139,4 +139,17 @@
         }
         return new AoForm(form);
     };
+
+    ao(function () {
+        var tooltips = ao.getAllByCss('.has-tooltip');
+        for (var i = 0, l = tooltips.length; i < l; ++i) {
+            var tooltipOwner = ao(tooltips[i]);
+            var text = tooltipOwner.attr('data-tooltip');
+            var tooltip = ao('<span>').addClass('tooltip').html(text);
+            tooltipOwner.removeAttr('data-tooltip').append(tooltip);
+            var pos = tooltipOwner.attr('data-tooltip-pos');
+            if (!Boolean(pos)) { continue; }
+            tooltip.css('left', 'auto', 'right', 0, 'bottom', '29px');
+        }
+    });
 })(Ao);

@@ -5,7 +5,7 @@
         <input id="post-id" name="post_id" type="hidden" value="{{ slug }}" />
 
         <div id="comment-box">
-            <img id="avatar-preview" class="avatar light-border" data-role="user-avatar"
+            <img id="avatar-preview" class="avatar medium-border" data-role="user-avatar"
                  src="{{ site.baseurl }}/assets/images/comments/avatar-unknown.gif" alt="avatar" />
 
             <div id="comment-text">
@@ -21,7 +21,7 @@
 
             <input type="text" id="identity" name="identity" class="form-input"
                    placeholder="email/@twitter/github" value="" />
-            <span class="icon-wrapper" title="Identity is only used to generate an avatar. It is not submitted with the form.">
+            <span class="icon-wrapper has-tooltip" data-tooltip="Identity is only used to generate an avatar. It is not submitted with the form.">
                 {% include icons/info.html %}
             </span>
 
@@ -29,7 +29,8 @@
 
             <div id="remember-me">
                 <input type="checkbox" id="remember" name="remember"><label for="remember">Remember me</label>
-                <span title="Stores your name and email in the browser so you don't have to fill out the form again. This does not set a cookie.">
+                <span class="has-tooltip" data-tooltip-pos="above-left"
+                      data-tooltip="Stores your name and email in the browser so you don't have to fill out the form again. Does not set a cookie.">
                     {% include icons/info.html %}
                 </span>
             </div>

@@ -138,7 +138,7 @@
             return commentForm;
         }();
 
-        ao.ready(function () {
+        ao(function () {
             web.commentForm = new CommentForm();
             web.commentForm.load();
         });
