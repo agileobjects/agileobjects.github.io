@@ -2,7 +2,7 @@
 layout: post
 title: C# Performance&#58; new vs Func vs Activator.CreateInstance()
 excerpt: I recently wrote an extension method which uses an Expression Tree to create a Func which creates an instance of an object from its Type. With that done I thought I'd check the performance difference between my method and Activator.CreateInstance(), which it was intended to replace. Here's what I found.
-tags: [C&#35;, Expression Trees, Programming Practices, Performance]
+tags: [Expression Trees, Performance]
 images_dir: '2012-02-11/'
 ---
 

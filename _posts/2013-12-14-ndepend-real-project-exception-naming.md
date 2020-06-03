@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project, Round 1.3&#58; An Exception by Any Other Name...
 excerpt: This is the third in a series of blogs looking at things NDepend told me about a personal project of mine - this time a curious problem with Exception naming.
-tags: [C&#35;, NDepend, Programming Practices]
+tags: [NDepend]
 images_dir: '2013-12-14/'
 ---
 

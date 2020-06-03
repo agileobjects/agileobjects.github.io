@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project, Round 1.2&#58; Dead Methods
 excerpt: This is the second in a series of blogs about things NDepend told me about a personal project of mine. This time, methods which are apparently never called.
-tags: [C&#35;, NDepend, Programming Practices]
+tags: [NDepend]
 images_dir: '2013-12-08/'
 ---
 

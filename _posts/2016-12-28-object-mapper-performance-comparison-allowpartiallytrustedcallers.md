@@ -2,7 +2,7 @@
 layout: post
 title: Mapper vs Mapper&#58; The Performance Plot Thickens
 excerpt: The last mapper performance blog (for a while, at least), including updated versions of AgileMapper, AutoMapper and Mapster, and discussion of some performance nuances.
-tags: [C&#35;, AgileMapper, Programming Practices]
+tags: [AgileMapper, AutoMapper, Performance]
 ---
 
 Ok, first of all, I'm definitely going to write about something other than mapper performance soon.

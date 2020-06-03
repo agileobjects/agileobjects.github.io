@@ -2,7 +2,7 @@
 layout: post
 title: Using an HttpModule to Redirect a Request When an Uploaded File is Too Big
 excerpt: Today I wanted to build something into an ASP.NET MVC application to impose a size limit on uploaded files. I wanted to use an HttpModule so I could get at the upload before any Controllers got involved, and redirect the request if the file was too big. I did this without much fuss, but the redirect went to an ASP.NET "Maximum request length exceeded" error page. I just wanted to do a redirect, darnit!
-tags: [C&#35;, ASP.NET, ASP.NET MVC, Patterns]
+tags: [ASP.NET, ASP.NET MVC]
 ---
 
 <span class="updated">

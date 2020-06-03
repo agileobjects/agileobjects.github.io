@@ -2,7 +2,7 @@
 layout: post
 title: Extending WatiN 3&#58; Detecting if a PDF Has Opened In a New Window
 excerpt: WatiN lets you attach to browser windows so you can verify their contents and close them as part of your tests, but the standard API doesn't detect windows with PDF documents in them. Here's an extension method which does.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, JavaScript, JQuery, Automated Testing]
+tags: [JavaScript, JQuery, Automated Testing]
 ---
 
 [WatiN](https://watin.org) lets you attach to browser windows so you can verify their contents and 

@@ -2,7 +2,7 @@
 layout: post
 title: Fixing Chrome's AJAX Request Caching Bug
 excerpt: I recently had to make a set of web pages restore their state when the user arrived on them after clicking the browser's back button. I used JQuery's ajax function to get the data, but even with JQuery's cache&#58; false setting and MVC's OutputCache attribute, Chrome insisted on retrieving it from its cache. Here's how I solved the problem.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, JavaScript, JQuery]
+tags: [JavaScript, JQuery, Ajax]
 ---
 
 I recently had to make a set of web pages restore their state when the user arrived on them after 

@@ -2,7 +2,7 @@
 layout: post
 title: AgileMapper&#58; a zero-configuration, highly configurable, transparent, id-aware object mapper
 excerpt: Regular readers of my blog (maybe even both of you) will have seen sporadic references to 'my pet mapper project'. It's now - finally! - in a beta stage I'm happy to talk about.
-tags: [C&#35;, AgileMapper, ReadableExpressions, Expression Trees, Programming Practices]
+tags: [AgileMapper, Expression Trees]
 ---
 
 Regular readers of my blog (maybe even both of you) will have seen sporadic references to 'my pet

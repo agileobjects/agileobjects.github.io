@@ -2,7 +2,7 @@
 layout: post
 title: CSProj to XProj&#58; Supporting .NET Core using the Preview tools
 excerpt: With the RTM of the lovely .NET Core, I've now added support for .NET Standard 1.0 to ReadableExpressions and AgileMapper. Here's a step-by-step of how I added the support using VS2015 Update 3.
-tags: [C&#35;, .NET Core, AgileMapper, ReadableExpressions]
+tags: [C&#35;, .NET Core]
 ---
 
 With [the RTM](https://blogs.msdn.microsoft.com/dotnet/2016/06/27/announcing-net-core-1-0/) of the 

@@ -2,7 +2,7 @@
 layout: post
 title: Populating ASP.NET MVC ViewModels using ViewModelBuilders
 excerpt: The ViewModels in my current project had got quite complex; as well as properties copied from model objects, they increasingly had flags used by Views to know whether to render links or sub-sections. The logic which set these properties was bloating Controllers, so I factored it out into objects which populate all non-editable properties of a ViewModel; ViewModelBuilders. Here's how :)
-tags: [C&#35;, ASP.NET MVC, Programming Practices, Patterns, Dependency Injection (DI)]
+tags: [ASP.NET MVC, Dependency Injection (DI)]
 ---
 
 The ViewModels in my current project had got quite complex; as well as properties copied from model 

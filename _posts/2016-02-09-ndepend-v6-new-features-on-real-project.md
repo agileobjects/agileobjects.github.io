@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project (Again)&#58; Version 6's New Stuff
 excerpt: There's a new version of NDepend out in the wild, so I thought I'd give it a whirl on my pet object-object mapper project. Here's a quick overview of some of the new features.
-tags: [C&#35;, NDepend, Patterns, Programming Practices]
+tags: [NDepend]
 ---
 
 There's a [new version of NDepend](https://www.ndepend.com/ndepend-v6) (the uber-comprehensive 

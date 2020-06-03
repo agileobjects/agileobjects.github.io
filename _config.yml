@@ -10,6 +10,7 @@ author:
 favicon: 'assets/images/favicon.png'
 baseurl: 
 post_images_dir: '/assets/images/posts/'
+future: true
 production_url: https://agileobjects.co.uk
 # Add your GA Tracking Id
 ga_analytics: UA-165403546-1

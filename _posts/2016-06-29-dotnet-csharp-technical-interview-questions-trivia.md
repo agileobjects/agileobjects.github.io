@@ -2,7 +2,7 @@
 layout: post
 title: Interview Trivia Questions
 excerpt: There is a style of technical interview question which I think is more or less pointless. Here's some examples, with what I think is a question worth asking instead.
-tags: [C&#35;, Patterns, Programming Practices, Dependency Injection (DI)]
+tags: [C&#35;, Patterns, Dependency Injection (DI)]
 ---
 
 Here's some interview questions I've been asked / seen:

@@ -2,7 +2,7 @@
 layout: post
 title: Why Automated Tests Are So Great
 excerpt: I've recently done work at a company where there are no automated tests, and tests aren't part of the culture. I've been writing tests for so long now that it's jarring to consider working without them, so I've gone ahead and written tests for my part of the work. As I've done so it's really brought home the advantages of writing tests, and I wanted to list them out.
-tags: [Programming Practices, Patterns, Automated Testing]
+tags: [Automated Testing]
 ---
 
 I've recently done work at a company where there are no automated tests, and tests aren't part of the culture. 

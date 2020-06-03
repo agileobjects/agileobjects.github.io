@@ -2,7 +2,7 @@
 layout: post
 title: I See AnemicDomainModels
 excerpt: AnemicDomainModel is an anti-pattern I seem to keep coming across. Here's an overview of it, the problems it causes, and some pointers on leaving it behind.
-tags: [Programming Practices, Patterns, Domain Driven Design (DDD)]
+tags: [Patterns, Domain Driven Design (DDD)]
 ---
 
 [AnemicDomainModel](https://www.martinfowler.com/bliki/AnemicDomainModel.html) is an anti-pattern I seem 

@@ -2,7 +2,7 @@
 layout: post
 title: Simple Solutions to Horrible Azure Pain - as Usual
 excerpt: I recently spent far too long debugging a problem with our Azure application. We have two Azure cloud projects, and at about the same time they both started refusing to start; the web applications they house both worked perfectly when deployed to local IIS. There turned out to be two different problems - both very simple - so I thought I'd share what they turned out to be :)
-tags: [ASP.NET, ASP.NET MVC, Azure]
+tags: [Azure]
 ---
 
 I recently spent far too long debugging a problem with our Azure application. We have two Azure cloud 

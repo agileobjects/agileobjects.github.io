@@ -2,7 +2,7 @@
 layout: post
 title: Spotting a Missing Object
 excerpt: There are various tell-tale signs when a system is missing an object, and I spotted some of them recently while writing the ReadableExpressions library. Here's how.
-tags: [C&#35;, Programming Practices]
+tags: [Programming Practices]
 ---
 
 There are various tell-tale signs when a system is missing an object, and I spotted some of them 

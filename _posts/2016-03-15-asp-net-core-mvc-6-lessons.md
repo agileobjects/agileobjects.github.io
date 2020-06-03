@@ -2,7 +2,7 @@
 layout: post
 title: ASP.NET Core and MVC 6 Lessons Learned
 excerpt: I recently finished a small website using ASP.NET Core and MVC 6 - I only scratched the surface of the framework, but here's some gotchas and things I picked up along the way.
-tags: [C&#35;, ReadableExpressions, Expression Trees, Programming Practices]
+tags: [ASP.NET Core, Node.js, Dependency Injection (DI)]
 ---
 
 I recently finished a small website using ASP.NET Core and MVC 6 - I only scratched the surface of 

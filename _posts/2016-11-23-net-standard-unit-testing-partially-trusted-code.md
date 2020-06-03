@@ -2,7 +2,7 @@
 layout: post
 title: .NET Standard and Testing Partially Trusted Code
 excerpt: Because libraries written for .NET Standard can run on multiple platforms - with more to come in the future - it's worth considering how or if they run in partially trusted environments. Here's some pointers on how.
-tags: [C&#35;, .NET Core, AgileMapper, ReadableExpressions, Programming Practices]
+tags: [C&#35;, Automated Testing]
 images_dir: '2016-11-23/'
 ---
 

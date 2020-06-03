@@ -2,7 +2,7 @@
 layout: post
 title: Using a custom IValueProvider for domain model objects in ASP.NET MVC 2
 excerpt: I had a series of ASP.NET MVC controllers which took identifiers for various domain objects, loaded the objects, then passed them to ViewModels. In order to DRY out the code a bit I decided to factor the object-loading logic into a customer IValueProvider - it turned out pretty neat, and this is how I did it :)
-tags: [C&#35;, ASP.NET MVC, Programming Practices, Patterns, Domain Driven Design (DDD)]
+tags: [ASP.NET MVC, Domain Driven Design (DDD)]
 ---
 
 I had an ASP.NET MVC project with URLs like this:

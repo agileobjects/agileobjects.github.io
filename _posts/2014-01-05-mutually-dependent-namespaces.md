@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project, Round 1.4&#58; Mutually Dependent Namespaces
 excerpt: This is the fourth in a series of blogs looking at things NDepend told me about a personal project of mine - this time mutually-dependent namespaces.
-tags: [C&#35;, NDepend, Programming Practices]
+tags: [NDepend]
 images_dir: '2014-01-05/'
 ---
 

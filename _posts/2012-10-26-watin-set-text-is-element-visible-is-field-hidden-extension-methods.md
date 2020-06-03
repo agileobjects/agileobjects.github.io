@@ -2,7 +2,7 @@
 layout: post
 title: Extending WatiN&#58; Useful Extension Methods
 excerpt: I've been doing a fair amount of UI testing using WatiN recently – here's some extension methods I've found useful.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, Automated Testing]
+tags: [Automated Testing]
 ---
 
 I've been doing a fair amount of UI testing using [WatiN](https://watin.org) recently – here's some 

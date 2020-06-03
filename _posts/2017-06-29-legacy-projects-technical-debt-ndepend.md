@@ -2,7 +2,7 @@
 layout: post
 title: Legacy Projects, Technical Debt and NDepend
 excerpt: Legacy systems are commonplace, but it's difficult to come up with anything concrete to justify the expense of an update to someone with an eye on the bottom line. Thankfully, the folks at NDepend have now built technical debt computation on top of their code analysis tools, giving you a much easier way to have these sorts of discussions. Here's a real-world example.
-tags: [C&#35;, Programming Practices]
+tags: [NDepend, Programming Practices]
 images_dir: '2017-06-29/'
 ---
 

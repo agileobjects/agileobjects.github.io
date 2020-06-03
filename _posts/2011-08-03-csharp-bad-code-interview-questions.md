@@ -2,7 +2,7 @@
 layout: post
 title: Interview question - what's wrong with this code?
 excerpt: You can learn a lot about good code from reading bad code, and at least something about how well someone codes from  what they can tell you about bad code. With this in mind I handed a print out of some bad code to the latest prospective developers I've interviewed, to see what they made of it. I'll write another blog with the things I think is wrong with the code soon (there's quite a few of them), but it'd be very interesting to hear what people think is wrong with it before I do :)
-tags: [C&#35;, Programming Practices, Patterns, Domain Driven Design (DDD), Dependency Injection (DI)]
+tags: [C&#35;, Patterns, Domain Driven Design (DDD), Dependency Injection (DI)]
 ---
 
 <span class="updated">

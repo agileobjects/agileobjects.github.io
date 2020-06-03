@@ -2,7 +2,7 @@
 layout: post
 title: No More NCrunch For Me
 excerpt: NCrunch is a Visual Studio add-in which runs your tests while you work so you know if you've broken anything, as well as providing coverage indicators in the IDE and coverage metrics on demand. It recently went commercial, and time is running out for the free version I've been using for the last couple of months. From my experiences using NCrunch I'm going to let it expire, and go about my business without it. Here's why.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, Programming Practices, Patterns, Automated Testing]
+tags: [Automated Testing]
 ---
 
 When I opened up Visual Studio this morning, I was greeted with this little popup:

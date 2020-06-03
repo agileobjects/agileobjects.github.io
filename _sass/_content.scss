@@ -13,6 +13,23 @@
 
 .post-header {
     margin-bottom: 1.66667em;
+
+    h2 {
+        padding: 3px 6px;
+
+        > a {
+            line-height: 1.25em;
+        }
+    }
+
+    &.has-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        > h2 {
+            background: rgba(51, 51, 51, .8);
+        }
+    }
 }
 
 .post-title {
@@ -290,33 +307,14 @@ ul.archive-posts-list {
 .post-featured {
     flex: 0 0 100%;
 
-    .post-inside {
-        padding: 0 0.833333em;
-    }
-
-    img {
-        height: 100%;
-        left: 0;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-
     .post-header {
-        margin: 0;
+        overflow: auto;
     }
 
-    .post-thumbnail {
-        display: block;
-        height: 0;
-        padding-top: 60%;
-        position: relative;
-        width: 100%;
-    }
-
-    .post-meta {
-        margin-bottom: 0.5em;
+    .post-tags {
+        a, a:hover, a:focus {
+            color: $white !important;
+        }
     }
 }
 

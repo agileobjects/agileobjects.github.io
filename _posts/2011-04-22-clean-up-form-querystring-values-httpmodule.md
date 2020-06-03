@@ -2,7 +2,7 @@
 layout: post
 title: Using an HttpModule to Clean Up Form and QueryString Input
 excerpt: To avoid XSS attacks, ASP.NET throws a lovely yellow screen of death. But sometimes you want to accept potentially dangerous input, or you just don't want to have that error splashed across the screen. Being a fan of prevention rather than cure, I figured I'd make an IHttpModule to screen input before it gets to my application.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, Aspect Oriented Programming (AOP)]
+tags: [ASP.NET, ASP.NET MVC, Aspect Oriented Programming (AOP)]
 ---
 
 **"A potentially dangerous Request.Form value was detected from the client"**
