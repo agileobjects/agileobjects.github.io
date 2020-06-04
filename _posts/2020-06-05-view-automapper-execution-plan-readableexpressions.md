@@ -11,9 +11,9 @@ hidden: true
 
 Waaaaaay back in (I think) v6, AutoMapper 
 [surfaced](https://docs.automapper.org/en/stable/Understanding-your-mapping.html) its mapping execution 
-plans so you can look at them to see what happens when it maps one object to another. The execution 
-plan you retrieve is an `Expression` object - the one AutoMapper compiles into the `Func` which is 
-executed to perform the mapping. Raw `Expression`s are not easy to understand, but luckily 
+plans so you can look at them to see how it maps one object to another. The execution plan you retrieve 
+is an `Expression` object - the one AutoMapper compiles into the `Func` which is executed to perform 
+the mapping. Raw `Expression`s are not easy to understand, but luckily 
 [ReadableExpressions]({{ site.re_github }}) is here to make them... readable.
 
 ## An Example
@@ -54,7 +54,7 @@ enum Title
 }
 ```
 
-...to this:
+...to:
 
 ```csharp
 class WeddingDto
@@ -98,8 +98,8 @@ The default way to view the plan is with Visual Studio's Debug View, which looks
 ![Visual Studio's Debug View]({{ site.post_images_dir }}{{ page.images_dir }}VsDebugView.gif)
 
 ...you can _kind of_ see some of what's going on - there's an `if` test for `$src` being null, there's 
-a try / catch which assigns `typeMapDestination.Date`, but there's also a lot of noise - not terribly 
-easy to decipher.
+a try / catch which assigns `typeMapDestination.Date`, but there's a lot of noise, and it's not 
+terribly easy to decipher.
 
 ## Reading the Plan
 
@@ -113,9 +113,9 @@ PM> Install-Package AgileObjects.ReadableExpressions
 
 ![ReadableExpression's View]({{ site.post_images_dir }}{{ page.images_dir }}ReadableView.gif)
 
-Oh! It's a lambda which takes `src`, `dest`, `ctxt` arguments, returns the result of a ternary and 
-assigns each property within a set of try / catches, handling nulls as it goes. It's much easier to
-understand this way!
+Oh! It's a lambda which takes `src`, `dest` and `ctxt` arguments, returns the result of a ternary 
+and assigns each property within a set of try / catches, handling nulls as it goes. It's much easier 
+to understand this way!
 
 ## Exploring the Plan
 
@@ -127,7 +127,7 @@ mouse over the original `executionPlan` variable, and click the magnifying glass
 
 ![ReadableExpression's View]({{ site.post_images_dir }}{{ page.images_dir }}VisualizerView.gif)
 
-Even better! To make it clearer still, the visualizer also provides options to customise the output:
+Even better! To make it clearer still, the visualizer provides options to customise the output:
 
 ![ReadableExpression's Options]({{ site.post_images_dir }}{{ page.images_dir }}VisualizerOptions.gif#medium-border)
 
