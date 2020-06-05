@@ -3,9 +3,9 @@ layout: post
 title: Viewing AutoMapper Execution Plans with ReadableExpressions
 excerpt: Waaaaaay back in (I think) v6, AutoMapper surfaced its mapping execution plans so you can look at them to see what happens when it maps one object to another. Their default form is not easy to understand, but luckily ReadableExpressions is here to make them... readable. Here's how.
 tags: [ReadableExpressions, AutoMapper, Debugging]
-images_dir: '2020-06-05/'
+images_dir: '2020-06-04/'
 featured: true
-featured_image: '/assets/images/posts/2020-06-05/magnifying-glass.jpg'
+featured_image: '/assets/images/posts/2020-06-04/magnifying-glass.jpg'
 hidden: true
 ---
 
