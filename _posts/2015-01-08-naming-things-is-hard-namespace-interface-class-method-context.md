@@ -2,7 +2,7 @@
 layout: post
 title: Naming Things is Hard&#58; Keeping Context in Mind
 excerpt: Nothing that you name in coding exists in a vacuum. It will all be used and referenced in a certain way, and this should inform the names you choose. Here's some examples.
-tags: [Programming Practices, Naming Patterns]
+tags: [Naming Patterns]
 ---
 
 Well, look at this naming stuff turning into a series :)

@@ -2,7 +2,7 @@
 layout: post
 title: Naming Things is Hard&#58; Method-Naming Patterns
 excerpt: Some of the method-naming patterns I've come across / developed / adopted.
-tags: [Programming Practices, Naming Patterns]
+tags: [Naming Patterns]
 ---
 
 Here's a few of the method-naming patterns I've come across / developed / adopted.

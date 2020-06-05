@@ -2,7 +2,7 @@
 layout: post
 title: Extending WatiN 2&#58; Wait for JQuery document.ready() Functions to Complete
 excerpt: WatiN's DomContainer.WaitForComplete() method pauses test execution until the DOM has finished loading, but if your page has functions registered with JQuery's ready() function, you'll probably want to wait for those to finish executing before testing it. Here's a WatiN extension method which pauses test execution until that happens.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, JavaScript, JQuery, Automated Testing]
+tags: [JavaScript, JQuery, Automated Testing]
 ---
 
 [WatiN](https://watin.org)'s 

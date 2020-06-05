@@ -2,7 +2,7 @@
 layout: post
 title: A C# Extension Method using Expression Trees to Create an instance from a Type
 excerpt: I recently wrote a Type.GetInstance() extension method, and used the opportunity to play around with Expression Trees, which I'd recently read up on. Here's the set of extension methods I came up with, which allow you to quickly create an instance of a Type from the Type itself.
-tags: [C&#35;, Expression Trees, Programming Practices, Performance]
+tags: [Expression Trees, Performance]
 ---
 
 <span class="updated">

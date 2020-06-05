@@ -2,7 +2,7 @@
 layout: post
 title: Node.js and TypeScript Modules&#58; Internal, External... Shake it All About
 excerpt: When I decided to write a JavaScript game, I knew I'd need to run the same logic on the server and the browser, so Node.js was an obvious choice. It's JavaScript on the server, right? Anything I write to run in a browser will be runnable on the server as well. Easy! Well… not so much. Here's the misunderstandings and problems I faced, along with my solution.
-tags: [JavaScript, Node.js, Programming Practices]
+tags: [JavaScript, TypeScript, Node.js]
 ---
 
 Well, that was painful.

@@ -2,7 +2,7 @@
 layout: post
 title: Dynamically accessing deployed Assemblies and Types in C# - Part 2
 excerpt: First post - might as well start with an extension method of mine I've found rather useful recently. It returns a collection of Types from all locally-deployed Assemblies, optionally filtering by Assembly and Type.
-tags: [C&#35;, Enterprise Library, Unity]
+tags: [C&#35;]
 ---
 
 Well, will you look at that - no sooner do I write [my first blog](find-local-deployed-types-assemblies) 

@@ -2,7 +2,7 @@
 layout: post
 title: A Super-Fast C# Extension Method using Expression Trees to Create an instance from a Type
 excerpt: Having written an extension method to create an instance from a Type and been a bit underwhelmed by its performance, I looked into exactly what was happening and have now got it working much, much faster. Here's how.
-tags: [C&#35;, Expression Trees, Programming Practices, Performance]
+tags: [Expression Trees, Performance]
 images_dir: '2012-02-19/'
 ---
 

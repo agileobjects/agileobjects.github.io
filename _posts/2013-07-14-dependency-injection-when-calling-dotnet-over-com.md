@@ -2,7 +2,7 @@
 layout: post
 title: Using Dependency Injection When Calling .NET Over COM
 excerpt: I've recently been working with a number of VB6 systems which use C# .NET components via COM, and wanted to keep the same sort of organisational structures and patterns in the C# part of the application as I would if it was a standard MVC app or WCF service - namely, using Dependency Injection to plug the various C# classes together. This is easier said than done with COM, but here's an approach I've used to achieve it.
-tags: [C&#35;, Programming Practices, Patterns, Dependency Injection (DI), Unity]
+tags: [C&#35;, Patterns, Dependency Injection (DI), Unity]
 ---
 
 COM provides a way for legacy systems to use components written in modern languages and frameworks, and 

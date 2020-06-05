@@ -2,7 +2,7 @@
 layout: post
 title: An Improved HttpModule to Redirect Requests When an Uploaded File is Too Big
 excerpt: Further to comments on my previous post on this topic, I realised my HttpModule which gives a user a friendly error message if they upload a file which is too big only dealt with half of the problem. The maximum size a request can be is specified in the machine.config and web.config in the maximumRequestLength attribute on the httpRuntime element; if a user uploads a file which is larger than that, the part of the HttpModule which checks the request size is by-passed, and the user gets a not-ver
-tags: [C&#35;, ASP.NET, ASP.NET MVC, Patterns]
+tags: [ASP.NET, ASP.NET MVC]
 ---
 
 Further to comments on [this post](redirect-request-if-file-upload-too-big-httpmodule), I realised my 

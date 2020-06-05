@@ -2,7 +2,7 @@
 layout: post
 title: Unobtrusive Maximum Input Lengths with JQuery and FluentValidation
 excerpt: JQuery unobtrusive validation can be used to show an error message when the user inputs too many characters or a numeric value which is too big. On a recent project we wanted to use input's maxlength attribute to prevent a user from entering too many characters rather than cure the problem with an error message - here's how we did it.
-tags: [C&#35;, ASP.NET, ASP.NET MVC, JavaScript, JQuery]
+tags: [JavaScript, JQuery, FluentValidation]
 ---
 
 If you use [FluentValidation](https://fluentvalidation.codeplex.com) and set a maximum length for a 

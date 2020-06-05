@@ -2,7 +2,7 @@
 layout: post
 title: Self-Configuring Enterprise Library Validation
 excerpt: A recent project used Enterprise Library Validation to validate domain objects, and needed it configured for a web front end, a WCF front end, and (of course) unit tests. The same configuration in 3 different places didn't strike me as very DRY, so I figured hey - why not have it configure itself? Here's a quick paraphrase of how I did it.
-tags: [C&#35;, Enterprise Library, Unity, Programming Practices, Dependency Injection (DI)]
+tags: [Enterprise Library, Unity]
 ---
 
 A recent project used [Enterprise Library Validation](https://msdn.microsoft.com/en-us/library/ff664356%28v=PandP.50%29.aspx) 

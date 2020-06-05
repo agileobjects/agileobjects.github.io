@@ -2,7 +2,7 @@
 layout: post
 title: Self-Configuring Unity Interception
 excerpt: The application I'm currently working on performs user authorization using authorization objects injected into Service Layer methods using Unity Interface Interception. There's quite a lot of these objects, which means quite a lot of configuration, so I decided I'd make them configure themselves :)
-tags: [C&#35;, Enterprise Library, Unity, Programming Practices, Patterns, Dependency Injection (DI), Aspect Oriented Programming (AOP)]
+tags: [Unity, Aspect Oriented Programming (AOP)]
 ---
 
 The application I'm currently working on performs user authorization using authorization objects injected 

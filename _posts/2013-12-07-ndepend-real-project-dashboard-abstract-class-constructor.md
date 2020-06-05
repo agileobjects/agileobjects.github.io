@@ -2,7 +2,7 @@
 layout: post
 title: NDepend on a Real Project, Round 1.1&#58; the Dashboard and a Non-Protected Abstract Class Constructor
 excerpt: The other day I got an email from Patrick Smacchia, generously offering me an NDepend licence on the grounds that if I find it useful I can write about it on my blog. NDepend allows you to write Linq queries against an assembly or a code base to interrogate it for quality issues and see various metrics and reports. I have a personal project underway which I've been working on for some time, so I figured I'd give it a go and see what it can tell me. This is the first of the results.
-tags: [C&#35;, NDepend, Programming Practices]
+tags: [NDepend]
 images_dir: '2013-12-07/'
 ---
 

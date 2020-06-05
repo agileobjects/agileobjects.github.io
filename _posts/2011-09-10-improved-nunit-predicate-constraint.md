@@ -2,7 +2,7 @@
 layout: post
 title: A Friendlier NUnit PredicateConstraint
 excerpt: I've taken to using NUnit's constraint model for my unit tests, as I find it a great way to write readable tests which state exactly what they prove. NUnit has lots of built-in Constraints, but its PredicateConstraint doesn't return very helpful error messages; here's a friendlier version, which does.
-tags: [C&#35;, Automated Testing]
+tags: [Automated Testing, NUnit]
 ---
 
 After recently reading [a book](https://www.amazon.co.uk/Growing-Object-Oriented-Software-Guided-Signature/dp/0321503627) 

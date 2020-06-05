@@ -2,7 +2,7 @@
 layout: post
 title: Integrating ASP.NET Core With Webforms Using IIS URL Rewrite
 excerpt: I'm currently updating a legacy ASP.NET WebForms application to ASP.NET Core. Because big rewrites (almost) never work, it's a case of migrating sections of the site one at a time, having WebForms pass specific requests to ASP.NET Core, with no change to the end user's experience. Here's how.
-tags: [C&#35;, ASP.NET Core, ASP.NET, ASP.NET MVC]
+tags: [ASP.NET Core, ASP.NET, ASP.NET MVC, IIS]
 ---
 
 I'm currently updating a legacy [ASP.NET WebForms](https://www.asp.net/web-forms) application to 

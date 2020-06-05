@@ -2,7 +2,7 @@
 layout: post
 title: Self-Configuring Domain Event Handlers
 excerpt: I recently implemented Domain Events as a way of organising domain logic in our application; I really liked the way it worked out, so I wanted to share an overview of using Domain Events, as well as a class which automatically looks up all the available IDomainEventHandlers.
-tags: [C&#35;, Programming Practices, Patterns, Dependency Injection (DI), Domain Driven Design (DDD)]
+tags: [Dependency Injection (DI), Domain Driven Design (DDD)]
 ---
 
 I recently implemented [Domain Events](https://www.udidahan.com/2009/06/14/domain-events-salvation) as 

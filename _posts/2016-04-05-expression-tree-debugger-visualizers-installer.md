@@ -2,7 +2,7 @@
 layout: post
 title: ReadableExpressions Debugger Visualizers now in the Visual Studio Gallery
 excerpt: Bowing to vast, popular demand (one comment), I've now put an installer for the ReadableExpressions Debugger Visualizers on the Visual Studio Gallery.
-tags: [ReadableExpressions]
+tags: [ReadableExpressions, Debugging]
 ---
 
 Bowing to vast, popular demand (a comment on [the blog](readable-expression-trees-debug-visualizer)),

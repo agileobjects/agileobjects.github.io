@@ -2,7 +2,7 @@
 layout: post
 title: Handy Generic JQuery Functions
 excerpt: I was a bit of a late-comer to the JQuery party, but now I've been using it for a while it's given me a host of options for adding extra flair to the client side of my applications. Here's a few generic JQuery functions I've written which can be used to add some neat little features to a page. Just call any of them from a document ready function.
-tags: [C&#35;, JavaScript, JQuery]
+tags: [JavaScript, JQuery]
 ---
 
 I was a bit of a late-comer to the JQuery party, but now I've been using it for a while it's given 

@@ -2,7 +2,7 @@
 layout: post
 title: Finding a Balance&#58; Code 'Complexity'
 excerpt: On any project, there's a tension between writing code everyone finds easily accessible, and using more modern techniques which make code more terse and expressive. Here's some thoughts on addressing that tension.
-tags: [Programming Practices, Patterns]
+tags: [Programming Practices]
 ---
 
 "If you want to create a masterpiece - if you want to paint the Sistine Chapel - you can do that in your 

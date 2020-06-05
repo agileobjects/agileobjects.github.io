@@ -2,7 +2,7 @@
 layout: post
 title: Mapper vs Mapper&#58; Performance
 excerpt: The first in a series of posts comparing a subset of the available mappers. This blog is on that favourite thing we're not supposed to obsess too much about (in programming) - performance.
-tags: [C&#35;, .NET Core, AgileMapper, Programming Practices]
+tags: [AgileMapper, AutoMapper, Performance]
 ---
 
 <span class="updated">

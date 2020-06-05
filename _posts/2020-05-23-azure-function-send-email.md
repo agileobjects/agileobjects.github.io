@@ -2,7 +2,7 @@
 layout: post
 title: A .NET Core 3 Azure Function to Send an Email
 excerpt: Static sites can easily be hosted for free by (e.g) GitHub Pages or Azure Storage, but if you have a contact page you'll need something to send the emails. Here's a configurable .NET Core 3 Azure Function which does that.
-tags: [C&#35;, Azure, Azure Functions]
+tags: [Azure, Azure Functions]
 images_dir: '2020-05-01/'
 ---
 

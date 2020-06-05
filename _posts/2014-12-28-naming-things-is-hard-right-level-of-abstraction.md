@@ -2,7 +2,7 @@
 layout: post
 title: Naming Things is Hard&#58; Finding the Right Level of Abstraction
 excerpt: It is said and experience has confirmed - in programming, naming things is hard. So hard it's common for programmers with years and years (and years) of experience to regularly name things poorly. Here's some of the processes I use to name variables and types, focusing on finding the right level of abstraction.
-tags: [Programming Practices, Naming Patterns]
+tags: [Naming Patterns]
 ---
 
 It is said and experience has confirmed - in programming, 

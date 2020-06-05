@@ -2,7 +2,7 @@
 layout: post
 title: How to Moq
 excerpt: Moq provides various ways of setting up and verifying behaviour, and I've recently seen some confusion over how. So here's some examples and pointers.
-tags: [C&#35;, Moq, Programming Practices, Automated Testing]
+tags: [Moq, Automated Testing]
 ---
 
 [Moq](https://github.com/moq/moq4) provides various ways of setting up and verifying behaviour, and 

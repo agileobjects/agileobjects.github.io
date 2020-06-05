@@ -2,7 +2,7 @@
 layout: post
 title: Easier ASP.NET MVC Routing
 excerpt: I've recently refactored the way Routes are declared in an ASP.NET MVC application I'm working on, and I wanted to share part of the system I came up with; a really easy way to declare and keep track of ASP.NET MVC Routes, which then allows you to find the name of the Route which has been selected for the current request.
-tags: [C&#35;, ASP.NET MVC]
+tags: [ASP.NET MVC]
 images_dir: '2011-11-30/'
 ---
 

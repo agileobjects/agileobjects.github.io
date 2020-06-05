@@ -2,7 +2,7 @@
 layout: post
 title: Naming Things is Hard&#58; Dictionaries
 excerpt: I've been working with a codebase recently which makes a lot of use of dictionaries - here's a few words about naming them.
-tags: [Programming Practices, Naming Patterns]
+tags: [Naming Patterns]
 ---
 
 Following on from [my previous post](/naming-things-is-hard-right-level-of-abstraction) on naming things, 

@@ -4,82 +4,6 @@
  * 6. Media Queries
  * ----------------------------------------------------------------------------
  */
-@media only screen and (min-width: 601px) and (max-width: 800px), only screen and (min-width: 1001px) {
-    .post-featured .post-title,
-    .project-featured .project-title {
-        font-size: 1.33333rem;
-    }
-
-    .post-featured:only-child,
-    .post-featured:first-child:nth-last-child(3) {
-        flex: 0 0 100%;
-    }
-
-    .post-featured:only-child .post-thumbnail,
-    .post-featured:first-child:nth-last-child(3) .post-thumbnail,
-    .project-featured:only-child .project-thumbnail,
-    .project-featured:first-child:nth-last-child(3) .project-thumbnail {
-        margin: 0;
-    }
-
-    .post-featured.has-image:only-child .post-header,
-    .post-featured.has-image:first-child:nth-last-child(3) .post-header {
-        background: rgba($gray-darkest,.9);
-        border-left: 2px solid $color-accent;
-        bottom: 1.66667em;
-        left: 2.5em;
-        margin: 0;
-        max-width: 60%;
-        min-width: 30%;
-        padding: 1.5em;
-        position: absolute;
-    }
-
-    .post-featured:only-child .post-meta,
-    .post-featured:first-child:nth-last-child(3) .post-meta {
-        margin-bottom: 0.75em;
-    }
-
-    .post-featured:only-child .post-title,
-    .post-featured:first-child:nth-last-child(3) .post-title,
-    .project-featured:only-child .project-title,
-    .project-featured:first-child:nth-last-child(3) .project-title {
-        font-size: 1.66667rem;
-    }
-
-    .post-featured.has-image:only-child .post-title,
-    .post-featured.has-image:first-child:nth-last-child(3) .post-title,
-    .project-featured.has-image:only-child .project-title,
-    .project-featured.has-image:first-child:nth-last-child(3) .project-title {
-        color: $white;
-    }
-
-    .post-featured.has-image:only-child .post-tags a:hover,
-    .post-featured.has-image:first-child:nth-last-child(3) .post-tags a:hover {
-        color: $gray-light;
-    }
-
-    .post-featured:first-child:nth-last-child(2) .post-thumbnail,
-    .post-featured:nth-child(2):nth-last-child(2) .post-thumbnail {
-        padding-top: 60%;
-    }
-
-    .post-featured:nth-child(2):last-child .post-thumbnail,
-    .post-featured:nth-child(3):last-child .post-thumbnail {
-        padding-top: calc(90% + 9px);
-    }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 800px) {
-    .post-featured:only-child .post-thumbnail + .post-header,
-    .post-featured:first-child:nth-last-child(3) .post-thumbnail + .post-header {
-        bottom: 3vw;
-        left: 4.5vw;
-        max-width: 75%;
-        min-width: 30%;
-    }
-}
-
 @media only screen and (min-width: 801px) {
     .site-content {
         margin-left: 30vw;
@@ -180,19 +104,19 @@
         padding-right: 30px;
     }
 
-    .post-featured .post-title,
-    .project-featured .project-title {
-        font-size: 1.66667rem;
-    }
+    .project-featured {
+        .project-title {
+            font-size: 1.33333rem;
+        }
 
-    .post-featured:only-child .post-title,
-    .post-featured:first-child:nth-last-child(3) .post-title {
-        font-size: 2rem;
-    }
+        .project-thumbnail {
+            margin: 0;
+        }
 
-    .project-featured .project-content {
-        font-size: .9rem;
-        padding-left: 20px;
+        .project-content {
+            font-size: .9rem;
+            padding-left: 20px;
+        }
     }
 }
 
@@ -208,6 +132,10 @@
 }
 
 @media only screen and (min-width: 1469px) {
+    .post-featured:only-child .post-title {
+        max-width: 80%;
+    }
+
     .post-full .post-thumbnail,
     .post-content img[src$='#wide'],
     .post-content img[src$='#full'] {
@@ -226,6 +154,32 @@
     .site-content {
         padding-left: 60px;
         padding-right: 60px;
+    }
+}
+
+@media only screen and (max-width: 1469px) {
+    .post-featured {
+        flex: 0 0 100%;
+        margin-bottom: 1.3333em;
+
+        header {
+            padding: 0;
+        }
+
+        .post-title {
+            margin: 8px 10px;
+            max-width: 100%;
+        }
+
+        .post-tags {
+            bottom: 0;
+            margin: 0 0 8px 10px;
+        }
+    }
+
+    .post-featured:last-child:not(:only-child) {
+        flex: 0 0 100%;
+        margin-left: 0;
     }
 }
 

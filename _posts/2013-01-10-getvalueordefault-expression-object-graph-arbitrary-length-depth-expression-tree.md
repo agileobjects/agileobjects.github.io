@@ -2,7 +2,7 @@
 layout: post
 title: GetValueOrDefault() For An Expression of Arbitrary Length Using Expression Trees
 excerpt: In my most recent project we had to support classes with fairly deep object graphs where any of the nodes could validly be null. We didn't want to have lots of 'if not null' checks everywhere, so I wrote an extension method which takes an expression of any length and returns the expression value or a default value if any of the nodes are null. Here's the extension method code, along with an overview of how it works.
-tags: [C&#35;, Expression Trees]
+tags: [Expression Trees]
 ---
 
 In my most recent project we had to support classes with fairly deep object graphs where any of the 
