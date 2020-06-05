@@ -104,6 +104,12 @@
         padding-right: 30px;
     }
 
+    .post-featured {
+        flex: 0 0 80% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
     .project-featured {
         .project-title {
             font-size: 1.33333rem;

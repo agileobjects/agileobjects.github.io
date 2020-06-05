@@ -25,5 +25,5 @@
         ao(function () {
             web.MenuToggle = new MenuToggle();
         });
-    })(Ao.Web || (Ao.Web = {}));
+    })(ao.Web || (ao.Web = {}));
 }(Ao));
