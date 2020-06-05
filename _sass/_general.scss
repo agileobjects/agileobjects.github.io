@@ -130,6 +130,11 @@ img {
     border: 1px solid $gray;
 }
 
+p > img[src*="#center"] {
+    display: block;
+    margin: 0 auto;
+}
+
 /* Text meant only for screen readers */
 .screen-reader-text,
 .site-logo + .site-identity .site-title,

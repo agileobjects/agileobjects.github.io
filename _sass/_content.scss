@@ -21,15 +21,6 @@
             line-height: 1.25em;
         }
     }
-
-    &.has-image {
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        > h2 {
-            background: rgba(51, 51, 51, .8);
-        }
-    }
 }
 
 .post-title {
@@ -79,6 +70,7 @@
 }
 
 .post-tags,
+.reading-time,
 .post-share {
     font-size: 0.77778rem;
     line-height: 1.5;
@@ -121,8 +113,13 @@
     margin-bottom: 1.42857em;
 }
 
-.post-full .post-tags {
+.post-full .post-tags, .reading-time {
     margin-top: 2.14285em;
+}
+
+.reading-time {
+    color: $gray-light;
+    float: right;
 }
 
 .post-full .post-content {
@@ -160,6 +157,13 @@ span.updated:first-letter {
     span.updated:first-letter {
         padding-top: 0;
     }
+}
+
+blockquote > p {
+    background: $gray-dark-alt;
+    border-left: 2px solid $color-accent;
+    margin-bottom: 1.3333em;
+    padding: 3px 0 3px 1em;
 }
 
 .read-next,
@@ -301,21 +305,56 @@ ul.archive-posts-list {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 -0.83333em 2.5em;
+    margin: 0 -0.83333em 0;
 }
 
 .post-featured {
-    flex: 0 0 100%;
+    flex: 0 0 50%;
 
-    .post-header {
+    header {
+        border-left: 2px solid $color-accent;
+        height: 150px;
+        max-width: 100%;
+        min-width: 30%;
         overflow: auto;
+        padding: .5em .8em;
+        position: relative;
+
+        &.has-image {
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            > h2 {
+                background: rgba($gray-darkest,.9);
+            }
+        }
     }
 
     .post-tags {
+        bottom: 5px;
+        position: absolute;
+
         a, a:hover, a:focus {
-            color: $white !important;
+            background: rgba($gray-darkest,.8);
+            color: $white;
+            padding: 1px 6px;
         }
     }
+}
+
+.post-featured:only-child {
+    flex: 0 0 100%;
+
+    header {
+        margin: auto;
+        max-width: 80%;
+        padding: 1em 1.5em;
+    }
+}
+
+.post-featured:last-child:not(:only-child) {
+    flex: 0 0 49%;
+    margin-left: 1%;
 }
 
 /* Projects */
