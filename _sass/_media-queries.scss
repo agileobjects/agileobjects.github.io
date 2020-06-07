@@ -105,9 +105,9 @@
     }
 
     .post-featured {
-        flex: 0 0 80% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        flex: 0 0 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .project-featured {
@@ -128,7 +128,6 @@
 
 @media only screen and (min-width: 1086px) {
     .post-full .post-thumbnail,
-    .post-content img[src$='#wide'],
     .post-content img[src$='#full'] {
         margin-left: calc(510px - 47vw);
         margin-right: calc(510px - 47vw);
@@ -138,12 +137,22 @@
 }
 
 @media only screen and (min-width: 1469px) {
+    .post-featured:first-child {
+        flex: 0 0 54%;
+        margin-right: 1%;
+    }
+
+    .post-featured:last-child:not(:only-child) {
+        flex: 0 0 45%;
+    }
+
     .post-featured:only-child .post-title {
+        margin: auto;
         max-width: 80%;
+        padding: 1em 1.5em;
     }
 
     .post-full .post-thumbnail,
-    .post-content img[src$='#wide'],
     .post-content img[src$='#full'] {
         margin-left: -180px;
         margin-right: -180px;
@@ -160,32 +169,6 @@
     .site-content {
         padding-left: 60px;
         padding-right: 60px;
-    }
-}
-
-@media only screen and (max-width: 1469px) {
-    .post-featured {
-        flex: 0 0 100%;
-        margin-bottom: 1.3333em;
-
-        header {
-            padding: 0;
-        }
-
-        .post-title {
-            margin: 8px 10px;
-            max-width: 100%;
-        }
-
-        .post-tags {
-            bottom: 0;
-            margin: 0 0 8px 10px;
-        }
-    }
-
-    .post-featured:last-child:not(:only-child) {
-        flex: 0 0 100%;
-        margin-left: 0;
     }
 }
 
