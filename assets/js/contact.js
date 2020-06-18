@@ -26,9 +26,10 @@
                 var formData = {
                     name: this._name.value,
                     email: this._email.value,
-                    message: this._message.value,
-                    ['g-recaptcha-response']: this._recaptcha.e.value
+                    message: this._message.value
                 };
+
+                formData['g-recaptcha-response'] = this._recaptcha.e.value;
 
                 ao.ajax({
                     type: 'post',
