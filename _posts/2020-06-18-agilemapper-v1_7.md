@@ -22,16 +22,18 @@ by the mapper whenever the configured type pair is matched:
 ```csharp
 Mapper.WhenMapping
    .From<Address>().To<AddressDto>()
-   .MapInstancesUsing((a, dto) => new AddressDto
+   .MapInstancesUsing(ctx => new AddressDto
    {
-       Number = a.HouseNo,
-       Line1 = a.Street,
-       Line2 = a.Town,
-       Line3 = a.City,
-       Line4 = a.County,
-       Postcode = a.PostalCode
+       Number = ctx.Source.HouseNo,
+       Line1 = ctx.Source.Street,
+       Line2 = ctx.Source.Town,
+       Line3 = ctx.Source.City,
+       Line4 = ctx.Source.County,
+       Postcode = ctx.Source.PostalCode
    });
 ```
+
+See a live example on [DotNetFiddle](https://dotnetfiddle.net/XNPrMS){:target="_blank"}.
 
 ## Alternate Data Sources
 
