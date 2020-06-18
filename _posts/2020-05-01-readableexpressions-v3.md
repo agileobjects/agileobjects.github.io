@@ -6,9 +6,9 @@ tags: [Expression Trees, ReadableExpressions, Debugging]
 images_dir: '2020-05-01/'
 ---
 
-ReadableExpressions translates Expression trees to source code as an alternative to Visual Studio's 
+_ReadableExpressions translates Expression trees to source code as an alternative to Visual Studio's 
 Debug View. There's a set of [Debugger Visualizers]({{ site.re_viz }}) in the Visual Studio Marketplace,
-and [a NuGet package]({{ site.re_nuget }}) with the extension method which does all the magic.
+and [a NuGet package]({{ site.re_nuget }}) with the extension method which does all the magic._
 
 ReadableExpressions version 3 provides various options to customise translation, and colourizes the 
 visualizer source code view, adding light and dark themes.
