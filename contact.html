@@ -26,6 +26,10 @@ contact: true
                       placeholder="Your message"
                       data-val="true" data-val-required="A message is required"></textarea>
 
+            <div class="g-recaptcha" data-sitekey="{{ site.contact.recaptcha_key }}" data-callback="recaptchaValid"></div>
+            <input type="hidden" id="contact-form-recaptcha" name="recaptcha" 
+                   data-val="true" data-val-recaptcha="Are you a robot...?" />
+
             <input id="contact-form-submit" type="submit" value="Send" />
 
             <div id="progress-cover" class="hidden"></div>

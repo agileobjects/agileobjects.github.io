@@ -45,16 +45,20 @@
         },
         email: function () {
             return ao.isEmail(this.e.value);
+        },
+        recaptcha: function () {
+            this.e.value = grecaptcha.getResponse();
+            return Boolean(this.e.value);
         }
     };
     var validatorNames = Object.keys(validators);
     var validatorsCount = validatorNames.length;
 
-    var AoValidator = ao.derive(function (input) {
-        this._base.call(this, input);
+    var AoValidator = ao.derive(function (inputElemOrId) {
+        this._base.call(this, inputElemOrId);
 
         this.on('blur keyup', this.validate);
-        this._msg = ao(input.nextElementSibling);
+        this._msg = ao(this.e.nextElementSibling);
         if (this._msg.hasClass('error-message') === false) {
             this._msg = ao('<span>').addClass('error-message');
             this.after(this._msg);
@@ -69,16 +73,27 @@
         }
     });
 
+    AoValidator.prototype.setValid = function (valid) {
+        var remove, add;
+        if (valid) {
+            remove = 'error', add = 'valid';
+        } else {
+            remove = 'valid', add = 'error';
+        }
+        this._msg.removeClass('field-validation-' + remove).addClass('field-validation-' + add);
+        return this;
+    };
+
     AoValidator.prototype.validate = function () {
         for (var i = 0, l = this._validators.length; i < l; ++i) {
             var validator = this._validators[i];
             if (validator.test.call(this) === false) {
                 this._msg.html(validator.msg);
-                this._msg.removeClass('field-validation-valid').addClass('field-validation-error');
+                this.setValid(false);
                 return false;
             }
         }
-        this._msg.removeClass('field-validation-error').addClass('field-validation-valid');
+        this.setValid(true);
         return true;
     };
 
@@ -138,6 +153,10 @@
             form = document.forms[0];
         }
         return new AoForm(form);
+    };
+
+    ao.validator = function (inputElemOrId) {
+        return new AoValidator(inputElemOrId);
     };
 
     ao(function () {

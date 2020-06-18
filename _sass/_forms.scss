@@ -2,22 +2,32 @@
 
 /* Form fields */
 input,
-textarea {
-    background: $white;
+textarea,
+.g-recaptcha {
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
-    font-size: 16px;
     line-height: 1.5;
     margin: 10px 0 0 0;
-    padding: 8px 10px;
     vertical-align: baseline;
+}
+
+input,
+textarea {
+    background: $white;
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+input[type="text"],
+textarea,
+.g-recaptcha {
+    border: 1px solid $black;
+    color: $gray-darkest;
 }
 
 input[type="text"],
 textarea {
-    border: 1px solid $black;
-    color: $gray-darkest;
     display: block;
     max-width: 100%;
     width: 100%;

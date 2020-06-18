@@ -17,7 +17,7 @@ ga_analytics: UA-165403546-1
 
 # Comment settings
 comments:
-  enabled: truec
+  enabled: true
   show_count: true
   empty: []
   form_action: 'https://agileobjects-postblogcomment.azurewebsites.net/api/PostBlogComment?code=4M3vF5qIkyTCwtOWjvjJzuPWm7DAyKNxhMLLlj2gaFFHSyLUYQRK5A=='
@@ -25,6 +25,7 @@ comments:
 
 # Contact form settings
 contact:
+  recaptcha_key: '6LctXKYZAAAAAF7Bm_IchT8ZJaqohVK7w-xrPZqy'
   form_action: 'https://agileobjects-email.azurewebsites.net/api/SendEmail?code=v/fdE3E7FhUc9QgLaXeOXvOParYBoCXfiFesiy9Y7QEiMOYKq7lVrQ=='
 # form_action: 'http://localhost:7071/api/SendEmail'
 

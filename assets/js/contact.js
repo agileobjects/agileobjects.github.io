@@ -4,9 +4,14 @@
 
         var ContactForm = function () {
             function contactForm() {
-                this.name = ao.get('contact-form-name');
-                this.email = ao.get('contact-form-email');
-                this.message = ao.get('contact-form-message');
+                this._name = ao.get('contact-form-name');
+                this._email = ao.get('contact-form-email');
+                this._message = ao.get('contact-form-message');
+                this._recaptcha = ao.validator('contact-form-recaptcha');
+            };
+
+            contactForm.prototype.recaptchaValid = function () {
+                this._recaptcha.setValid(true);
             };
 
             contactForm.prototype.handleSend = function (form) {
@@ -19,9 +24,10 @@
                 aoForm.submitting();
 
                 var formData = {
-                    name: this.name.value,
-                    email: this.email.value,
-                    message: this.message.value
+                    name: this._name.value,
+                    email: this._email.value,
+                    message: this._message.value,
+                    ['g-recaptcha-response']: this._recaptcha.e.value
                 };
 
                 ao.ajax({
@@ -29,8 +35,8 @@
                     url: form.action,
                     data: formData,
                     ctx: aoForm,
-                    onFail: function() { this.error(); },
-                    onSuccess: function() { this.ok(); }
+                    onFail: function () { this.error(); },
+                    onSuccess: function () { this.ok(); }
                 });
 
                 return false;
@@ -49,6 +55,7 @@
 
         ao(function () {
             web.contactForm = new ContactForm();
+            window.recaptchaValid = function () { web.contactForm.recaptchaValid(); };
         });
     })(ao.Web || (ao.Web = {}));
 })(Ao);
