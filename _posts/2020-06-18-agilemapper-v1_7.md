@@ -33,7 +33,7 @@ Mapper.WhenMapping
    });
 ```
 
-See a live example on [DotNetFiddle](https://dotnetfiddle.net/XNPrMS){:target="_blank"}.
+[This DotNetFiddle](https://dotnetfiddle.net/XNPrMS){:target="_blank"} has a live example.
 
 ## Alternate Data Sources
 
@@ -51,6 +51,8 @@ Mapper.WhenMapping
 In this example AgileMapper's usual [Dictionary mapping]({{ site.am_docs }}/Dictionary-Mapping) is 
 skipped, and the source Dictionary's `Values` collection is used to update the target `List<Product>` 
 using [collection mapping]({{ site.am_docs }}/Collections) instead.
+
+[This DotNetFiddle](https://dotnetfiddle.net/JzQfLX){:target="_blank"} has a live example.
 
 Note that `ToTargetInstead()` is different to `ToTarget()`:
 
