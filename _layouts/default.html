@@ -20,6 +20,10 @@
 
     <!-- CSS Styles -->
     <link href="/assets/css/style.css" rel="stylesheet">
+
+    {% if page.layout == 'post' %}
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    {% endif %}
 </head>
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
@@ -41,6 +45,11 @@
             </div><!-- .inner-wide -->
         </div><!-- .site-content -->
     </div><!-- .site -->
+    {% if page.layout == 'post' %}
+    <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/agileobjects">
+        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a coffee</span>
+    </a>
+    {% endif %}
     <!-- Javascript Assets -->
     <script src="/assets/js/ao.min.js"></script>
     {% if page.layout == 'post' %}
