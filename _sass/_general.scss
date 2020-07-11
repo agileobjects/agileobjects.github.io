@@ -135,6 +135,10 @@ p > img[src*="#center"] {
     margin: 0 auto;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
 /* Text meant only for screen readers */
 .screen-reader-text,
 .site-logo + .site-identity .site-title,

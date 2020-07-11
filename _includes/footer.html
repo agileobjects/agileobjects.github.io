@@ -1,7 +1,10 @@
 <footer id="colophon" class="site-footer">
     <p class="site-info inner">
-        <a href="#">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }}.
-        Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>.
+        <span class="no-wrap"><a href="#">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }}.</span>
+        {% if page.layout == 'post' %}
+        <span class="no-wrap">Code samples have <a href="{{ site.ao_github }}/blob/master/LICENSE">MIT license</a>.</span>
+        {% endif %}
+        <span class="no-wrap">Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>.</span>
     </p>
     <a id="back-to-top" class="back-to-top" href="#page">
         <span class="icon-arrow-up" aria-hidden="true"></span>

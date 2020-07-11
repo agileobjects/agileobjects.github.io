@@ -36,6 +36,7 @@ rss: agileobjects
 contact_icon: true
 
 # Projects
+ao_github: 'https://github.com/agileobjects/agileobjects.github.io'
 am_nuget: 'https://www.nuget.org/packages/AgileObjects.AgileMapper'
 am_github: 'https://github.com/agileobjects/AgileMapper'
 am_docs: 'https://agilemapper.readthedocs.io'
