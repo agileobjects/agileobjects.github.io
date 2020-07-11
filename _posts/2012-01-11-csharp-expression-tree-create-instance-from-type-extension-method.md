@@ -7,8 +7,7 @@ tags: [Expression Trees, Performance]
 
 <span class="updated">
 Edit: I've now written an improved version of this set of extension methods, which can be found 
-[here](fast-csharp-expression-tree-create-instance-from-type-extension-method). Consider these 
-deprecated!
+[here](create-instance-of-type-net-core). Consider these deprecated!
 </span>
 
 <span class="first">

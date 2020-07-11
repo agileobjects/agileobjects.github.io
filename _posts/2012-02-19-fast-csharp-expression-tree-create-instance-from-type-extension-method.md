@@ -6,10 +6,17 @@ tags: [Expression Trees, Performance]
 images_dir: '2012-02-19/'
 ---
 
+<span class="updated">
+Edit: I've now written an improved version of this set of extension methods, which can be found 
+[here](create-instance-of-type-net-core). Consider these deprecated!
+</span>
+
+<span class="first">
 Having written [an extension method](csharp-expression-tree-create-instance-from-type-extension-method) 
 to create an instance from a Type and been 
 [a bit underwhelmed](csharp-performance-new-expression-tree-func-activator-createinstance) by its 
 performance, I looked into exactly what was happening and have now got it working much, _much_ faster.
+</span>
 
 To recap, the problem with the first version of this method is that it cached the `Func`s it created 
 with all their argument types as `object`, which meant they had to be cast every time the `Func` was 
