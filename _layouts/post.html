@@ -56,7 +56,7 @@ comments: true
                 <p class="post-tags">
                     {% if page.previous.tags.size > 0 %}
                     {% for tag in page.previous.tags %}
-                    <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/">{{ tag }}</a>
+                    <a href="/tags/#{{ tag | cgi_encode }}">{{ tag }}</a>
                     {% endfor %}
                     {% endif %}
                 </p>
@@ -73,7 +73,7 @@ comments: true
                 <p class="post-tags">
                     {% if page.next.tags.size > 0 %}
                     {% for tag in page.next.tags %}
-                    <a href="/tag/{{ tag | downcase | replace: ' ', '-' }}/">{{ tag }}</a>
+                    <a href="/tags/#{{ tag | cgi_encode }}">{{ tag }}</a>
                     {% endfor %}
                     {% endif %}
                 </p>
