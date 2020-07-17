@@ -1,13 +1,8 @@
 ﻿@import "_variables.scss";
 
-.bmc-button img {
-    border: none !important;
-    box-shadow: none !important;
-    height: 34px !important;
-    margin-bottom: 1px !important;
-    vertical-align: middle !important;
-    width: 35px !important;
-}
+$coffee-img-size: 40px;
+$coffee-img-margin-top: -($coffee-img-size / 2);
+$coffee-img-margin-right: -($coffee-img-size / 10);
 
 .bmc-button {
     background-color: #FFFFFF !important;
@@ -20,16 +15,29 @@
     box-sizing: border-box !important;
     color: #000000 !important;
     display: inline-flex !important;
-    font-family: 'Cookie', cursive !important;
-    font-size: 22px !important;
-    height: 51px !important;
-    letter-spacing: 0.6px !important;
-    line-height: 35px !important;
-    margin: 0 auto !important;
-    padding: 7px 15px 7px 10px !important;
+    padding: 7px 7px 7px 10px !important;
     position: fixed;
     right: 5%;
+    text-align: center;
     text-decoration: none !important;
+
+    span {
+        display: block;
+        font-size: .8em;
+        padding-right: $coffee-img-size;
+        position: relative;
+    }
+
+    img {
+        border: none !important;
+        box-shadow: none !important;
+        height: $coffee-img-size !important;
+        margin: $coffee-img-margin-top $coffee-img-margin-right 0 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: $coffee-img-size !important;
+    }
 }
 
 .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
