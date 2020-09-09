@@ -12,6 +12,8 @@ contained some good info, as well as some things I don't agree with. Top of the 
 
 > Self-documenting code is bullshit.
 
+I mean... it's not, is it?
+
 ## Self-Documenting Code
 
 Self-documenting code is code written in such a way that it's easy to read and understand its intention. 
@@ -21,7 +23,7 @@ but it removes the need for _a lot_ of documentation and code comments.
 
 ## For Example
 
-The blog gives the following example of documenting code with comments:
+The blog gives the following example of code documented with comments:
 
 ```js
 /**
@@ -59,8 +61,8 @@ var toggleVisibility = function (selector, toggle) {
 };
 ```
 
-This is pretty neatly-written code - let's take it line-by-line, consider which comments add value, and 
-if we can make the code more self-documenting.
+The code itself is pretty neatly-written - let's take it line-by-line, consider which comments add
+value, and if we can make it more self-documenting.
 
 ### JSDoc Documentation
 
@@ -77,7 +79,7 @@ var toggleVisibility = function (selector, toggle) {
 
 According to the documentation, this function toggles the visibility of a tab - but its name and the 
 names of its arguments make no mention of tabs. Maybe the file containing this function is tab-specific, 
-so within [its context](/naming-things-is-hard-namespace-interface-class-method-context) this makes 
+so [within its context](/naming-things-is-hard-namespace-interface-class-method-context) this makes 
 sense, but maybe not. In any case, this can be more self-documenting:
 
 ```js
@@ -117,8 +119,8 @@ it can be improved. `elem` is a completely generic variable name - it gives us a
 variable is, but tells us nothing about its purpose.
 
 Secondly, is the comment lying? It says we're getting the tab to 'show', but doesn't this function 
-_toggle_ visibility? The JSDoc said 'Toggle visibility of a content tab' - I'd expect from that that it 
-would show hidden tabs, and hide visible ones. Sure enough though, it only _shows_ tabs, it doesn't 
+_toggle_ visibility? The JSDoc said 'Toggle visibility of a content tab' - I'd expect from that it 
+would _show_ hidden tabs, and _hide_ visible ones. Sure enough though, it only _shows_ tabs, it doesn't 
 hide them. This is one of the problems with documentation and comments - unlike code, they can _lie_.
 
 So with a quick detour to rename the function:
@@ -153,7 +155,7 @@ a more self-documenting CSS class name:
 ...the comment is redundant.
 
 The comments for the next two statements again pretty much repeat what 
-their code is doing, especially with our new naming:
+their code is doing, especially with our updated naming:
 
 ```js
     // If a toggle element was provided, add an .active class 
@@ -166,7 +168,7 @@ their code is doing, especially with our new naming:
     tabToShow.focus()
 ```
 
-...so we can remove them. They're noise.
+They're noise, and we can remove them.
 
 ### Worthwhile Comments
 
@@ -184,7 +186,7 @@ The comment for the _next_ statements actually adds value:
 It explains how we ended up at the final two lines, and why we're adding a `tabindex` - that information 
 would be tricky to convey in the code itself, so the comment has earned its place.
 
-We can however, self-document a little more by adding a helper function:
+We can however, self-document a little more with a helper function:
 
 ```js
 function hasFocus(elementSelector) {
