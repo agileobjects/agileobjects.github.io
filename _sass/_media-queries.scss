@@ -44,6 +44,7 @@
 
     .site-logo,
     .profile {
+        font-size: .76667em;
         margin: 0 0 1.66667em;
     }
 
@@ -52,8 +53,8 @@
     }
 
     .profile .avatar {
-        height: 100px;
-        width: 100px;
+        height: 52px;
+        width: 52px;
     }
 
     .site-title {
@@ -110,16 +111,16 @@
         margin-right: auto;
     }
 
-    .project-featured {
-        .project-title {
+    .product-featured {
+        .product-title {
             font-size: 1.33333rem;
         }
 
-        .project-thumbnail {
+        .product-thumbnail {
             margin: 0;
         }
 
-        .project-content {
+        .product-content {
             font-size: .9rem;
             padding-left: 20px;
         }
@@ -160,7 +161,7 @@
         width: 1080px;
     }
 
-    .project-featured .project-content {
+    .product-featured .product-content {
         font-size: 1rem;
     }
 }

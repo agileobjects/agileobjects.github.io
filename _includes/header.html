@@ -6,23 +6,13 @@
                 {% if site.logo != null %}
                 <p class="site-logo"><a href="{{ site.baseurl }}/" rel="home"><img src="{{ site.baseurl }}/assets/images/{{ site.logo }}" alt="{{ site.name }}" /></a></p>
                 <h1 class="site-title screen-reader-text"><a href="{{ site.baseurl }}" rel="home">{{site.title}}</a></h1>
-                {% elsif site.author %}
-                <p class="profile">
-                    <a href="{{ site.baseurl }}/">
-                        <img src="{{ site.author.image }}" alt="{{ site.author.name }}'s Picture" class="avatar" />
-                    </a>
-                </p>
+                {% endif %}
                 <div class="site-identity">
-                    {% if site.name %}
                     <h1 class="site-title">
                         <a href="{{ site.baseurl }}/">{{site.name}}</a>
                     </h1>
-                    {% endif %}
-                    {% if site.description %}
                     <p class="site-description">{{site.description}}</p>
-                    {% endif %}
                 </div><!-- .site-identity -->
-                {% endif %}
                 <button id="menu-toggle" class="menu-toggle">
                     <span class="screen-reader-text">Main Menu</span><span class="icon-menu" aria-hidden="true"></span>
                 </button>

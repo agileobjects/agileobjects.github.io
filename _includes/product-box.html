@@ -1,0 +1,16 @@
+
+<article class="post product-featured has-image">
+    <div class="product-inside">
+        <a href="https://nuget.org/packages/AgileObjects.{{ product.name }}" class="product-thumbnail" target="_blank">
+            <img src="{{ site.baseurl }}/assets/images/products/{{ product.image }}" alt="{{ product.name }}">
+            <header class="product-header">
+                <h2 class="product-title">{{ product.name }}</h2>
+            </header><!-- .product-header -->
+        </a>
+        <ul class="product-content">
+            {% for item in product.description %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div><!-- .product-inside -->
+</article><!-- .product -->

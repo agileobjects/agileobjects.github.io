@@ -1,0 +1,97 @@
+---
+layout: default
+title: About
+projects: [
+  {
+    title: 'Driving Licence-Checking Web App',
+    description: [
+      "Developed a user-facing web app to integrate with the DVLA's driving licence-checking API",
+      "Augmented an existing fluent SQL-generation API for robust CRUD query generation including joins, filtering, ordering and grouping",
+      "Developed a simple JavaScript binding framework for declarative client-side behaviour",
+      "Introduced a framework enabling code reuse across multiple client products"
+    ],
+    tags: [ C#, ASP.NET Core, JQuery, SQL Server, Git ]
+  },
+  {
+    title: Vehicle Leasing Order Microservice,
+    description: [
+      "Helped design and develop an update to a Vehicle Leasing microservice to support repeat customer orders",
+      "Gave presentations on CQRS and Expression Trees to the development department",
+      "Advised on coding practices"
+    ],
+    tags: [ C#, Web API, Identity Server, Oracle, Azure DevOps, Git ]
+  },
+  {
+    title: Core Shared Library Migrations,
+    description: [
+      "Designed and developed a set of shared, core packages (configuration, logging, etc) to support existing .NET Framework and new .NET Core services with the same API",
+      "Developed a generic testing library for unit and integration tests with NUnit and XUnit"
+    ],
+    tags: [ C#, ASP.NET Core, Web API, Rabbit MQ, Mass Transit, Git ]
+  },
+  {
+    title: Pensions Management Microservices,
+    description: [
+      "Helped design and develop a Pensions Management microservice to support an off-shore call-centre UI",
+      "Developed a document storage microservice integrating Web API with SharePoint",
+      "Designed and developed a generic, reusable, NServiceBus State Machine framework",
+      "Developed a generic testing library for unit and integration tests with XUnit and Specflow",
+      "Advised on software architecture and coding practices"
+    ],
+    tags: [ C#, ASP.NET Core, Web API, NServiceBus, Identity Server, SQL Server, Azure DevOps, Git ]
+  },
+  {
+    title: Call Center Call Management System,
+    description: [
+      "Helped design and develop a full-stack call-centre call management web app",
+      "Advised on software architecture and coding practices"
+    ],
+    tags: [ C#, ASP.NET Core, TypeScript, LESS, Entity Framework Core, MySQL, Redis, Bootstrap, Azure DevOps, Git ]
+  },
+  {
+    title: Science Publishing Platform Migration,
+    description: [
+      "Planned and began a vertical-slice migration from a WebForms app to ASP.NET Core, establishing patterns to enable the full migration",
+      "Optimized system reporting, removing 30,000+ lines of code and yielding a 30+ fold performance increase",
+      "Introduced and wrote unit, integration and browser automation tests using XUnit and Selenium",
+      "Advised on software architecture, coding practices, infrastructure, development process, training and system direction"
+    ],
+    tags: [ C#, ASP.NET Core, TypeScript, Entity Framework, Dapper, SQL Server, Azure DevOps, Git ]
+  },
+  {
+    title: Financial Advice Platform Update,
+    description: [
+      "Helped develop new functionality for a Financial Advice platform web app",
+      "Introduced Knockout for data binding and Razor templates for server-based letter rendering",
+      "Introduced StructureMap Dependency Injection, CQRS and other Agile patterns and practices",
+      "Advised on software architecture and coding practices"
+    ],
+    tags: [ C#, ASP.NET MVC, JQuery, Knockout, WCF, SQL Server ]
+  }
+]
+---
+
+<main id="main" class="site-main">
+    <article class="post-full inner">
+        <div class="hero">
+            <p class="hero-text">AgileObjects is a full-stack .NET consultancy based in Gloucester, UK. We enjoy delivering software.</p>
+        </div>
+
+        <p>
+            Over the last couple of decades, AgileObjects has designed and developed mission-critical,
+            award-winning projects, introduced Agile methodologies to Waterfall companies, migrated
+            .NET Framework apps to .NET Core, and worked extensively throughout the web stack. We
+            talk plain English to stakeholders and techie to techies.
+        </p>
+
+        <header class="post-header">
+            <h1 class="post-title">Recent Projects</h1>
+        </header>
+
+        <div>
+            {% for project in page.projects %}
+            {% include project-box.html %}
+            {% endfor %}
+        </div>
+    </article><!-- .inner-->
+</main>

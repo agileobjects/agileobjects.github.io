@@ -1,0 +1,19 @@
+<div class="project">
+    <input type="checkbox" id="project-{{ forloop.index }}" />
+    <label for="project-{{ forloop.index }}" class="hero">
+        <span class="hero-text">{{ project.title }}</span>
+    </label>
+
+    <div>
+        <ul>
+            {% for item in project.description %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        <p class="project-tags">
+            {% for tag in project.tags %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+        </p>
+    </div>
+</div>
