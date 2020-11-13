@@ -42,12 +42,6 @@
         padding: 0;
     }
 
-    .site-logo,
-    .profile {
-        font-size: .76667em;
-        margin: 0 0 1.66667em;
-    }
-
     .site-logo img {
         max-height: 100px;
     }
@@ -84,10 +78,10 @@
     .social-links {
         -ms-flex-pack: center;
         justify-content: center;
-    }
 
-    .social-links a {
-        margin: 0 5px 0.5em;
+        a {
+            margin: 0 5px 0.5em;
+        }
     }
 }
 

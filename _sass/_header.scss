@@ -30,9 +30,13 @@
     margin: 0 10px 0 0;
 }
 
-.site-logo a,
-.profile a {
-    color: $gray-darkest;
+.profile {
+    font-size: .76667em;
+    margin: 0 0 1.66667em;
+
+    a {
+        color: $gray-darkest;
+    }
 }
 
 .site-logo img {
