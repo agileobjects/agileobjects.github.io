@@ -22,26 +22,30 @@ using filters - `Func`s which match members based on their types, names, paths, 
 same filters can now be used to configure source values to matched target members.
 
 For example, say you have a set of source models with `bool` properties which map to target model 
-`string` members, which expect "1" or "0" instead of true or false. By marking your target members 
-with `YesOrNoAttribute`s, this can be configured like so:
+`string` members, which expect `"Yes"` or `"No"` instead of true or false. By marking your target 
+members with `YesOrNoAttribute`s, this can be configured like so:
 
 ```csharp
 // Configure bool -> string mappings to map 'Yes' or 'No'
-// if the target string member has a YesOrNoAttribute:
+// if the target string member has a YesOrNoAttribute
+
+// ToTarget() applies the source value to any matching 
+// target string member:
 Mapper.WhenMapping
 	.From<bool>().To<string>()
-	.IfTargetMemberMatches(m => m.HasAttribute<YesOrNoAttribute>())
-	.Map((bl, str) => bl ? "Yes" : "No") // <- 'bl' is the source bool value
-	.ToTarget(); // <- ToTarget() applies the source value to any matching target string member
+	.IfTargetMemberMatches(m => 
+	    m.HasAttribute<YesOrNoAttribute>())
+	.Map((bl, str) => bl ? "Yes" : "No")
+	.ToTarget();
 ```
 
 [This DotNetFiddle](https://dotnetfiddle.net/LVTd2z){:target="_blank"} shows a live example.
 
 ## Ignoring Unusual Base Class Library Classes
 
-AgileMapper now ignores BCL classes which aren't commonly used in models. Previously, if a model had
-a `PropertyInfo` member (for example), AgileMapper would try to figure out how to map it, find that 
-it couldn't, and move on. It now skips BCL types except those usually found in models - Lists, 
+AgileMapper now ignores BCL classes which aren't commonly used in models. For example, if a model 
+has a `PropertyInfo` member, AgileMapper would previously try to figure out how to map it, find that 
+it couldn't, and move on. It now skips BCL classes except those usually found in models - Lists, 
 Dictionaries, etc. This makes for faster mapper creation.
 
 ## NET Standard 2.0 Target
