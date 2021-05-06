@@ -5,7 +5,7 @@ logo:
 # Author image is used in site sidebar
 author:
   name: Steve Wilkes
-  image: https://avatars1.githubusercontent.com/u/8459425?s=100&v=4
+  image: https://avatars1.githubusercontent.com/u/8459425?s=52&v=4
 favicon: 'assets/images/favicon.png'
 baseurl: 
 post_images_dir: '/assets/images/posts/'
@@ -35,7 +35,7 @@ stackoverflow: users/721236/steve-wilkes
 rss: agileobjects
 contact_icon: true
 
-# Projects
+# Products
 ao_github: 'https://github.com/agileobjects/agileobjects.github.io'
 am_nuget: 'https://www.nuget.org/packages/AgileObjects.AgileMapper'
 am_github: 'https://github.com/agileobjects/AgileMapper'
@@ -51,8 +51,8 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Projects
-    url: /projects
+  - text: Products
+    url: /products
   - text: Search
     url: /search
   - text: Contact

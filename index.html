@@ -5,31 +5,30 @@ title: Home
 
 <main id="main" class="site-main">
 
-{% if page.url == "/" %}
-<!-- Featured-->
-<div id="featured-posts" class="featured-posts">
-    {% for post in site.posts %}
-    {% if post.featured == true %}
-    {% include featuredbox.html %}
-    {% endif %}
-    {% endfor %}
-</div>
+    {% if page.url == "/" %}
+    <!-- Featured-->
+    <div class="post-feed-title">Featured</div>
+    <div id="featured-posts" class="featured-posts">
+        {% for post in site.posts %}
+        {% if post.featured == true %}
+        {% include featuredbox.html %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif%}
 
-{% endif%}
-
-<!-- Posts Index -->
-<div class="post-feed inner">
+    <!-- Posts Index -->
     {% if page.url == "/" %}
     <div class="post-feed-title">Latest</div>
     {% endif %}
-    <div class="post-feed inner-wide">
+    <div class="post-feed inner">
         {% for post in paginator.posts %}
-            {% include postbox.html %}
+        {% include postbox.html %}
         {% endfor %}
     </div>
-</div>
-<!-- Pagination-->
-{% include pagination.html %}
+
+    <!-- Pagination-->
+    {% include pagination.html %}
 </main>
 
 

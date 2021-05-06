@@ -25,6 +25,10 @@ comments: true
             <img src="{{ page.featured_image }}" alt="{{ page.title }}">
         </div>
         {% endif %}
+        <div class="profile">
+            <img src="{{ site.author.image }}" alt="{{ site.author.name }}'s Picture" class="avatar" style="margin-bottom: .66667em" />
+            Steve Wilkes, Principal Engineer
+        </div>
         <div class="post-content">
             {{content}}
         </div>

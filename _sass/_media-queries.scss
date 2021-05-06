@@ -8,7 +8,6 @@
     .site-content {
         margin-left: 30vw;
         padding-bottom: 3.33333em;
-        padding-top: 3.33333em;
     }
 
     .site-header {
@@ -29,7 +28,7 @@
 
     .site-header-inside {
         padding-bottom: 3.33333em;
-        padding-top: 3.33333em;
+        padding-top: 3em;
     }
 
     .site-branding {
@@ -42,22 +41,17 @@
         padding: 0;
     }
 
-    .site-logo,
-    .profile {
-        margin: 0 0 1.66667em;
-    }
-
     .site-logo img {
         max-height: 100px;
     }
 
     .profile .avatar {
-        height: 100px;
-        width: 100px;
+        height: 52px;
+        width: 52px;
     }
 
     .site-title {
-        font-size: 1.33333rem;
+        font-size: 1.75rem;
         line-height: 1.2;
     }
 
@@ -83,10 +77,10 @@
     .social-links {
         -ms-flex-pack: center;
         justify-content: center;
-    }
 
-    .social-links a {
-        margin: 0 5px 0.5em;
+        a {
+            margin: 0 5px 0.5em;
+        }
     }
 }
 
@@ -110,16 +104,16 @@
         margin-right: auto;
     }
 
-    .project-featured {
-        .project-title {
+    .product-featured {
+        .product-title {
             font-size: 1.33333rem;
         }
 
-        .project-thumbnail {
+        .product-thumbnail {
             margin: 0;
         }
 
-        .project-content {
+        .product-content {
             font-size: .9rem;
             padding-left: 20px;
         }
@@ -160,7 +154,7 @@
         width: 1080px;
     }
 
-    .project-featured .project-content {
+    .product-featured .product-content {
         font-size: 1rem;
     }
 }

@@ -12,7 +12,7 @@
 }
 
 .post-header {
-    margin-bottom: 1.66667em;
+    overflow: hidden;
 
     h2 {
         padding: 3px 6px;
@@ -71,7 +71,8 @@
 
 .post-tags,
 .reading-time,
-.post-share {
+.post-share,
+.project-tags > span {
     font-size: 0.77778rem;
     line-height: 1.5;
     float: left;
@@ -197,25 +198,29 @@ blockquote > p {
     width: 60px;
 }
 
-.post-feed .post {
-    border-bottom: 1px solid $gray-lighter;
+.post-feed {
+    .post-header {
+        margin-bottom: 0.83333em;
+    }
+
+    .post {
+        border-bottom: 1px solid $gray-lighter;
+    }
+
+    .post-content {
+        font-size: 0.88889rem;
+        margin-bottom: 1.66667em;
+    }
 }
 
-.post-feed .post-header {
-    margin-bottom: 0.83333em;
-}
+.read-next {
+    .post-title {
+        font-size: 1.33333rem;
+    }
 
-.post-feed .post-content {
-    font-size: 0.88889rem;
-    margin-bottom: 1.66667em;
-}
-
-.read-next .post-title {
-    font-size: 1.33333rem;
-}
-
-.read-next .post-meta {
-    margin-bottom: 0.5em;
+    .post-meta {
+        margin-bottom: 0.5em;
+    }
 }
 
 .tag-top {
@@ -223,7 +228,8 @@ blockquote > p {
 }
 
 .button-small,
-.tagcloud a {
+.tagcloud a,
+.project-tags > span {
     border: 1px solid $gray-lighter;
     color: $body-text-color;
     display: inline-block;
@@ -255,7 +261,6 @@ ul.archive-posts-list {
         margin-bottom: 0.5556em
     }
 }
-
 /* Archives */
 .page-header {
     margin-bottom: 1.66667em;
@@ -274,7 +279,6 @@ ul.archive-posts-list {
     margin: 0.25em 0 0;
     text-transform: uppercase;
 }
-
 /* Hero section */
 .hero {
     margin-bottom: 2.5em;
@@ -297,7 +301,6 @@ ul.archive-posts-list {
     margin: 0;
 }
 
-/* Featured posts */
 .featured-posts {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -340,9 +343,75 @@ ul.archive-posts-list {
         }
     }
 }
-
 /* Projects */
-.featured-projects {
+.project {
+
+    input[type=checkbox] {
+        display: none;
+
+        ~ div {
+            display: none;
+            padding-left: 26px;
+        }
+    }
+
+    label.hero {
+        cursor: pointer;
+        margin-bottom: .5em;
+        padding-left: 26px;
+        position: relative;
+        display: block;
+
+        &::before {
+            content: "+";
+            position: absolute;
+            left: 3px;
+        }
+
+        &::after {
+            margin-top: 0;
+            height: 0;
+            width: 120px;
+        }
+
+        .hero-text {
+            font-size: 1.33334em;
+        }
+    }
+
+    input[type=checkbox]:checked {
+        + label {
+            margin-bottom: .77778em;
+
+            &:before {
+                content: "-";
+                left: 5px;
+            }
+
+            &:after {
+                height: 1px;
+                margin-top: 1em;
+            }
+        }
+
+        ~ div {
+            display: block;
+            margin-bottom: 2em;
+            overflow: hidden;
+        }
+    }
+
+    ul {
+        padding-left: .9em;
+    }
+
+    li {
+        font-size: .9em;
+        margin-bottom: .4em;
+    }
+}
+/* Products */
+.featured-products {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -352,11 +421,11 @@ ul.archive-posts-list {
     margin: 0 -0.83333em 2.5em;
 }
 
-.project-featured {
+.product-featured {
     flex: 0 0 100%;
     margin-bottom: .5em;
 
-    .project-inside {
+    .product-inside {
         padding: 0 0.833333em;
         margin-bottom: 1.5em;
         overflow: hidden;
@@ -368,7 +437,7 @@ ul.archive-posts-list {
         width: 27%;
     }
 
-    .project-header {
+    .product-header {
         float: left;
     }
 
@@ -376,11 +445,11 @@ ul.archive-posts-list {
         margin-bottom: 6px;
     }
 
-    .project-thumbnail {
+    .product-thumbnail {
         text-decoration: none;
     }
 
-    .project-content {
+    .product-content {
         font-size: 0.75rem;
         float: left;
         margin-bottom: 0;
@@ -388,7 +457,6 @@ ul.archive-posts-list {
         width: 63%;
     }
 }
-
 /**
  * 4.2 Pagination
  * ----------------------------------------------------------------------------

@@ -12,7 +12,7 @@ contained some good info, as well as some things I don't agree with. Top of the 
 
 > Self-documenting code is bullshit.
 
-I mean... it's not, is it?
+I mean... it's not... is it?
 
 ## Self-Documenting Code
 
