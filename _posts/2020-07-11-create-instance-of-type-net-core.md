@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating an Instance of Type, 8 Years Later
+title: Creating an Instance of a Type, 8 Years Later
 excerpt: I recently had an enquiry about code in a post from 2012, and thought I'd revisit it. It's better now.
 tags: [Expression Trees, Performance]
 images_dir: '2020-07-11/'
