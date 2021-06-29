@@ -20,6 +20,11 @@ body {
         text-decoration: none !important;
     }
 
+    .wy-side-nav-search input[type=text] {
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+    }
+
 .wy-nav-content, .wy-body-for-nav {
     background-color: #1e1e1e;
 }
@@ -97,4 +102,21 @@ li.current {
 
 .hljs-meta {
     color: #4EC9B0;
+}
+
+.btn-neutral, .btn-neutral:hover, .btn-neutral:visited {
+    background-color: transparent !important;
+    border: 1px solid #eee;
+    color: #fff !important;
+}
+
+    .btn-neutral:hover {
+        background: #eee;
+        color: #1a1a1a;
+        outline: 0;
+        text-decoration: none !important;
+    }
+
+footer {
+    color: #fff;
 }
