@@ -29,5 +29,4 @@
     for (i = 0; i < hlLength; ++i) {
         observer.observe(hlCode[i], config);
     }
-    alert(termsRegex);
 });
