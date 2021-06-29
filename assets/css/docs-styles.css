@@ -111,8 +111,8 @@ li.current {
 }
 
     .btn-neutral:hover {
-        background: #eee;
-        color: #1a1a1a;
+        background: #eee !important;
+        color: #1a1a1a !important;
         outline: 0;
         text-decoration: none !important;
     }
