@@ -328,6 +328,7 @@ ul.archive-posts-list {
             background-size: cover;
 
             > h2 {
+                color: $body-text-color;
                 background: rgba($gray-darkest,.9);
             }
         }
@@ -344,6 +345,10 @@ ul.archive-posts-list {
     }
 }
 /* Projects */
+.projects {
+    margin-top: 1em;
+}
+
 .project {
 
     input[type=checkbox] {

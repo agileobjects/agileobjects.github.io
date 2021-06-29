@@ -61,6 +61,10 @@
 .site-title a {
     color: #fff;
     text-decoration: none;
+
+    .site-title-highlight {
+        color: $body-title-color;
+    }
 }
 
 .site-description {

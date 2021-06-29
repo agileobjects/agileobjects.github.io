@@ -3,6 +3,15 @@ layout: default
 title: About
 projects: [
   {
+    title: 'B&amp;Q Post-Brexit HMRC API Integration',
+    description: [
+      "Wrote a user-facing, web-based system integrated with HMRC's Post-Brexit customs declaration API",
+      "Led code reviews of and advised on best-practices for several existing projects",
+      "Introduced Kingfisher NuGet packages in a private feed for code reuse between solutions"
+    ],
+    tags: [ C#, ASP.NET MVC, ASP.NET Web API, ASP.NET Core, JQuery, Entity Framework, SQL Server, Azure, Gitlab, Git ]
+  },
+  {
     title: 'Driving Licence-Checking Web App',
     description: [
       "Developed a user-facing web app to integrate with the DVLA's driving licence-checking API",
@@ -88,7 +97,7 @@ projects: [
             <h1 class="post-title">Recent Projects</h1>
         </header>
 
-        <div>
+        <div class="projects">
             {% for project in page.projects %}
             {% include project-box.html %}
             {% endfor %}
