@@ -1,0 +1,33 @@
+body {
+  color: #fff;
+  background: #1e1e1e;
+}
+
+.wy-nav-side {
+  background-color: #1a1a1a;
+}
+
+.wy-side-nav-search {
+  background-color: #101010;
+}
+
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+  color: #59a6ff;
+}
+
+.wy-nav-content, .wy-body-for-nav {
+  background-color: #1e1e1e;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #59a6ff;
+}
+
+a, a:hover, a:visited {
+  color: #EFE524;
+}
+
+a:hover {
+  text-decoration: underline;
+}
