@@ -34,3 +34,12 @@ a, a:hover, a:visited {
     a:hover {
         text-decoration: underline;
     }
+
+code {
+    background: #222;
+    border-bottom: 1px dashed #aaa;
+    border-top: 1px dashed #aaa;
+    color: #fff;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    padding: 1px 3px;
+}
