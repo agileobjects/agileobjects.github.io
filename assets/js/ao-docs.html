@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" \>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css" rel="stylesheet" \>
+    <title></title>
+    <script src="https://buildableexpressions.readthedocs.io/js/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<pre>
+<code class="cs">// Map null-source collections to null for all source
+// and target types:
+Mapper.WhenMapping.MapNullCollectionsToNull();
+
+// Map null collections to null only when mapping from
+// Order to OrderDto:
+Mapper.WhenMapping
+    .From&lt;Order&gt;()
+    .To&lt;OrderDto&gt;()
+    .MapNullCollectionsToNull();
+</code>
+</pre>
+    <script>window['dox-cls'] = 'Mapper'</script>
+    <script src="ao-docs.js"></script>
+</body>
+</html>

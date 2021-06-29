@@ -1,15 +1,8 @@
 ﻿$(function () {
-    var i, l, terms = document.location.search.substring(1).split('&'), term = '';
-    for (i = 0, l = terms.length; i < l; ++i) {
-        term = terms[i].split('=');
-        if (term[0] === 't') {
-            term = term[1];
-            break;
-        }
-    }
-    var hlCode = document.querySelectorAll('pre code.language-cs'),
+    var hlCode = document.querySelectorAll('pre code.language-cs,pre code.cs'),
         hlLength = hlCode.length,
-        termsRegex = new RegExp('\\b(' + term + ')\\b', 'g'),
+        i, l,
+        termsRegex = new RegExp('\\b(' + (window['dox-cls'] || 'xyz') + ')\\b', 'g'),
         typeRegex = /(new<\/span>\W+|class<\/span> <span class="hljs-title">|public<\/span>\W+|: <span class="hljs-title">|&lt;)([A-Z][^& \(\[\]]+)( |{|\(|\[\]&gt;|&gt;)/g,
         genericTypeRegex = /(I{0,1}Dictionary|IEnumerable|IReadOnlyCollection|I{0,1}Collection|I{0,1}List)&lt;/g,
         observer = new MutationObserver(function (mutations) {
