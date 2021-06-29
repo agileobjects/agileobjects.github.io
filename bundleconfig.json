@@ -29,5 +29,11 @@
     "inputFiles": [
       "assets/js/contact.js"
     ]
+  },
+  {
+    "outputFileName": "assets/css/docs-styles.min.css",
+    "inputFiles": [
+      "assets/css/docs-styles.css"
+    ]
   }
 ]
