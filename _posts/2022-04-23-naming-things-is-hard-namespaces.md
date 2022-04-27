@@ -43,12 +43,12 @@ Oh, and by the same reasoning - 'Implementations' isn't a namespace either :)
 ## Quick Tips
 
 - If a namespace will contain several child items, make it plural, _e.g._ 
-  [`Microsoft.Extensions.Options.DataAnnotations`](https://nuget.org/packages/Microsoft.Extensions.Options.DataAnnotationsDataAnnotations),
-  or [`System.IO.Pipelines`](https://nuget.org/packages/System.IO.Pipelines)
+  [Microsoft.Extensions.Options.DataAnnotations](https://nuget.org/packages/Microsoft.Extensions.Options.DataAnnotationsDataAnnotations),
+  or [System.IO.Pipelines](https://nuget.org/packages/System.IO.Pipelines)
 
 - If a namespace will contain a particular implementation of something, make it singular, _e.g._
-  [`Microsoft.Extensions.FileSystemGlobbing`](https://nuget.org/packages/Microsoft.Extensions.FileSystemGlobbing),
-  or [`System.Security.SecureString`](https://nuget.org/packages/System.Security.SecureString)
+  [Microsoft.Extensions.FileSystemGlobbing](https://nuget.org/packages/Microsoft.Extensions.FileSystemGlobbing),
+  or [System.Security.SecureString](https://nuget.org/packages/System.Security.SecureString)
 
 - Name namespaces after the behaviours or services they provide, _e.g._ 'Security', 'Caching',
   'Logging', etc
