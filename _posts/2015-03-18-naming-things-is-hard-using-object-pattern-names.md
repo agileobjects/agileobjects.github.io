@@ -2,7 +2,7 @@
 layout: post
 title: Naming Things Is Hard&#58; Using Object Pattern Names
 excerpt: Design Patterns - tried-and-true solutions to common problems - have now been around long enough that many of them have very familiar names. We can use those names as part of an object-naming strategy.
-tags: [Domain Driven Design (DDD), Patterns]
+tags: [Naming Patterns, Domain Driven Design (DDD), Patterns]
 ---
 
 [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern) - tried-and-true solutions
